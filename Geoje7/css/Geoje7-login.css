@@ -1,0 +1,149 @@
+/* font */
+@font-face{
+    font-family:"arial";
+    font-weight: 700;
+    src:url(../font/arialbd_0.woff)
+}
+@font-face{
+    font-family:"Script MT";
+    font-weight: 400;
+    src:url(../font/SCRIPTBL.woff)
+}
+@font-face{
+    font-family:"mal-Gothic";
+    font-weight: 700;
+    src:url(../font/malgunbd_0.woff)
+}
+@font-face{
+    font-family:"Noto-sans";
+    font-weight: 600;
+    src:url(../font/NotoSansKR-Medium.woff)
+}
+@font-face{
+    font-family:"Noto-sans";
+    font-weight: 400;
+    src:url(../font/NotoSansKR-Regular.woff)
+}
+@font-face{
+    font-family:"Noto-sans";
+    font-weight: 200;
+    src:url(../font/NotoSansKR-Light.woff)
+}
+@font-face{
+    font-family:"Scheherazade-New";
+    font-weight: 700;
+    src:url(../font/ScheherazadeNew-Bold.woff)
+}
+@font-face{
+    font-family:"Scheherazade-New";
+    font-weight: 400;
+    src:url(../font/ScheherazadeNew-Regular.woff)
+}
+#loginWrap{
+    display: flex;
+    margin: 0 auto;
+    height: 100vh;
+    background-image:url(../img/view_01.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    justify-content: center;
+    align-items: center;
+}
+.back {
+    width: 100%;
+    height: 100vh;
+    background: rgba(0,0,0,0.5);
+    position: absolute;
+}
+.loginBox{
+    width: 550px;
+    height: 380px;
+    margin: 0 auto;
+    background-color: rgba(255,255,255,0.6);
+    text-align: center;
+    z-index: 1000;
+}
+#loginfrm{
+    width: 400px;
+    margin: 0 auto;
+    text-align: center;
+}
+#loginfrm .logo {
+    padding: 25px;
+}
+#loginfrm .logo a {
+    font-family:"Scheherazade-New";
+    font-weight: 700;
+    font-size: 50px;
+}
+.login_text{
+    width: 400px;
+    display: block;
+    height: 44px;
+    margin: 0 auto;
+    margin-bottom: 8px;
+    border: 1px solid #eee;
+    box-sizing: border-box;
+}
+#loginid,#loginpw{
+    display: block;
+    width: 376px;
+    height: 20px;
+    padding: 10px;
+    margin: 0 auto;
+}
+#login {
+    width: 400px;
+    height: 44px;
+    background-color: #000000;
+    color: white;
+    font-family:"Noto-sans";
+    font-weight: 700;
+    font-size: 14px;
+}
+.text_box{
+    display: flex;
+    padding-top: 10px;
+    width: 400px;
+    font-family:"Noto-sans";
+    font-weight: 700;
+    font-size: 14px;
+}
+.text_box a {
+    flex:1
+}
+.text_box a:first-child ,.text_box a:nth-child(2){
+    border-right: 1px solid black;
+}
+.sns{
+    display: flex;
+    width: 150px;
+    height: 50px;
+    margin: 0 auto;
+    padding-top: 15px;
+    justify-content: space-around;
+}
+.sns li{
+    display: block;
+    position: relative;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background: white;
+    
+}
+.sns li a {
+    position: absolute;
+    left: 50%; top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    font-size: 20px;
+}
+.sns li:first-child a i{
+    color: red;
+}
+.sns li:nth-child(2) a i{
+    color: darkblue;
+}
+.sns li:last-child a i{
+    color: blueviolet;
+}

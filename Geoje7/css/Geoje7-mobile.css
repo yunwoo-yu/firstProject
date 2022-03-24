@@ -1,0 +1,318 @@
+@media screen and (min-width:1200px) and (max-width:1455px) {
+    header .wide_inner_box .logo{
+        width: 100px;
+        display: block;
+        float: none;
+        margin: 0 auto;
+    }
+    header::after{
+        top:132px;
+    }
+    .logo{
+        margin-left: 10px;
+    }
+
+    .logo>a {
+        font-size: 40px;
+        line-height: 60px;
+    }
+    
+    nav {
+        width: 100%;
+        margin: 0 auto;
+        display: block;
+        float: none;
+    }
+    .login {
+        float: none;
+        position: absolute;
+        top: 0; right: -100px;
+    }
+    nav #nav{
+        width: 100%;
+        text-align: center;
+    }
+    #nav>li {
+        padding: 0 3px;
+    }
+    .special .wide_inner_box .special_3 li>p{
+        font-size: 30px;
+    }
+    .special .wide_inner_box .special_3 li .detail_box{
+        width: 100px;
+        height: 50px;
+    }
+    .special .wide_inner_box .special_3 li .detail_box>p>a{
+        font-size: 15px;
+        padding: 17px 0;
+    }
+    }
+@media screen and (max-width:768px) {
+    .inner_box{
+        overflow: hidden;
+    }
+    /* 헤더 */
+    header {
+        width: 100%;
+        height: 72px;
+    } 
+    .logo{
+        line-height: 65px;
+    }
+    .logo>a{
+        font-size: 40px;
+    }
+    header::after{
+        display: none;
+    }
+    header nav {
+        display: none;
+    }
+    header .wide_inner_box .logo{
+        width: 100px;
+        display: block;
+        float: none;
+        margin: 0 auto;
+    }
+    header .login {
+        display: none;
+    }
+    .hamBtn{
+        display: block;
+    }
+    .hamBtn a.Imgchg{
+        background-image: url(../img/ham-close.png);
+    }
+    .mobile_nav #m_nav>li:hover>a::after{
+        width: 180px;
+    }
+    /* 무비 */
+    .movie .vid_btn li a {
+        font-size: 20px;
+    }
+    /* 타이틀 */
+    .title{
+        font-size: 30px;
+        font-weight: 700;
+    }
+    .sub_title {
+        font-size: 15px;
+    }
+    /* 액티비티 */
+    .activity{
+        padding-bottom: 50px;
+        margin-bottom: 0px;
+    }
+    .activity>.inner_box>.activity_box{
+        max-width: 768px;
+    }
+    .activity>.sub_title {
+        padding-bottom: 40px;
+    }
+    .activity .pager li a {
+        width: 10px;
+        height: 10px;
+    }
+    .activity .imgList li>p {
+        font-size: 15px;
+    }
+    .activity .imgList li .detail_box{
+        width: 70px;
+        height: 20px;
+        top: 55%;
+    }
+    .activity .imgList li .detail_box>p>a{
+        font-size: 14px;
+        padding: 4px 0;
+    }
+    /* room */
+    .room{
+        margin-bottom: 0;
+    }
+    .room>.inner_box{
+        width: 95%;
+        margin: 0 2.5%;
+    }
+    .room .room_pager{
+        bottom: 10%;
+    }
+    .room>h4{
+        margin-bottom: 20px;
+    }
+    .room_title{
+        font-size: 20px;
+        padding: 10px 30px;
+        margin-top: 50px;
+    }
+    .text1{
+        width: 100%;
+        font-size: 14px;
+        padding: 50px 0;
+    }
+    .text2{
+        margin-top: 20px;
+        font-size: 13px;
+    }
+    
+    .room_pager>li{
+        float: left;
+        margin-right: 5px;
+        width: 10px;
+        height: 10px;
+        border: 1px solid #fafafa;
+        border-radius: 50%;
+    }
+    .room>div>div{
+        width: 100%;
+        flex-wrap: wrap;
+        height: auto;
+    }
+    .room>div>div>div{
+        width: 100%;
+    }
+    .room .img_Box{
+        height: auto;
+    }
+    .room .room_text{
+        width: 100%;
+        /* height: 200px; */
+        height: 40vw;
+        min-height: 300px;
+        border: none;
+    }
+    .room .fade_Img{
+        width: 100%;
+        /* height: 400px; */
+        height: 53vw;
+    }
+    .room .fade_Img li{
+        width: 100%;
+        height: auto;
+    }
+    .room .room_text .text_Box .fade_text{
+        position: absolute;
+        margin-top: 0;
+        height: 100%;
+    }
+                   /* 프라이빗 */
+    .room>.inner_box>.room_Box:last-child>.img_Box{
+        order: 1;
+    }
+    /* 스페셜_3 */
+    .special{
+        padding-bottom: 100px;
+    }
+    .special .wide_inner_box .special_3{
+        display: block;
+        width: 100%;
+    }
+    .special .wide_inner_box .special_3 li{
+        height: 220px;
+        overflow: hidden;
+    }
+    .special .wide_inner_box .special_3 li>.txtBox{
+        top: 40%;
+    }
+    .special .wide_inner_box .special_3 li>.txtBox>p{
+        font-size: 25px;
+    }
+    .special .wide_inner_box .special_3 li .back{
+        z-index: 10;
+    }
+    .special .wide_inner_box .special_3 li img{
+        position: absolute;
+        top: -100px;
+    }
+    .special .wide_inner_box .special_3 li:last-child img{
+        top: -150px;
+    }
+    .special .wide_inner_box .special_3 li .txtBox .hov{
+        font-size: 15px;
+        
+    }
+    .special .wide_inner_box .special_3 li .txtBox .detail_box {
+        width: 80px;
+        height: 30px;
+    }
+    .special .wide_inner_box .special_3 li .txtBox .detail_box>p>a{
+        font-size: 15px;
+        padding: 7.5px 0;
+        
+    }
+    .special .wide_inner_box .special_3 li:hover .txtBox .detail_box{
+        margin-top: 20px;
+    }
+    /* 실시간예약 */
+    .reservation{
+        overflow-x: hidden;
+        margin: 0 0 100px 0;
+        height: 250px;
+    }
+    .reservation .wide_inner_box .reser_box{
+        height: 250px;
+
+    }
+    .reservation .wide_inner_box .reser_box .logo2{
+        font-size: 20px;
+        top: 15px;
+    }
+    .reservation .wide_inner_box .reservation_btn{
+        width: 100px;
+        height: 20px;
+    }
+    .reservation .wide_inner_box .reservation_btn p a{
+        font-size: 13px;
+        line-height: 20px;
+    }
+    .reservation .wide_inner_box .reser_box img{
+        position: absolute;
+        width: auto;
+        height: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+                    /* footer */
+    footer>.wide_inner_box{
+        width: 95%;
+        margin: 0 2.5%;
+    }
+    footer .wide_inner_box .sns{
+        position: static;
+        margin-top: 10px;
+        margin-left: 10px;
+        padding-bottom: 5px;
+
+    }
+    footer .wide_inner_box .foot_info>h4{
+        font-size: 25px;
+    }
+    footer .wide_inner_box .foot_info .foot_utill li a{
+        font-size: 15px;
+    }
+    footer .wide_inner_box address p{
+        font-size: 13px;
+    }
+    .sns li{
+        width: 35px;
+        height: 35px;
+        border-radius: 7px;
+    }
+    .sns li a i{
+        font-size: 30px;
+    }
+    .fa, .fab, .fad, .fal, .far, .fas{
+        line-height: 1.5;
+    }
+}
+@media screen and (max-width:500px){
+    .activity .imgList li>p {
+        font-size: 13px;
+    }
+    .text1{
+        width: 350px;
+        word-break: keep-all;
+    }
+    footer .wide_inner_box .foot_info .foot_utill li {
+        padding-right: 10px;
+    }
+}

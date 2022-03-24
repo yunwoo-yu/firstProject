@@ -1,0 +1,1863 @@
+$jost: "jost";
+$Noto: "Noto-sans";
+
+//버튼배경
+@mixin Btnback($w, $h, $bg, $br) {
+    width: $w;
+    height: $h;
+    background-color: $bg;
+    border-radius: $br;
+}
+
+//폰트
+@mixin font($ff, $fw, $fz, $fs, $cl) {
+    font-family: $ff;
+    font-weight: $fw;
+    font-size: $fz;
+    font-style: $fs;
+    color: $cl;
+}
+
+//애니메이션 키프레임
+
+@keyframes line-top {
+    0% {
+        transform: translateY(0px);
+    }
+
+    100% {
+        transform: translateY(10px);
+    }
+}
+
+@keyframes line-mid {
+    0% {
+        transform: scale(1);
+    }
+
+    100% {
+        transform: scale(0);
+    }
+}
+
+@keyframes line-bot {
+    0% {
+        transform: translateY(0px);
+    }
+
+    100% {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes line-top-rotate {
+    0% {
+        transform: translateY(10px) rotateZ(0deg);
+    }
+
+    100% {
+        transform: translateY(10px) rotateZ(45deg);
+    }
+}
+
+@keyframes line-bot-rotate {
+    0% {
+        transform: translateY(-10px) rotateZ(0deg);
+    }
+
+    100% {
+        transform: translateY(-10px) rotateZ(135deg);
+    }
+}
+
+@keyframes gender {
+    0% {
+        left: -100%;
+    }
+
+    100% {
+        left: 0;
+    }
+}
+@keyframes gender_mobile {
+    0% {
+        left: -100%;
+    }
+
+    100% {
+        left: 50%;
+    }
+}
+
+//햄버거 애니메이션
+
+//모바일 반응형
+
+$mb1880: 1880px;
+$mb1680: 1680px;
+$mb1480: 1480px;
+$mb1380: 1380px;
+$mb1180: 1180px;
+$mb1152: 1152px;
+$mb1024: 1024px;
+$mb874: 874px;
+$mb767: 767px;
+$mb666: 666px;
+$mb640: 640px;
+$mb480: 480px;
+
+@mixin mobile($mb) {
+    @media screen and (max-width: $mb) {
+        @content;
+    }
+}
+
+:root {
+    --swiper-navigation-size: -160px;
+}
+
+.innerbox {
+    width: 90%;
+    height: 100%;
+    max-width: 1920px;
+    position: relative;
+    margin: 0 auto;
+
+    @include mobile($mb767) {
+        width: 95%;
+    }
+}
+
+//공통사항
+header {
+    width: 100%;
+    position: fixed;
+    z-index: 9999;
+    transition: 0.6s;
+    top: 0;
+
+    .top {
+        height: 80px;
+        background-color: #121212;
+
+        @include mobile($mb767) {
+            height: 60px;
+        }
+
+        .innerbox {
+
+            .logo {
+                width: 140px;
+                margin: 0 auto;
+                padding: 10px 0;
+
+                @include mobile($mb767) {
+                    width: 90px;
+                }
+
+                a {
+                    display: block;
+
+                    img {
+                        width: 100%;
+                    }
+                }
+            }
+
+            > ul {
+                display: flex;
+                justify-content: space-between;
+                width: 80px;
+                position: absolute;
+                top: 50%;
+                right: 0;
+                transform: translateY(-50%);
+
+                @include mobile($mb767) {
+                    width: 70px;
+                }
+
+                @include mobile($mb1180) {
+                    position: absolute;
+                    right: 0;
+                    top: 50%;
+                    transform: translateY(-50%);
+                }
+
+                li {
+                    width: 28px;
+
+                    @include mobile($mb767) {
+                        display: none;
+                    }
+
+                    a {
+                        display: block;
+
+                        img {
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+
+            .ham_Btn {
+                width: 80px;
+                height: 80px;
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: 1000;
+                display: none;
+                z-index: 9000;
+                transition: 0.6s;
+
+                &.active {
+                    left: 70%;
+
+                    @include mobile($mb480) {
+                        left: 60%;
+                    }
+                }
+
+                @include mobile($mb1180) {
+                    display: block;
+                }
+
+                @include mobile($mb767) {
+                    width: 60px;
+                    height: 60px;
+                }
+
+                .line_box {
+                    width: 35px;
+                    height: 26px;
+                    position: relative;
+                    // background-color: green;
+                    top: 50%;
+                    left: 50%;
+                    transform: translateX(-50%) translateY(-50%);
+                    cursor: pointer;
+
+                    @include mobile($mb767) {
+                        width: 30px;
+                        height: 23px;
+                    }
+
+                    .line {
+                        width: 35px;
+                        height: 5px;
+                        background: white;
+                        margin-bottom: 5px;
+                        border-radius: 2px;
+                        transition: 0.6s;
+
+                        &.active {
+                            background: #121212;
+                        }
+
+                        @include mobile($mb767) {
+                            width: 30px;
+                            height: 4px;
+                            margin-bottom: 6px;
+                        }
+                    }
+
+                    .line_top {
+                        animation: line-top 0.3s forwards ease-out, line-top-rotate 0.3s 0.5s forwards ease-out;
+                    }
+
+                    .line_mid {
+                        animation: line-mid 0.3s forwards ease-out;
+                    }
+
+                    .line_bot {
+                        animation: line-bot 0.3s forwards ease-out, line-bot-rotate 0.3s 0.5s forwards ease-out;
+                    }
+                }
+            }
+        }
+
+        .m_nav {
+            position: absolute;
+            width: 80%;
+            height: 100vh;
+            background: rgba(255, 255, 255, 1);
+            top: 0;
+            left: -100%;
+            z-index: 8000;
+            transition: 0.6s;
+            display: none;
+
+            @include mobile($mb1180) {
+                display: block;
+            }
+
+            &.active {
+                left: 0;
+            }
+
+            .m_menu {
+                width: 100%;
+                position: relative;
+                top: 80px;
+
+                @include mobile($mb767) {
+                    top: 60px;
+                }
+
+                li {
+                    display: block;
+
+                    a {
+                        display: block;
+                        padding: 28px 0;
+                        text-indent: 5%;
+                        color: #121212;
+                        font-size: 22px;
+                        border-bottom: 1px solid black;
+                    }
+                }
+            }
+
+            .m_icon {
+                position: relative;
+                top: 79px;
+                margin-top: 70px;
+
+                li {
+                    width: 100%;
+                    padding: 15px 0;
+
+                    a {
+                        display: flex;
+                        align-items: center;
+                        text-indent: 5%;
+
+                        i {
+                            width: 28px;
+                            display: inline-block;
+                            margin-left: 5%;
+
+                            img {
+                                width: 100%;
+                            }
+                        }
+
+                        span {
+                            width: 20%;
+                            text-indent: 20px;
+
+                            @include mobile($mb767) {
+                                width: 50%;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    nav {
+        width: 100%;
+        background-color: #fff;
+
+        .innerbox {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 75px;
+
+            @include mobile($mb1180) {
+                display: block;
+            }
+
+            @include mobile($mb767) {
+                height: 60px;
+            }
+
+            .search_box {
+                @include mobile($mb1180) {
+                    position: absolute;
+                    width: 36px;
+                    height: 36px;
+                    border-radius: 50%;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    left: 2%;
+                }
+
+                @include mobile($mb767) {
+                    left: 12px;
+                }
+
+                &.active {
+                    .input_box {
+                        width: 200px;
+
+                        background: rgba(0, 0, 0, 1);
+                        transition: all 0.5s cubic-bezier(0, 0.105, 0.035, 1.57);
+
+                        .search_input {
+                            opacity: 1;
+                            transform: translate(0px, 0px);
+                        }
+
+                        .search_icon {
+                            background: #f5f5f5;
+                        }
+
+                        @include mobile($mb767) {
+                            width: 150px;
+                        }
+                    }
+                }
+
+                .input_box {
+                    width: 42px;
+                    height: 42px;
+                    overflow: hidden;
+                    background: rgba(255, 255, 255, 0);
+                    border-radius: 24px;
+                    position: relative;
+                    transition: all 0.2s ease-in-out;
+
+                    @include mobile($mb767) {
+                        width: 36px;
+                        height: 36px;
+                    }
+
+                    .search_input {
+                        width: 100%;
+                        height: 42px;
+                        padding: 0px 20px 0 50px;
+                        opacity: 0;
+                        position: absolute;
+                        top: 0px;
+                        left: 0px;
+                        background: transparent;
+                        box-sizing: border-box;
+                        border: none;
+                        outline: none;
+                        @include font($Noto, 500, 16px, normal, #525252);
+                        line-height: 20px;
+
+                        transform: translate(0, 60px);
+                        transition: all 0.2s cubic-bezier(0, 0.105, 0.035, 1.57);
+                        transition-delay: 0.3s;
+
+                        @include mobile($mb767) {
+                            height: 36px;
+                        }
+                    }
+
+                    .search_icon {
+                        width: 42px;
+                        height: 42px;
+                        border: none;
+                        border-radius: 50%;
+                        background: #eee;
+                        padding: 0px;
+                        outline: none;
+                        position: absolute;
+                        z-index: 2;
+                        cursor: pointer;
+                        transition: all 0.2s ease-in-out;
+
+                        @include mobile($mb767) {
+                            width: 36px;
+                            height: 36px;
+                        }
+
+                        img {
+                            width: 24px;
+                            position: absolute;
+                            top: 50%;
+                            left: 50%;
+                            transform: translateX(-50%) translateY(-50%);
+                            @include mobile($mb767) {
+                                width: 18px;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .nav {
+                width: 650px;
+                height: 75px;
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+
+                @include mobile($mb1180) {
+                    display: none;
+                }
+
+                li {
+                    width: 100px;
+                    text-align: center;
+
+                    &:hover a {
+                        color: #e8e8e8;
+                    }
+
+                    a {
+                        width: 100%;
+                        display: block;
+                        padding: 20px 0;
+                        font-size: 20px;
+                        transition: 0.3s;
+                    }
+                }
+            }
+
+            .nav_icon {
+                width: 80px;
+                display: inline-flex;
+                justify-content: space-between;
+
+                @include mobile($mb767) {
+                    display: none;
+                }
+
+                @include mobile($mb1180) {
+                    position: absolute;
+                    right: 0;
+                    top: 50%;
+                    transform: translateY(-50%);
+                }
+
+                li {
+                    width: 28px;
+
+                    @include mobile($mb767) {
+                        width: 24px;
+                    }
+
+                    a {
+                        display: block;
+
+                        img {
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// 헤더영역
+main {
+    //메인배너
+    #mainBanner {
+        width: 100%;
+        height: 100vh;
+        background: #121212;
+
+        // overflow: hidden;
+        @include mobile($mb1680) {
+            height: 100%;
+            padding-bottom: 50px;
+        }
+
+        .innerbox {
+            > h4 {
+                width: 100%;
+                @include font($jost, 700, 50px, italic, #f5f5f5);
+                padding-top: 219px;
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: 100;
+
+                @include mobile($mb767) {
+                    font-size: 30px;
+                    padding-top: 180px;
+                }
+
+                @include mobile($mb480) {
+                    font-size: 22px;
+                }
+            }
+
+            .main_slider {
+                max-width: 900px;
+                position: relative;
+                padding-top: 386px;
+                z-index: 1000;
+                overflow: hidden;
+
+                @include mobile($mb1024) {
+                    max-width: 650px;
+                }
+
+                @include mobile($mb767) {
+                    width: 50%;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    padding-top: 300px;
+                }
+
+                @include mobile($mb767) {
+                    width: 70%;
+                }
+
+                @include mobile($mb480) {
+                    width: 80%;
+                }
+
+                li {
+                    text-align: center;
+
+                    a {
+                        display: block;
+
+                        img {
+                            width: 100%;
+                            height: auto;
+                        }
+                    }
+                }
+
+                .swiper-button-prev {
+                    @include Btnback(50px, 50px, #aaa, 50%);
+                    top: 60%;
+
+                    @include mobile($mb640) {
+                        display: none;
+                    }
+
+                    img {
+                        position: absolute;
+                        max-width: 100%;
+                        height: auto;
+                    }
+                }
+
+                .swiper-button-prev::after {
+                    display: none;
+                }
+
+                .swiper-button-next {
+                    @include Btnback(50px, 50px, #aaa, 50%);
+                    top: 60%;
+
+                    @include mobile($mb640) {
+                        display: none;
+                    }
+
+                    img {
+                        position: absolute;
+                    }
+                }
+
+                .swiper-button-next::after {
+                    display: none;
+                }
+            }
+
+            .sliderfade {
+                position: absolute;
+                width: 400px;
+
+                top: 27%;
+                right: 0;
+
+                @include mobile($mb1480) {
+                    display: none;
+                }
+
+                h4 {
+                    @include font($jost, 700, 50px, italic, #f5f5f5);
+
+                    width: 300px;
+                    text-decoration: underline;
+                    text-align: center;
+                    -ms-text-underline-position: under;
+                    position: absolute;
+                    z-index: 100;
+                    top: -30px;
+                    right: -30px;
+                }
+
+                p {
+                    @include font($jost, 700, 50px, italic, #f5f5f5);
+                    position: absolute;
+                    z-index: 100;
+                    top: 570px;
+                    right: 200px;
+                    text-align: center;
+                }
+
+                .fade_slide {
+                    width: 100%;
+
+                    li {
+                        position: absolute;
+                        display: none;
+
+                        &:first-child {
+                            display: block;
+                        }
+
+                        a {
+                            display: block;
+
+                            img {
+                                max-width: 100%;
+                                height: auto;
+                                object-fit: contain;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .sidebar {
+                width: 24px;
+                padding: 15px 10px;
+                position: fixed;
+                right: 0;
+                top: 50%;
+                transform: translateX(-50%);
+                background-color: #eee;
+                border-radius: 12px;
+                z-index: 9999;
+
+                @include mobile($mb1180) {
+                    display: none;
+                }
+
+                ul {
+                    width: 100%;
+                    display: flex;
+                    flex-direction: column;
+
+                    @for $i from 1 to 5 {
+                        li:nth-child(#{$i}) {
+                            margin-bottom: 8px;
+
+                            &::after {
+                                content: "";
+                                width: 23px;
+                                height: 2px;
+                                margin-top: 8px;
+                                display: block;
+                                background-color: #aaa;
+                            }
+                        }
+                    }
+
+                    li {
+                        a {
+                            display: block;
+                            width: 24px;
+                            height: 24px;
+
+                            img {
+                                width: 100%;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    //신상품
+    #new {
+        width: 100%;
+        height: 100vh;
+
+        @include mobile($mb1680) {
+            height: 100%;
+            padding-bottom: 50px;
+        }
+
+        .innerbox {
+            h4 {
+                @include font($Noto, 800, 48px, null, #121212);
+                text-align: center;
+                padding: 42px 0 69px 0;
+                opacity: 1;
+
+                a {
+                    display: block;
+                    text-decoration: underline;
+                }
+
+                @include mobile($mb1180) {
+                    font-size: 36px;
+                }
+
+                @include mobile($mb767) {
+                    font-size: 28px;
+                }
+
+                @include mobile($mb480) {
+                    font-size: 22px;
+                }
+            }
+
+            .new_tab {
+                ul {
+                    display: flex;
+                    justify-content: space-around;
+                    max-width: 1200px;
+                    text-align: center;
+                    margin: 0 auto;
+                    padding-bottom: 30px;
+
+                    li {
+                        @include font($Noto, 600, 25px, null, #121212);
+                        width: 250px;
+                        background: #eee;
+                        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+
+                        @include mobile($mb1180) {
+                            max-width: 200px;
+                            font-size: 18px;
+                        }
+
+                        @include mobile($mb767) {
+                            max-width: 120px;
+                            font-size: 15px;
+                        }
+
+                        @include mobile($mb480) {
+                            max-width: 100px;
+                            font-size: 12px;
+                        }
+
+                        &.active {
+                            background: #121212;
+
+                            a {
+                                color: #f5f5f5;
+                            }
+                        }
+
+                        a {
+                            display: block;
+                            padding: 25px 0;
+
+                            @include mobile($mb480) {
+                                padding: 15px 0;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .new_product {
+                width: 100%;
+                position: relative;
+                ul {
+                    &.active {
+                        display: flex;
+                    }
+
+                    max-width: 1200px;
+                    display: none;
+                    flex-wrap: wrap;
+                    justify-content: space-between;
+                    text-align: center;
+                    margin: 0 auto;
+                    top: 0;
+
+                    @include mobile($mb1180) {
+                        justify-content: center;
+                    }
+
+                    li {
+                        width: 250px;
+                        display: flex;
+                        justify-content: center;
+
+                        @include mobile($mb1180) {
+                            @for $i from 7 through 8 {
+                                &:nth-child(#{$i}) {
+                                    display: none;
+                                }
+
+                                width: 33.3%;
+                            }
+                        }
+
+                        @include mobile($mb767) {
+                            @for $i from 5 through 6 {
+                                &:nth-child(#{$i}) {
+                                    display: none;
+                                }
+
+                                width: 50%;
+                            }
+                        }
+
+                        a {
+                            display: block;
+                            width: 200px;
+
+                            @include mobile($mb1180) {
+                                max-width: 200px;
+                            }
+
+                            img {
+                                width: 100%;
+                            }
+                        }
+
+                        p {
+                            @include font($Noto, 800, 18px, null, #121212);
+                            margin-bottom: 15px;
+
+                            @include mobile($mb480) {
+                                font-size: 15px;
+                            }
+                        }
+
+                        span {
+                            @include font($Noto, 500, 15px, null, #333);
+
+                            @include mobile($mb480) {
+                                font-size: 13px;
+                            }
+
+                            strong {
+                                @include font($Noto, 600, 14px, null, #121212);
+
+                                @include mobile($mb480) {
+                                    font-size: 12px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    //콜라보1
+    #collabo1 {
+        width: 100%;
+        height: 100vh;
+        background: #121212;
+        overflow: hidden;
+
+        @include mobile($mb1680) {
+            height: 100%;
+            padding: 50px 0;
+        }
+
+        .innerbox {
+            .clb1_slider {
+                width: 100%;
+                padding-top: 15px;
+
+                .bx-wrapper {
+                    border: none;
+                    box-shadow: none;
+                    margin-bottom: 25px;
+                    left: 50%;
+                    transform: translateX(-50%);
+
+                    .bx-controls {
+                        .bx-pager {
+                            bottom: 15px;
+                        }
+                    }
+
+                    li {
+                        img {
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+
+            .clb1_text {
+                text-align: center;
+
+                h4 {
+                    @include font($Noto, 800, 45px, normal, #f5f5f5);
+                    margin-bottom: 30px;
+
+                    @include mobile($mb767) {
+                        font-size: 28px;
+                        word-break: keep-all;
+                    }
+
+                    @include mobile($mb480) {
+                        font-size: 18px;
+
+                        line-height: 1;
+                    }
+                }
+
+                p {
+                    @include font($Noto, 400, 18px, normal, #f5f5f5);
+                    padding-bottom: 8px;
+
+                    @include mobile($mb767) {
+                        font-size: 15px;
+                    }
+
+                    @include mobile($mb480) {
+                        line-height: 1.2;
+                        font-size: 12px;
+                        word-break: keep-all;
+                    }
+                }
+            }
+
+            .clb1_button {
+                width: 100%;
+                height: 40px;
+                margin: 15px auto;
+                text-align: center;
+
+                div {
+                    margin: 0 auto;
+                    display: inline-block;
+
+                    span {
+                        display: block;
+                        width: 150px;
+                        float: left;
+                        background: #f5f5f5;
+                        border-radius: 20px 20px;
+
+                        @include mobile($mb767) {
+                            width: 110px;
+                            border-radius: 15px 15px;
+                        }
+
+                        &:first-child {
+                            margin-right: 30px;
+
+                            @include mobile($mb767) {
+                                margin-right: 15px;
+                            }
+                        }
+
+                        a {
+                            @include font($Noto, 600, 16px, normal, #121212);
+                            display: block;
+                            padding: 12px 0;
+
+                            @include mobile($mb767) {
+                                font-size: 14px;
+                                padding: 8px 0;
+                            }
+
+                            @include mobile($mb480) {
+                                font-size: 12px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    //오리지널 상품
+    #original {
+        height: 100vh;
+        width: 100%;
+        position: relative;
+
+        @include mobile($mb1680) {
+            height: 100%;
+
+            @include mobile($mb1180) {
+                display: none;
+            }
+        }
+
+        .org_back {
+            width: 75%;
+            height: 100vh;
+            background: rgba(233, 182, 91, 1);
+            position: absolute;
+            top: 0;
+            right: 0;
+            z-index: -1;
+
+            @include mobile($mb1680) {
+                max-height: 100%;
+            }
+        }
+
+        .innerbox {
+            .original_wrap {
+                width: 100%;
+                height: 100%;
+
+                .big_original {
+                    width: 50%;
+                    height: 100vh;
+                    float: left;
+
+                    @include mobile($mb1180) {
+                        height: 600px;
+                    }
+
+                    .big_box {
+                        width: 100%;
+                        height: inherit;
+                        z-index: 1000;
+                        position: relative;
+
+                        li {
+                            width: 100%;
+                            box-shadow: 15px 15px 10px rgba(0, 0, 0, 0.1);
+                            position: absolute;
+                            left: 0;
+                            top: 50%;
+                            transform: translateY(-50%);
+                            background: #f5f5f5;
+                            display: none;
+
+                            &.active {
+                                display: block;
+                            }
+
+                            > div {
+                                float: left;
+                            }
+
+                            .big_img {
+                                width: 50%;
+                                position: relative;
+
+                                > p {
+                                    @include font($jost, 800, 48px, italic, #121212);
+                                    position: absolute;
+                                    top: -8%;
+                                    left: 50%;
+                                    transform: translateX(-50%);
+
+                                    @include mobile($mb1180) {
+                                        font-size: 30px;
+                                    }
+                                }
+
+                                img {
+                                    width: 100%;
+                                }
+                            }
+
+                            .big_text {
+                                width: 35%;
+                                height: 100%;
+                                font-family: $Noto;
+                                padding: 50px 0 0 50px;
+                                line-height: 1.5;
+
+                                @include mobile($mb1480) {
+                                    padding: 20px 0 0 40px;
+                                }
+
+                                @include mobile($mb1380) {
+                                    padding: 20px 0 0 30px;
+                                }
+
+                                span {
+                                    @include font($Noto, 800, 12px, null, rgba(115, 115, 115, 1));
+                                    display: block;
+                                    padding-bottom: 30px;
+
+                                    @include mobile($mb1380) {
+                                        font-size: 10px;
+                                        padding-bottom: 10px;
+                                    }
+                                }
+
+                                h4 {
+                                    font-size: 24px;
+
+                                    @include mobile($mb1680) {
+                                        font-size: 18px;
+                                    }
+
+                                    @include mobile($mb1380) {
+                                        font-size: 14px;
+                                    }
+                                }
+
+                                p {
+                                    font-weight: 400;
+                                    font-size: 15px;
+                                    padding: 10px 0;
+
+                                    @include mobile($mb1680) {
+                                        font-size: 12px;
+                                    }
+
+                                    @include mobile($mb1180) {
+                                        &:nth-child(7) {
+                                            display: none;
+                                        }
+                                    }
+
+                                    &:first-of-type {
+                                        font-weight: 800;
+                                        font-size: 23px;
+
+                                        @include mobile($mb1680) {
+                                            font-size: 16px;
+                                        }
+
+                                        @include mobile($mb1380) {
+                                            font-size: 13px;
+                                        }
+
+                                        @include mobile($mb1180) {
+                                            &:nth-child(3) {
+                                                display: none;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .small_original {
+                    width: 50%;
+                    height: 100vh;
+                    float: right;
+                    position: relative;
+                    overflow: hidden;
+
+                    @include mobile($mb1180) {
+                        max-height: 600px;
+                    }
+
+                    > p {
+                        position: absolute;
+                        text-align: center;
+                        width: 100px;
+                        height: 40px;
+                        background: #121212;
+                        border-radius: 20px;
+                        line-height: 40px;
+                        right: 5%;
+                        top: 20%;
+                        text-decoration: underline;
+
+                        @include mobile($mb1024) {
+                            top: 30%;
+                        }
+
+                        a {
+                            @include font($jost, 600, 16px, italic, #f5f5f5);
+                            display: block;
+                        }
+                    }
+
+                    .small_box {
+                        width: 400%;
+                        position: absolute;
+                        bottom: 20%;
+
+                        @include mobile($mb1880) {
+                            bottom: 25%;
+                        }
+
+                        @include mobile($mb1380) {
+                            bottom: 30%;
+                        }
+
+                        @include mobile($mb1180) {
+                            bottom: 25%;
+                        }
+
+                        @include mobile($mb1024) {
+                            bottom: 15%;
+                        }
+
+                        li {
+                            padding: 0 10px;
+                            float: left;
+                            box-sizing: border-box;
+                            width: calc(100% / 16);
+
+                            div {
+                                img {
+                                    width: 100%;
+                                    cursor: pointer;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    //콜라보2
+    #collabo2 {
+        width: 100%;
+        height: 100vh;
+        background: #121212;
+        overflow: hidden;
+
+        @include mobile($mb1880) {
+            height: 100%;
+        }
+
+        @include mobile($mb767) {
+            padding: 0;
+            
+        }
+
+        .innerbox {
+            width: 100%;
+            max-width: 1920px;
+            
+            
+            .clb2_title {
+                position: absolute;
+                top: 100px;
+                left: 50%;
+                transform: translateX(-50%);
+                text-align: center;
+                z-index: 100;
+
+                @include mobile($mb1024) {
+                    top: 30px;
+                }
+
+                @include mobile($mb480) {
+                    top: 10px;
+                }
+
+                p {
+                    @include font($jost, 600, 35px, null, #f5f5f5);
+                    padding-bottom: 10px;
+
+                    @include mobile($mb1180) {
+                        font-size: 24px;
+                    }
+
+                    @include mobile($mb1024) {
+                        font-size: 18px;
+                    }
+
+                    @include mobile($mb480) {
+                        font-size: 16px;
+                    }
+                }
+            }
+
+            .clb2_textbox {
+                width: 400px;
+                height: 200px;
+                border: 3px solid black;
+                background: rgba(255, 255, 255, 0.1);
+                text-align: center;
+                position: absolute;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                top: 50%;
+                left: 50%;
+                transform: translateX(-50%) translateY(-50%);
+                z-index: 100;
+
+                @include mobile($mb1180) {
+                    width: 200px;
+                    height: 100px;
+                }
+
+                @include mobile($mb1024) {
+                    width: 150px;
+                    height: 80px;
+                    border: 1px solid black;
+                }
+                @include mobile($mb767) {
+                    width: 250px;
+                    height: 150px;
+                }
+
+                @include mobile($mb480) {
+                    width: 110px;
+                    height: 70px;
+                }
+                
+
+                a {
+                    @include font($jost, 600, 45px, italic, #f5f5f5);
+
+                    display: block;
+
+                    @include mobile($mb1180) {
+                        font-size: 24px;
+                    }
+
+                    @include mobile($mb1024) {
+                        font-size: 16px;
+                    }
+                    @include mobile($mb767) {
+                        font-size: 24px;
+                    }
+
+                    @include mobile($mb480) {
+                        font-size: 12px;
+                    }
+
+                    p {
+                        align-items: center;
+                    }
+                }
+            }
+
+            .clb2_backimg {
+                display: flex;
+                @include mobile($mb767) {
+                    display: block;
+                }
+                
+                div {
+                    @include mobile($mb767) {
+                        width: 100%;
+                        
+                        &:first-child{
+                            display: none;
+                        }
+                        
+                    }
+                    img {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+
+    //셀렉트
+    #select {
+        background: linear-gradient(#aaa, 1%, #121212);
+        width: 100%;
+        height: calc(100vh - 195px);
+
+        @include mobile($mb1880) {
+            height: 100%;
+            padding: 25px 0;
+        }
+
+        @include mobile($mb1024) {
+            padding: 50px 0 100px 0;
+        }
+        @include mobile($mb767) {
+            padding: 50px 0;
+        }
+
+        .innerbox {
+            display: grid;
+            grid-template-columns: 650px auto;
+            grid-template-rows: 400px auto;
+            place-self: center center;
+
+            @include mobile($mb1680) {
+                grid-template-columns: 40% 60%;
+            }
+
+            @include mobile($mb1024) {
+                grid-template-rows: 1fr 1fr;
+            }
+            @include mobile($mb767) {
+                grid-template-rows: 30px 100px auto;
+                grid-template-columns: 50% 50%;
+            }
+            @include mobile($mb480) {
+                grid-template-rows: 30px 70px auto;
+            }
+
+            .slt_gender {
+                @include font($jost, 500, 60px, null, #aaa);
+                padding-top: 100px;
+                max-width: 100%;
+                grid-column: 1 / 2;
+                grid-row: 1 / 2;
+                position: relative;
+
+                @include mobile($mb1680) {
+                    font-size: 48px;
+                }
+
+                @include mobile($mb1024) {
+                    padding-top: 20px;
+                    font-size: 32px;
+                }
+
+                @include mobile($mb767) {
+                    padding-top: 0;
+                    font-size: 24px;
+                    grid-column: 1 / 3;
+                }
+                @include mobile($mb480) {
+                    font-size: 18px;
+                }
+
+                .gender_text {
+                    position: absolute;
+                    z-index: 100;
+                    
+                    @include mobile($mb767) {
+                        left: 50%;
+                        transform: translateX(-50%);
+                    }
+                    @include mobile($mb480) {
+                    }
+
+                    p {
+                        float: left;
+                        cursor: pointer;
+                        transition: 0.5s;
+
+                        &:first-child::after {
+                            content: "\00B7";
+                            padding: 0 20px;
+
+                            @include mobile($mb480) {
+                                padding: 0 8px;
+                                float: none;
+                            }
+                        }
+
+                        &:hover {
+                            color: #f5f5f5;
+                        }
+
+                        &.active {
+                            color: #f5f5f5;
+                        }
+                    }
+                }
+
+                .gender_img {
+                    div {
+                        max-width: 500px;
+                        position: absolute;
+                        top: 50%;
+                        left: -100%;
+                        z-index: 10;
+                        opacity: 0.4;
+                        display: none;
+
+                        @include mobile($mb1680) {
+                            max-width: 300px;
+                        }
+
+                        @include mobile($mb1024) {
+                            max-width: 200px;
+                        }
+
+                        @include mobile($mb767) {
+                            max-width: 140px;
+                        }
+
+                        @include mobile($mb480) {
+                            max-width: 100px;
+                        }
+
+                        img {
+                            width: 100%;
+                        }
+
+                        &.active {
+                            display: block;
+                            left: 0;
+                            animation: gender 0.6s ease;
+
+                            @include mobile($mb767) {
+                                left: 50%;
+                                transform: translateX(-50%);
+                                animation: gender_mobile 0.6s ease;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .slt_product {
+                @include font($jost, 500, 65px, null, #aaa);
+                width: 100%;
+                grid-column: 1 / 2;
+                grid-row: 2 / 3;
+                position: static;
+                z-index: 100;
+
+                @include mobile($mb1680) {
+                    font-size: 48px;
+                }
+
+                @include mobile($mb1024) {
+                    font-size: 32px;
+                }
+
+                @include mobile($mb767) {
+                    width: auto;
+                    font-size: 24px;
+                    grid-column: 1 / 3;
+                    margin: 0 auto;
+                }
+                @include mobile($mb480) {
+                    font-size: 18px;
+                }
+
+                p {
+                    float: left;
+                    cursor: pointer;
+                    transition: 0.5s;
+                    line-height: 1.5;
+
+                    @for $i from 1 through 5 {
+                        &:nth-child(#{$i})::after {
+                            content: "\00B7";
+                            padding: 0 10px;
+
+                            @include mobile($mb767) {
+                                padding: 0 5px;
+                            }
+                        }
+                    }
+
+                    &:hover {
+                        color: #f5f5f5;
+                    }
+
+                    &.active {
+                        color: #f5f5f5;
+                    }
+                }
+            }
+
+            .slt_product_img {
+                width: 100%;
+                height: 100%;
+                display: flex;
+                grid-column: 2 / 3;
+                grid-row: 1 / 3;
+                justify-content: center;
+                align-items: center;
+
+                @include mobile($mb767) {
+                    grid-column: 1 / 3;
+                    grid-row: 3 / 4;
+                }
+                .man {
+                    max-width: 1000px;
+
+                    > div {
+                        display: none;
+
+                        &.active {
+                            display: flex;
+                            flex-wrap: nowrap;
+                        }
+
+                        > a {
+                            max-width: 450px;
+                            display: block;
+                            float: left;
+
+                            @include mobile($mb1680) {
+                                max-width: 300px;
+                            }
+                            @include mobile($mb767) {
+                                max-width: 200px;
+                            }
+
+                            &:first-child {
+                                margin-right: 60px;
+
+                                @include mobile($mb767) {
+                                    margin-right: 20px;
+                                }
+                            }
+
+                            > img {
+                                width: 100%;
+                            }
+                        }
+                    }
+                }
+
+                .woman {
+                    @extend .man;
+                }
+            }
+        }
+    }
+}
+//푸터 /////////////
+footer {
+    height: auto;
+    background: #0f4c81;
+    padding: 25px 0;
+    .innerbox {
+        display: flex;
+        flex-wrap: wrap;
+        position: relative;
+
+        h3 {
+            width: 100%;
+            @include font($jost, 800, 36px, null, #f5f5f5);
+            padding: 10px 0 5px 0;
+
+            @include mobile($mb767) {
+                font-size: 24px;
+            }
+        }
+
+        address {
+            width: auto;
+            padding-right: 150px;
+
+            @include mobile($mb1380) {
+                padding-right: 80px;
+            }
+
+            @include mobile($mb767) {
+                font-size: 12px;
+                padding-right: 0;
+            }
+
+            p {
+                color: #f5f5f5;
+                padding: 5px 0;
+                position: relative;
+            }
+        }
+
+        .contact {
+            width: auto;
+            margin-top: -30px;
+            padding-right: 150px;
+            text-align: center;
+
+            @include mobile($mb1380) {
+                padding-right: 80px;
+            }
+
+            @include mobile($mb874) {
+                margin-top: 20px;
+                text-align: left;
+                width: 100%;
+                padding-right: 0;
+            }
+
+            @include mobile($mb767) {
+                padding-bottom: 10px;
+            }
+
+            h4 {
+                @include font($Noto, 800, 20px, null, #f5f5f5);
+                width: 100%;
+                padding-bottom: 15px;
+                text-decoration: underline;
+
+                @include mobile($mb767) {
+                    font-size: 14px;
+                }
+            }
+
+            div {
+                @include font($Noto, 400, 15px, null, #f5f5f5);
+                padding: 3px 5px;
+
+                @include mobile($mb874) {
+                    padding: 3px 0;
+                    font-size: 14px;
+                }
+
+                @include mobile($mb767) {
+                    font-size: 12px;
+                }
+
+                p {
+                    padding: 3px 0;
+                }
+            }
+        }
+
+        .foot_menu {
+            width: auto;
+            margin-top: -30px;
+            text-align: center;
+
+            @include mobile($mb666) {
+                text-align: left;
+                padding-bottom: 15px;
+            }
+
+            @include mobile($mb1152) {
+                margin-top: 20px;
+            }
+
+            @include mobile($mb874) {
+                width: 100%;
+                text-align: left;
+            }
+
+            @include mobile($mb767) {
+                display: none;
+            }
+
+            h4 {
+                @include font($Noto, 800, 20px, null, #f5f5f5);
+                text-decoration: underline;
+                padding-bottom: 15px;
+
+                @include mobile($mb767) {
+                    font-size: 16px;
+                }
+            }
+
+            div {
+                max-width: 250px;
+                display: flex;
+                flex-wrap: wrap;
+
+                p {
+                    padding: 7px 0;
+                    width: 50%;
+
+                    a {
+                        @include font($Noto, 400, 15px, null, #f5f5f5);
+
+                        @include mobile($mb767) {
+                            font-size: 12px;
+                        }
+                    }
+                }
+            }
+        }
+
+        .copy {
+            position: absolute;
+            right: 0;
+            bottom: -20px;
+
+            @include mobile($mb767) {
+                left: 0;
+                
+            }
+
+            p {
+                font-size: 12px;
+                color: #f5f5f5;
+            }
+            span{
+                font-size: 6px;
+                color: #f5f5f5;
+            }
+        }
+    }
+}

@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="img/favicon.ico">
+    <meta property="og:url" content="http://skypnal12.dothome.co.kr/Geoje">
+    <meta property="og:title" content="Geoje7">
+    <meta property="og:description" content="거제도에서 행복한 추억을 만들어보세요.">
+    <meta property="og:image" content="http://skypnal12.dothome.co.kr/Geoje/img/view_04.jpg">
+    <title>GeoJe7</title>
+    <script src="https://kit.fontawesome.com/8daa9e823d.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/Geoje7.css">
+    <link rel="stylesheet" href="css/Geoje7-mobile.css">
+    <link rel="stylesheet" href="css/jquery.bxslider.css">
+    <link rel="stylesheet" href="css/bxslider.css">
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="https://player.vimeo.com/api/player.js"></script>
+    <script src="js/jquery.bxslider.js"></script>
+    <script src="js/Geoje7.js"></script>
+
+</head>
+
+<body>
+    <ul class="skip_menu">
+        <li><a href="#nav">메인메뉴 바로가기</a></li>
+        <li><a href="#wrap">본문 바로가기</a></li>
+    </ul>
+    <!-- header -->
+    <header>
+        <div class="wide_inner_box ">
+            <h1 class="logo">
+                <a href="#void">Geoje7</a>
+            </h1>
+            <nav class="clear">
+                <h2 class="blind">메뉴</h2>
+                <ul id="nav">
+                    <li>
+                        <a href="#void">ABOUT</a>
+                        <ul class="sub">
+                            <li><a href="#void">외부전경</a></li>
+                            <li><a href="#void">오시는 길</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#void">ROOM</a>
+                        <ul class="sub">
+                            <li><a href="#void">Standard Room</a></li>
+                            <li><a href="#void">Special Room</a></li>
+                            <li><a href="#void">Private Room</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#void">SPECIAL</a>
+                        <ul class="sub">
+                            <li><a href="#void">BARBECUE SET</a></li>
+                            <li><a href="#void">Coffee & Dessert</a></li>
+                            <li><a href="#void">Floating SunSet</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#void">FACILITIES</a>
+                        <ul class="sub">
+                            <li><a href="#void">편의시설</a></li>
+                            <li><a href="#void">주변관광지</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#void">RESERVATION</a>
+                        <ul class="sub">
+                            <li><a href="#void">실시간 예약</a></li>
+                            <li><a href="#void">예약안내</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+            <div class="login">
+                <ul>
+                    <li><a href="Geoje7_Login.html">로그인</a></li>
+                    <li><a href="#void">회원가입</a></li>
+                </ul>
+            </div>
+            <div class="hamBtn">
+                <a href="#void"></a>
+            </div>
+            <div class="mobile_nav">
+                <ul id="m_nav">
+                    <li>
+                        <a href="#void">ABOUT</a>
+                        <ul class="m_sub">
+                            <li><a href="#void">외부전경</a></li>
+                            <li><a href="#void">오시는 길</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#void">ROOM</a>
+                        <ul class="m_sub">
+                            <li><a href="#void">Standard Room</a></li>
+                            <li><a href="#void">Special Room</a></li>
+                            <li><a href="#void">Private Room</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#void">SPECIAL</a>
+                        <ul class="m_sub">
+                            <li><a href="#void">BARBECUE SET</a></li>
+                            <li><a href="#void">Coffee & Dessert</a></li>
+                            <li><a href="#void">Floating SunSet</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#void">FACILITIES</a>
+                        <ul class="m_sub">
+                            <li><a href="#void">편의시설</a></li>
+                            <li><a href="#void">주변관광지</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#void">RESERVATION</a>
+                        <ul class="m_sub">
+                            <li><a href="#void">실시간 예약</a></li>
+                            <li><a href="#void">예약안내</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul class="m_login">
+                    <li><a href="Geoje7_Login.html">로그인</a></li>
+                    <li><a href="#">회원가입</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <!-- content -->
+    <section id="wrap">
+        <h2 class="blind">메인비디오</h2>
+        <div class="movie">
+            <div class="main_video ">
+                <iframe id="ivideo"
+                    src="https://play.mbus.tv/17b18ab18993f3e9?autoplay=1&repeat=1&mute=1&loop=1&"
+                    ></iframe>
+            </div>
+            <!-- <div id="vimeo-area"></div> -->
+            <!-- <ul class="vid_btn">
+                <li class="play-pause">
+                    <a href="#void" class="play"><i class="far fa-play-circle"></i></a>
+                    <a href="#void" class="pause"><i class="far fa-pause-circle"></i></a>
+                </li>
+                <li class="mute-onoff">
+                    <a href="#void" class="muteOff"><i class="fas fa-volume-mute"></i></a>
+                    <a href="#void" class="muteOn"><i class="fas fa-volume-up"></i></a>
+                </li>
+                <li><a href="#void"><i class="fas fa-expand-arrows-alt"></i></a></li>
+            </ul> -->
+        </div>
+        <section class="contents">
+            <h3 class="blind">컨텐츠</h3>
+            <section class="viewWrap">
+                    <ul class="viewSlider">
+                        <li><img src="img/view_01.jpg" alt=""></li>
+                        <li><img src="img/view_02.jpg" alt=""></li>
+                        <li><img src="img/view_03.jpg" alt=""></li>
+                        <li><img src="img/view_04.jpg" alt=""></li>
+                        <li><img src="img/view_05.jpg" alt=""></li>
+                        <li><img src="img/view_06.jpg" alt=""></li>
+                    </ul>
+            </section>
+            <!-- Activity -->
+            <section class="activity">
+                <h4 class="title">ACTIVITY</h4>
+                <p class="sub_title">잊지못할 특별한 추억, 거제도의 즐길거리</p>
+                <div class="inner_box">
+                    <div class="activity_box">
+                        <ul class="imgList clear">
+                            <li>
+                                <div class="back"></div>
+                                <img src="img/acti_1.jpg" alt="하늘등대">
+                                <p>기분좋은 바람, 하늘등대</p>
+                                <div class="detail_box">
+                                    <p><a href="#void">Detail &rarr;</a></p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="back"></div>
+                                <img src="img/acti_2.jpg" alt="풀장">
+                                <p>넓은 풀장, 바베큐 공간</p>
+                                <div class="detail_box">
+                                    <p><a href="#void">Detail &rarr;</a></p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="back"></div>
+                                <img src="img/acti_3.jpg" alt="축제">
+                                <p>거제도섬, 꽃축제</p>
+                                <div class="detail_box">
+                                    <p><a href="#void">Detail &rarr;</a></p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="back"></div>
+                                <img src="img/acti_4.jpg" alt="해수욕장">
+                                <p>해수욕장, 서핑</p>
+                                <div class="detail_box">
+                                    <p><a href="#void">Detail &rarr;</a></p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="back"></div>
+                                <img src="img/acti_5.jpg" alt="정원">
+                                <p>거제도의 외도, 보타니아 정원</p>
+                                <div class="detail_box">
+                                    <p><a href="#void">Detail &rarr;</a></p>
+                                </div>
+                            </li>
+                        </ul>
+                        <ul class="pager clear">
+                            <li class="active"><a href="#void"></a></li>
+                            <li><a href="#void"></a></li>
+                            <li><a href="#void"></a></li>
+                            <li><a href="#void"></a></li>
+                            <li><a href="#void"></a></li>
+                        </ul>
+                    </div>
+                </div>
+
+            </section>
+            <!-- Room -->
+            <section class="room">
+                <h4 class="title">Room</h4>
+                <div class="inner_box">
+                    <div class="room_Box">
+                        <div class="img_Box">
+                            <ul class="fade_Img">
+                                <li class="img_on"><a href="#void"><img src="img/spc_1.png" alt="스페셜1"></a></li>
+                                <li><a href="#void"><img src="img/spc_2.jpg" alt="스페셜2"></a></li>
+                                <li><a href="#void"><img src="img/spc_3.jpg" alt="스페셜3"></a></li>
+                            </ul>
+                            <ul class="room_pager">
+                                <li class="act"><a href="#void"></a></li>
+                                <li><a href="#void"></a></li>
+                                <li><a href="#void"></a></li>
+                            </ul>
+                        </div>
+                        <div class="room_text">
+                            <div class="text_Box">
+                                <div class="fade_text text_on">
+                                    <h5 class="room_title ">Special-A</h5>
+                                    <p class="text1">거제 바다가 보이는 아름다운 전망과 프라이빗하게 즐길 수 있는 인피니티풀</p>
+                                    <p class="text2">기준인원 : 기준 2명 / 최대 8명 | 객실구조 : 퀸 침대 1개</p>
+                                </div>
+                                <div class="fade_text">
+                                    <h5 class="room_title">Special-B</h5>
+                                    <p class="text1">거제 바다가 보이는 아름다운 전망과 프라이빗하게 즐길 수 있는 인피니티풀</p>
+                                    <p class="text2">기준인원 : 기준 2명 / 최대 8명 | 객실구조 : 퀸 침대 1개</p>
+                                </div>
+                                <div class="fade_text">
+                                    <h5 class="room_title">Special-C</h5>
+                                    <p class="text1">거제 바다가 보이는 아름다운 전망과 프라이빗하게 즐길 수 있는 인피니티풀</p>
+                                    <p class="text2">기준인원 : 기준 2명 / 최대 8명 | 객실구조 : 퀸 침대 1개</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="room_Box">
+                        <div class="img_Box">
+                            <ul class="fade_Img">
+                                <li class="img_on"><a href="#void"><img src="img/pri_1.png" alt="프라이빗1"></a></li>
+                                <li><a href="#void"><img src="img/pri_2.jpg" alt="프라이빗2"></a></li>
+                                <li><a href="#void"><img src="img/pri_3.jpg" alt="프라이빗3"></a></li>
+                            </ul>
+                            <ul class="room_pager">
+                                <li class="act"><a href="#void"></a></li>
+                                <li><a href="#void"></a></li>
+                                <li><a href="#void"></a></li>
+                            </ul>
+                        </div>
+                        <div class="room_text">
+                            <div class="text_Box ">
+                                <div class="fade_text text_on">
+                                    <h5 class="room_title">PRIVATE SPA-A </h5>
+                                    <p class="text1">쾌적하고 고급스러운 개별스파는 뭉친 근육을 이완시켜줍니다.</p>
+                                    <p class="text2">기준인원 : 기준 4명 / 최대 8명 | 객실구조 : 퀸 침대 2개</p>
+                                </div>
+                                <div class="fade_text">
+                                    <h5 class="room_title">PRIVATE SPA-B </h5>
+                                    <p class="text1">쾌적하고 고급스러운 개별스파는 뭉친 근육을 이완시켜줍니다.</p>
+                                    <p class="text2">기준인원 : 기준 4명 / 최대 8명 | 객실구조 : 퀸 침대 2개</p>
+                                </div>
+                                <div class="fade_text">
+                                    <h5 class="room_title">PRIVATE SPA-C </h5>
+                                    <p class="text1">쾌적하고 고급스러운 개별스파는 뭉친 근육을 이완시켜줍니다.</p>
+                                    <p class="text2">기준인원 : 기준 4명 / 최대 8명 | 객실구조 : 퀸 침대 2개</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- special_3 -->
+            <section class="special">
+                <h4 class="blind">스페셜</h4>
+                <div class="wide_inner_box">
+                    <ul class="special_3">
+                        <li>
+                            <div class="back"></div>
+                            <img src="img/special_1.jpg" alt="바베큐">
+                            <div class="txtBox">
+                                <p>BarBeCue Set</p>
+                                <p class="hov">맛있고 질좋은 바베큐 세트가 준비되어 있습니다.</p>
+                                <div class="detail_box">
+                                    <p><a href="#void">Detail &rarr;</a></p>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="back"></div>
+                            <img src="img/special_2.jpg" alt="카페">
+                            <div class="txtBox">
+                                <p>Coffee & Dessert </p>
+                                <p class="hov">좋은날 데크에서 여행의 여유를 즐겨보세요.</p>
+                                <div class="detail_box">
+                                    <p><a href="#void">Detail &rarr;</a></p>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="back"></div>
+                            <img src="img/special_3.jpg" alt="조식">
+                            <div class="txtBox">
+                                <p>Floating SunSet</p>
+                                <p class="hov">Geoje7 펜션만의 스페셜 조식 서비스를 즐겨보세요.</p>
+                                <div class="detail_box">
+                                    <p><a href="#void">Detail &rarr;</a></p>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+            <!-- reservation -->
+            <section class="reservation">
+                <h4 class="blind">예약</h4>
+                <div class="wide_inner_box">
+                    <div class="reser_box">
+                        <div class="back"></div>
+                        <h5 class="logo2">GeoJe7</h5>
+                        <img src="img/reser.jpg" alt="예약">
+                        <div class="reservation_btn">
+                            <p><a href="#void">실시간 예약</a></p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </section>
+    </section>
+    <!-- footer -->
+    <footer>
+        <div class="wide_inner_box">
+            <div class="foot_info">
+                <h4>CONTACT US</h4>
+                <ul class="foot_utill">
+                    <li><a href="#void">이용약관</a></li>
+                    <li><a href="#void">개인정보처리방침</a></li>
+                    <li><a href="#void">이메일무단수집거부</a></li>
+                </ul>
+            </div>
+            <address>
+                <p>주소 : 656-821 경남 거제시 하청면 대곡3길 27-8 (대곡리 522)</p>
+                <p>H.P : 055-636-7777, TEL : 010-6765-8222</p>
+                <p>계좌번호 : 농협(강부금) 177519-52-125661</p>
+                <p>대표 : 강부금</p>
+                <p>ⓒ 2021 거제세븐펜션. Proudly created with Dubuplus.com</p>
+            </address>
+            <ul class="sns">
+                <li><a href="#void"><i class="fab fa-youtube"></i></a></li>
+                <li><a href="#void"><i class="fab fa-facebook-square"></i></a></li>
+                <li><a href="#void"><i class="fab fa-instagram"></i></a></li>
+            </ul>
+        </div>
+    </footer>
+</body>
+
+</html>

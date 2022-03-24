@@ -1,0 +1,1911 @@
+@import "reset.css";
+.inner {
+  max-width: 1440px;
+  height: 100%;
+  margin: 0 auto;
+  position: relative;
+}
+@media screen and (max-width: 1500px) {
+  .inner {
+    width: 95%;
+  }
+}
+
+.Wrap {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+.Wrap header {
+  width: 100%;
+  background: #121212;
+  height: 70px;
+  position: relative;
+}
+.Wrap header h1 {
+  width: 100px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+          transform: translateX(-50%) translateY(-50%);
+  z-index: 9999;
+}
+@media screen and (max-width: 1024px) {
+  .Wrap header h1 {
+    left: 52%;
+  }
+}
+@media screen and (max-width: 767px) {
+  .Wrap header h1 {
+    left: 50%;
+  }
+}
+.Wrap header h1 a {
+  display: table;
+}
+.Wrap header h1 a img {
+  display: table-cell;
+  width: 100%;
+}
+.Wrap header nav .inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: right;
+      -ms-flex-pack: right;
+          justify-content: right;
+}
+.Wrap header nav .inner .Lgnb {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  left: 0;
+}
+@media screen and (max-width: 767px) {
+  .Wrap header nav .inner .Lgnb {
+    display: none;
+  }
+}
+.Wrap header nav .inner .Lgnb li {
+  padding-right: 65px;
+  line-height: 70px;
+}
+@media screen and (max-width: 1024px) {
+  .Wrap header nav .inner .Lgnb li {
+    padding-right: 30px;
+  }
+}
+.Wrap header nav .inner .Lgnb li:last-child {
+  padding-right: 0;
+}
+.Wrap header nav .inner .Lgnb li a {
+  font-weight: 400;
+  color: #f5f5f5;
+  font-size: 16px;
+}
+.Wrap header nav .inner .Rgnb {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+@media screen and (max-width: 767px) {
+  .Wrap header nav .inner .Rgnb {
+    display: none;
+  }
+}
+.Wrap header nav .inner .Rgnb li {
+  padding-right: 70px;
+  line-height: 70px;
+}
+@media screen and (max-width: 1024px) {
+  .Wrap header nav .inner .Rgnb li {
+    padding-right: 30px;
+  }
+}
+.Wrap header nav .inner .Rgnb li a {
+  color: #f5f5f5;
+  font-weight: 400;
+  font-size: 16px;
+}
+.Wrap header nav .inner .gnbicon {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+@media screen and (max-width: 767px) {
+  .Wrap header nav .inner .gnbicon {
+    display: none;
+  }
+}
+.Wrap header nav .inner .gnbicon > li {
+  width: 50px;
+  height: 70px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border-left: 1px solid #333;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  position: relative;
+}
+.Wrap header nav .inner .gnbicon > li:last-child {
+  border-right: 1px solid #333;
+}
+.Wrap header nav .inner .gnbicon > li .searchBox {
+  width: 24px;
+}
+.Wrap header nav .inner .gnbicon > li .searchBox button {
+  background: #121212;
+  border: none;
+}
+.Wrap header nav .inner .gnbicon > li .searchBox > div {
+  display: none;
+  width: 175px;
+  height: 40px;
+  position: absolute;
+  top: 70px;
+  left: 0;
+  z-index: 9999;
+  border: 1px solid #aaa;
+}
+.Wrap header nav .inner .gnbicon > li .searchBox > div.active {
+  display: block;
+}
+@media screen and (max-width: 1240px) {
+  .Wrap header nav .inner .gnbicon > li .searchBox > div {
+    left: -50px;
+  }
+}
+.Wrap header nav .inner .gnbicon > li .searchBox > div input {
+  width: 150px;
+  padding: 12.5px;
+  outline: none;
+  border: none;
+  text-align: left;
+}
+.Wrap .mobile_header {
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  right: -100%;
+  z-index: 9000;
+  display: none;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+@media screen and (max-width: 767px) {
+  .Wrap .mobile_header {
+    display: block;
+  }
+  .Wrap .mobile_header.active {
+    right: 0;
+    position: fixed;
+  }
+}
+.Wrap .mobile_header .m_nav {
+  width: 60%;
+  height: 100%;
+  background-color: #121212;
+  position: relative;
+  top: 70px;
+  right: -100%;
+  float: right;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  z-index: 9000;
+}
+.Wrap .mobile_header .m_nav .m_gnb {
+  width: 100%;
+}
+.Wrap .mobile_header .m_nav .m_gnb ul:first-child li::after {
+  content: "";
+  width: 95%;
+  height: 1px;
+  display: block;
+  background: #f5f5f5;
+  float: right;
+}
+.Wrap .mobile_header .m_nav .m_gnb ul:first-child li a {
+  display: block;
+  padding: 20px 0;
+  text-indent: 25px;
+  color: #f5f5f5;
+}
+.Wrap .mobile_header .m_nav .m_gnb ul:last-child {
+  margin-top: 30px;
+}
+.Wrap .mobile_header .m_nav .m_gnb ul:last-child li {
+  width: 100%;
+}
+.Wrap .mobile_header .m_nav .m_gnb ul:last-child li::after {
+  content: "";
+  width: 95%;
+  height: 1px;
+  display: block;
+  background: #f5f5f5;
+  float: right;
+}
+.Wrap .mobile_header .m_nav .m_gnb ul:last-child li:first-child {
+  margin-bottom: 35px;
+}
+.Wrap .mobile_header .m_nav .m_gnb ul:last-child li a {
+  width: 100%;
+  display: block;
+  color: #f5f5f5;
+  font-size: 16px;
+  text-indent: 25px;
+  line-height: 32px;
+}
+.Wrap .mobile_header .m_nav .m_gnb ul:last-child li a > div {
+  width: 32px;
+  float: left;
+  margin-right: 15px;
+  padding-bottom: 15px;
+}
+.Wrap .mobile_header .m_nav .m_gnb ul:last-child li a > div img {
+  width: 100%;
+}
+.Wrap .mobile_header .backClick {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  float: right;
+  background: rgba(0, 0, 0, 0.9);
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+.Wrap .ham_Btn {
+  width: 70px;
+  height: 70px;
+  position: absolute;
+  z-index: 9999;
+  text-align: center;
+  top: 0;
+  right: 0;
+  display: none;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+@media screen and (max-width: 767px) {
+  .Wrap .ham_Btn {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .Wrap .ham_Btn.active {
+    position: fixed;
+  }
+}
+.Wrap .ham_Btn .menu-trigger {
+  position: relative;
+  width: 35px;
+  height: 30px;
+  display: inline-block;
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+@media screen and (max-width: 480px) {
+  .Wrap .ham_Btn .menu-trigger {
+    width: 30px;
+    height: 25px;
+  }
+}
+.Wrap .ham_Btn .menu-trigger.active span:nth-of-type(1) {
+  width: 20px;
+  -webkit-transform: translate(20px, 7px) rotate(45deg);
+          transform: translate(20px, 7px) rotate(45deg);
+}
+@media screen and (max-width: 480px) {
+  .Wrap .ham_Btn .menu-trigger.active span:nth-of-type(1) {
+    -webkit-transform: translate(13px, 5px) rotate(45deg);
+            transform: translate(13px, 5px) rotate(45deg);
+  }
+}
+.Wrap .ham_Btn .menu-trigger.active span:nth-of-type(3) {
+  width: 20px;
+  -webkit-transform: translate(20px, -7px) rotate(-45deg);
+          transform: translate(20px, -7px) rotate(-45deg);
+}
+@media screen and (max-width: 480px) {
+  .Wrap .ham_Btn .menu-trigger.active span:nth-of-type(3) {
+    -webkit-transform: translate(13px, -5px) rotate(-45deg);
+            transform: translate(13px, -5px) rotate(-45deg);
+  }
+}
+.Wrap .ham_Btn .menu-trigger span {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background-color: #fff;
+  border-radius: 4px;
+  display: inline-block;
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+@media screen and (max-width: 480px) {
+  .Wrap .ham_Btn .menu-trigger span {
+    height: 3px;
+    border-radius: 3px;
+  }
+}
+.Wrap .ham_Btn .menu-trigger span:nth-of-type(1) {
+  top: 0;
+}
+.Wrap .ham_Btn .menu-trigger span:nth-of-type(2) {
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+.Wrap .ham_Btn .menu-trigger span:nth-of-type(3) {
+  bottom: 0px;
+}
+.Wrap main {
+  width: 100%;
+}
+.Wrap main .contentWrap {
+  width: 100%;
+  height: 100%;
+}
+.Wrap main .contentWrap #main_banner {
+  width: 100%;
+  height: 1080px;
+  background-image: url(../img/mainback.jpg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+@media screen and (max-width: 767px) {
+  .Wrap main .contentWrap #main_banner {
+    height: 650px;
+    background-position: right center;
+  }
+}
+@media screen and (max-width: 480px) {
+  .Wrap main .contentWrap #main_banner {
+    height: 500px;
+  }
+}
+.Wrap main .contentWrap #main_banner .inner .swiper {
+  width: 900px;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+@media screen and (max-width: 1500px) {
+  .Wrap main .contentWrap #main_banner .inner .swiper {
+    width: 420px;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .Wrap main .contentWrap #main_banner .inner .swiper {
+    width: 360px;
+  }
+}
+@media screen and (max-width: 850px) {
+  .Wrap main .contentWrap #main_banner .inner .swiper {
+    width: 240px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .Wrap main .contentWrap #main_banner .inner .swiper {
+    -webkit-transform: translateY(-30%) translateX(-50%);
+            transform: translateY(-30%) translateX(-50%);
+    left: 50%;
+    width: 420px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .Wrap main .contentWrap #main_banner .inner .swiper {
+    width: 280px;
+  }
+}
+@media screen and (max-width: 360px) {
+  .Wrap main .contentWrap #main_banner .inner .swiper {
+    width: 260px;
+  }
+}
+.Wrap main .contentWrap #main_banner .inner .swiper .swiper-wrapper .swiper-slide {
+  width: 420px;
+}
+@media screen and (max-width: 1024px) {
+  .Wrap main .contentWrap #main_banner .inner .swiper .swiper-wrapper .swiper-slide {
+    width: 240px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .Wrap main .contentWrap #main_banner .inner .swiper .swiper-wrapper .swiper-slide {
+    width: 180px;
+  }
+}
+.Wrap main .contentWrap #main_banner .inner .swiper .swiper-wrapper .swiper-slide a {
+  cursor: -webkit-grab;
+  cursor: grab;
+  display: block;
+}
+.Wrap main .contentWrap #main_banner .inner .swiper .swiper-wrapper .swiper-slide a img {
+  width: 100%;
+}
+.Wrap main .contentWrap #main_banner .inner .maintext {
+  width: 480px;
+  height: 300px;
+  position: absolute;
+  right: 0;
+  top: 30%;
+}
+@media screen and (max-width: 1024px) {
+  .Wrap main .contentWrap #main_banner .inner .maintext {
+    width: 400px;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+  }
+}
+@media screen and (max-width: 767px) {
+  .Wrap main .contentWrap #main_banner .inner .maintext {
+    left: 50%;
+    top: 5%;
+    -webkit-transform: translateX(-50%) translateY(0);
+            transform: translateX(-50%) translateY(0);
+  }
+}
+@media screen and (max-width: 480px) {
+  .Wrap main .contentWrap #main_banner .inner .maintext {
+    width: 250px;
+  }
+}
+@media screen and (max-width: 360px) {
+  .Wrap main .contentWrap #main_banner .inner .maintext {
+    width: 200px;
+  }
+}
+.Wrap main .contentWrap #main_banner .inner .maintext .textBox {
+  position: absolute;
+  width: inherit;
+  height: inherit;
+}
+.Wrap main .contentWrap #main_banner .inner .maintext .textBox h4 {
+  color: #f5f5f5;
+  font-size: 58px;
+  margin-bottom: 42px;
+}
+@media screen and (max-width: 1024px) {
+  .Wrap main .contentWrap #main_banner .inner .maintext .textBox h4 {
+    font-size: 40px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .Wrap main .contentWrap #main_banner .inner .maintext .textBox h4 {
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+}
+@media screen and (max-width: 360px) {
+  .Wrap main .contentWrap #main_banner .inner .maintext .textBox h4 {
+    font-size: 16px;
+  }
+}
+.Wrap main .contentWrap #main_banner .inner .maintext .textBox p {
+  color: #f5f5f5;
+  font-size: 24px;
+  line-height: 1.3;
+  word-break: keep-all;
+}
+@media screen and (max-width: 1024px) {
+  .Wrap main .contentWrap #main_banner .inner .maintext .textBox p {
+    font-size: 18px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .Wrap main .contentWrap #main_banner .inner .maintext .textBox p {
+    font-size: 14px;
+  }
+}
+@media screen and (max-width: 360px) {
+  .Wrap main .contentWrap #main_banner .inner .maintext .textBox p {
+    font-size: 12px;
+  }
+}
+.Wrap main .contentWrap #main_banner .inner .pager {
+  width: 400px;
+  height: 5px;
+  position: absolute;
+  bottom: 150px;
+}
+@media screen and (max-width: 1024px) {
+  .Wrap main .contentWrap #main_banner .inner .pager {
+    bottom: 30%;
+  }
+}
+@media screen and (max-width: 767px) {
+  .Wrap main .contentWrap #main_banner .inner .pager {
+    bottom: 5%;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+  }
+}
+@media screen and (max-width: 480px) {
+  .Wrap main .contentWrap #main_banner .inner .pager {
+    bottom: 10%;
+    width: 250px;
+  }
+}
+@media screen and (max-width: 360px) {
+  .Wrap main .contentWrap #main_banner .inner .pager {
+    width: 200px;
+  }
+}
+.Wrap main .contentWrap #main_banner .inner .pager > .swiper-pagination {
+  width: 100%;
+  height: 5px;
+  background-color: #b1b1b1;
+}
+.Wrap main .contentWrap #main_banner .inner .pager > .swiper-pagination span {
+  background-color: #f5f5f5;
+}
+.Wrap main .contentWrap #Products {
+  width: 100%;
+  height: 1080px;
+}
+@media screen and (max-width: 1500px) {
+  .Wrap main .contentWrap #Products {
+    height: 800px;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .Wrap main .contentWrap #Products {
+    height: 600px;
+    padding-bottom: 200px;
+  }
+}
+@media screen and (max-width: 850px) {
+  .Wrap main .contentWrap #Products {
+    height: 500px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .Wrap main .contentWrap #Products {
+    height: 450px;
+    padding-bottom: 100px;
+  }
+}
+.Wrap main .contentWrap #Products .inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+@media screen and (max-width: 1024px) {
+  .Wrap main .contentWrap #Products .inner {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+.Wrap main .contentWrap #Products .inner .Products_Lefttext {
+  max-width: 220px;
+  height: 100%;
+  font-family: "Nanum";
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+@media screen and (max-width: 850px) {
+  .Wrap main .contentWrap #Products .inner .Products_Lefttext {
+    width: 150px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .Wrap main .contentWrap #Products .inner .Products_Lefttext {
+    margin-right: 50px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .Wrap main .contentWrap #Products .inner .Products_Lefttext {
+    width: 100px;
+    margin-right: 0;
+  }
+}
+.Wrap main .contentWrap #Products .inner .Products_Lefttext .Products_title h4 {
+  font-size: 50px;
+  font-family: "Nanum";
+  font-weight: 700;
+  line-height: 1.2;
+}
+@media screen and (max-width: 850px) {
+  .Wrap main .contentWrap #Products .inner .Products_Lefttext .Products_title h4 {
+    font-size: 30px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .Wrap main .contentWrap #Products .inner .Products_Lefttext .Products_title h4 {
+    font-size: 22px;
+  }
+}
+.Wrap main .contentWrap #Products .inner .Products_Lefttext .Products_title::after {
+  content: "";
+  display: block;
+  width: 1px;
+  height: 100px;
+  background: #121212;
+  margin: 20px 0;
+}
+.Wrap main .contentWrap #Products .inner .Products_Lefttext .Products_gnb p {
+  font-size: 22px;
+  font-weight: 400;
+  color: #b1b1b1;
+  margin-bottom: 22px;
+  cursor: pointer;
+}
+@media screen and (max-width: 850px) {
+  .Wrap main .contentWrap #Products .inner .Products_Lefttext .Products_gnb p {
+    font-size: 16px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .Wrap main .contentWrap #Products .inner .Products_Lefttext .Products_gnb p {
+    font-size: 13px;
+  }
+}
+.Wrap main .contentWrap #Products .inner .Products_Lefttext .Products_gnb p.active {
+  color: #121212;
+}
+.Wrap main .contentWrap #Products .inner .Products_slideBox {
+  width: 500px;
+  height: 100%;
+  position: relative;
+}
+@media screen and (max-width: 1500px) {
+  .Wrap main .contentWrap #Products .inner .Products_slideBox {
+    width: 350px;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .Wrap main .contentWrap #Products .inner .Products_slideBox {
+    width: 300px;
+  }
+}
+@media screen and (max-width: 850px) {
+  .Wrap main .contentWrap #Products .inner .Products_slideBox {
+    width: 250px;
+  }
+}
+.Wrap main .contentWrap #Products .inner .Products_slideBox .Products_slide {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  display: none;
+}
+.Wrap main .contentWrap #Products .inner .Products_slideBox .Products_slide.active {
+  display: block;
+}
+.Wrap main .contentWrap #Products .inner .Products_slideBox .Products_slide > ul {
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.Wrap main .contentWrap #Products .inner .Products_slideBox .Products_slide > ul > li {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  display: none;
+}
+.Wrap main .contentWrap #Products .inner .Products_slideBox .Products_slide > ul > li.active {
+  display: block;
+}
+.Wrap main .contentWrap #Products .inner .Products_slideBox .Products_slide > ul > li a {
+  display: block;
+}
+.Wrap main .contentWrap #Products .inner .Products_slideBox .Products_slide > ul > li a img {
+  width: 100%;
+}
+.Wrap main .contentWrap #Products .inner .Products_slideBox .Products_slide .Products_pager {
+  position: absolute;
+  width: 108px;
+  height: 12px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  bottom: 300px;
+  z-index: 8000;
+}
+@media screen and (max-width: 1500px) {
+  .Wrap main .contentWrap #Products .inner .Products_slideBox .Products_slide .Products_pager {
+    bottom: 200px;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .Wrap main .contentWrap #Products .inner .Products_slideBox .Products_slide .Products_pager {
+    bottom: 150px;
+  }
+}
+@media screen and (max-width: 850px) {
+  .Wrap main .contentWrap #Products .inner .Products_slideBox .Products_slide .Products_pager {
+    bottom: 100px;
+  }
+}
+@media screen and (max-width: 360px) {
+  .Wrap main .contentWrap #Products .inner .Products_slideBox .Products_slide .Products_pager {
+    width: 90px;
+  }
+}
+.Wrap main .contentWrap #Products .inner .Products_slideBox .Products_slide .Products_pager ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.Wrap main .contentWrap #Products .inner .Products_slideBox .Products_slide .Products_pager ul li {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 1px solid #747474;
+  cursor: pointer;
+}
+@media screen and (max-width: 480px) {
+  .Wrap main .contentWrap #Products .inner .Products_slideBox .Products_slide .Products_pager ul li {
+    width: 10px;
+    height: 10px;
+  }
+}
+.Wrap main .contentWrap #Products .inner .Products_slideBox .Products_slide .Products_pager ul li.active {
+  background: #747474;
+}
+.Wrap main .contentWrap #Products .inner .Products_bigimg {
+  max-width: 660px;
+  height: 100%;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+@media screen and (max-width: 1500px) {
+  .Wrap main .contentWrap #Products .inner .Products_bigimg {
+    max-width: 400px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .Wrap main .contentWrap #Products .inner .Products_bigimg {
+    display: none;
+  }
+}
+.Wrap main .contentWrap #Products .inner .Products_bigimg .Products_fade {
+  height: 100%;
+  display: none;
+}
+.Wrap main .contentWrap #Products .inner .Products_bigimg .Products_fade.active {
+  display: block;
+}
+.Wrap main .contentWrap #Products .inner .Products_bigimg .Products_fade li {
+  height: 100%;
+  display: none;
+  position: absolute;
+  top: 0;
+}
+.Wrap main .contentWrap #Products .inner .Products_bigimg .Products_fade li.active {
+  display: block;
+}
+.Wrap main .contentWrap #Products .inner .Products_bigimg .Products_fade li img {
+  width: 100%;
+}
+.Wrap main .contentWrap #Products .inner .Products_bigimg .Products_fade li .Products_explanation {
+  position: absolute;
+  max-width: 550px;
+  height: auto;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  margin-left: 30px;
+  font-family: "Nanum";
+  color: #f5f5f5;
+}
+@media screen and (max-width: 1500px) {
+  .Wrap main .contentWrap #Products .inner .Products_bigimg .Products_fade li .Products_explanation {
+    max-width: 400px;
+  }
+}
+.Wrap main .contentWrap #Products .inner .Products_bigimg .Products_fade li .Products_explanation span {
+  display: block;
+  font-size: 14px;
+  margin-bottom: 16px;
+  font-weight: 700;
+}
+.Wrap main .contentWrap #Products .inner .Products_bigimg .Products_fade li .Products_explanation h4 {
+  font-size: 38px;
+  margin-bottom: 36px;
+  font-weight: 700;
+}
+@media screen and (max-width: 1500px) {
+  .Wrap main .contentWrap #Products .inner .Products_bigimg .Products_fade li .Products_explanation h4 {
+    font-size: 22px;
+  }
+}
+.Wrap main .contentWrap #Products .inner .Products_bigimg .Products_fade li .Products_explanation p {
+  font-family: "Roboto";
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.5;
+  word-break: keep-all;
+}
+@media screen and (max-width: 1500px) {
+  .Wrap main .contentWrap #Products .inner .Products_bigimg .Products_fade li .Products_explanation p {
+    font-size: 14px;
+  }
+}
+.Wrap main .contentWrap #TV_tab {
+  width: 100%;
+  height: 1080px;
+}
+@media screen and (max-width: 1240px) {
+  .Wrap main .contentWrap #TV_tab {
+    height: 800px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .Wrap main .contentWrap #TV_tab {
+    height: 600px;
+  }
+}
+.Wrap main .contentWrap #TV_tab .inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+@media screen and (max-width: 1024px) {
+  .Wrap main .contentWrap #TV_tab .inner {
+    display: block;
+  }
+}
+.Wrap main .contentWrap #TV_tab .inner .tv_img {
+  max-width: 720px;
+  margin: 0 auto;
+}
+.Wrap main .contentWrap #TV_tab .inner .tv_img img {
+  width: 100%;
+}
+.Wrap main .contentWrap #TV_tab .inner .tv_textbox {
+  max-width: 570px;
+  margin-left: 80px;
+  font-family: "Roboto";
+}
+@media screen and (max-width: 1240px) {
+  .Wrap main .contentWrap #TV_tab .inner .tv_textbox {
+    max-width: 480px;
+    margin-left: 40px;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .Wrap main .contentWrap #TV_tab .inner .tv_textbox {
+    max-width: 720px;
+    margin: 0 auto;
+    padding-top: 40px;
+  }
+}
+.Wrap main .contentWrap #TV_tab .inner .tv_textbox span {
+  display: block;
+  font-family: "Nanum";
+  font-size: 14px;
+  margin-bottom: 16px;
+  font-weight: 700;
+}
+@media screen and (max-width: 1024px) {
+  .Wrap main .contentWrap #TV_tab .inner .tv_textbox span {
+    margin-bottom: 12px;
+  }
+}
+.Wrap main .contentWrap #TV_tab .inner .tv_textbox h4 {
+  font-family: "Roboto";
+  font-size: 38px;
+  margin-bottom: 36px;
+  font-weight: 700;
+}
+@media screen and (max-width: 1240px) {
+  .Wrap main .contentWrap #TV_tab .inner .tv_textbox h4 {
+    font-size: 28px;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .Wrap main .contentWrap #TV_tab .inner .tv_textbox h4 {
+    margin-bottom: 24px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .Wrap main .contentWrap #TV_tab .inner .tv_textbox h4 {
+    font-size: 22px;
+  }
+}
+.Wrap main .contentWrap #TV_tab .inner .tv_textbox > p {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.5;
+  word-break: keep-all;
+  margin-bottom: 60px;
+}
+@media screen and (max-width: 1240px) {
+  .Wrap main .contentWrap #TV_tab .inner .tv_textbox > p {
+    font-size: 16px;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .Wrap main .contentWrap #TV_tab .inner .tv_textbox > p {
+    margin-bottom: 40px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .Wrap main .contentWrap #TV_tab .inner .tv_textbox > p {
+    font-size: 12px;
+  }
+}
+.Wrap main .contentWrap #TV_tab .inner .tv_textbox .more {
+  display: inline-block;
+}
+.Wrap main .contentWrap #TV_tab .inner .tv_textbox .more a {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+@media screen and (max-width: 480px) {
+  .Wrap main .contentWrap #TV_tab .inner .tv_textbox .more a {
+    font-size: 14px;
+  }
+}
+.Wrap main .contentWrap #TV_tab .inner .tv_textbox .more a > p {
+  color: #c9ae7e;
+  margin-right: 8px;
+}
+.Wrap main .contentWrap #TV_tab .inner .tv_textbox .more a > div svg {
+  padding: 7px 0;
+}
+@media screen and (max-width: 480px) {
+  .Wrap main .contentWrap #TV_tab .inner .tv_textbox .more a > div svg {
+    padding: 4px 0;
+  }
+}
+.Wrap main .contentWrap #ps5 {
+  width: 100%;
+  height: 100%;
+}
+.Wrap main .contentWrap #ps5 .ps5_contents1 {
+  width: 100%;
+  height: 1080px;
+  background-color: #f5f5f5;
+  background-image: url(../img/ps5back.jpg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: right center;
+}
+@media screen and (max-width: 1240px) {
+  .Wrap main .contentWrap #ps5 .ps5_contents1 {
+    height: 800px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .Wrap main .contentWrap #ps5 .ps5_contents1 {
+    height: 600px;
+  }
+}
+.Wrap main .contentWrap #ps5 .ps5_contents1 .inner .ps5_textBox {
+  padding-top: 120px;
+  max-width: 560px;
+}
+@media screen and (max-width: 1240px) {
+  .Wrap main .contentWrap #ps5 .ps5_contents1 .inner .ps5_textBox {
+    max-width: 400px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .Wrap main .contentWrap #ps5 .ps5_contents1 .inner .ps5_textBox {
+    padding-top: 60px;
+    max-width: 300px;
+  }
+}
+.Wrap main .contentWrap #ps5 .ps5_contents1 .inner .ps5_textBox .ps5_logo {
+  max-width: 350px;
+}
+@media screen and (max-width: 1240px) {
+  .Wrap main .contentWrap #ps5 .ps5_contents1 .inner .ps5_textBox .ps5_logo {
+    max-width: 200px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .Wrap main .contentWrap #ps5 .ps5_contents1 .inner .ps5_textBox .ps5_logo {
+    max-width: 150px;
+  }
+}
+.Wrap main .contentWrap #ps5 .ps5_contents1 .inner .ps5_textBox .ps5_logo img {
+  width: 100%;
+}
+.Wrap main .contentWrap #ps5 .ps5_contents1 .inner .ps5_textBox .ps5_title {
+  font-size: 45px;
+  font-weight: 500;
+  padding-top: 140px;
+}
+@media screen and (max-width: 1240px) {
+  .Wrap main .contentWrap #ps5 .ps5_contents1 .inner .ps5_textBox .ps5_title {
+    font-size: 32px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .Wrap main .contentWrap #ps5 .ps5_contents1 .inner .ps5_textBox .ps5_title {
+    padding-top: 60px;
+    font-size: 30px;
+  }
+}
+.Wrap main .contentWrap #ps5 .ps5_contents1 .inner .ps5_textBox .ps5_title::after {
+  content: "";
+  width: 1px;
+  height: 100px;
+  display: block;
+  background: #121212;
+  margin: 20px 0;
+}
+@media screen and (max-width: 480px) {
+  .Wrap main .contentWrap #ps5 .ps5_contents1 .inner .ps5_textBox .ps5_title::after {
+    height: 70px;
+  }
+}
+.Wrap main .contentWrap #ps5 .ps5_contents1 .inner .ps5_textBox .ps5_text {
+  font-family: "Nanum";
+  font-size: 20px;
+  line-height: 1.5;
+  word-break: keep-all;
+}
+@media screen and (max-width: 1240px) {
+  .Wrap main .contentWrap #ps5 .ps5_contents1 .inner .ps5_textBox .ps5_text {
+    font-size: 16px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .Wrap main .contentWrap #ps5 .ps5_contents1 .inner .ps5_textBox .ps5_text {
+    font-size: 14px;
+  }
+}
+.Wrap main .contentWrap #ps5 .ps5_contents2 {
+  width: 100%;
+  height: 1080px;
+  background-color: #f5f5f5;
+}
+@media screen and (max-width: 767px) {
+  .Wrap main .contentWrap #ps5 .ps5_contents2 {
+    height: 1600px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .Wrap main .contentWrap #ps5 .ps5_contents2 {
+    height: 1300px;
+  }
+}
+@media screen and (max-width: 360px) {
+  .Wrap main .contentWrap #ps5 .ps5_contents2 {
+    height: 1000px;
+  }
+}
+.Wrap main .contentWrap #ps5 .ps5_contents2 .inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+.Wrap main .contentWrap #ps5 .ps5_contents2 .inner .padtop {
+  width: 100%;
+  text-align: center;
+  word-break: keep-all;
+  margin-top: -170px;
+}
+@media screen and (max-width: 767px) {
+  .Wrap main .contentWrap #ps5 .ps5_contents2 .inner .padtop {
+    margin-top: -80px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .Wrap main .contentWrap #ps5 .ps5_contents2 .inner .padtop {
+    height: 350px;
+  }
+}
+.Wrap main .contentWrap #ps5 .ps5_contents2 .inner .padtop .pad_title {
+  max-width: 400px;
+  font-size: 48px;
+  font-weight: 500;
+  margin: 0 auto;
+  padding-bottom: 50px;
+}
+@media screen and (max-width: 767px) {
+  .Wrap main .contentWrap #ps5 .ps5_contents2 .inner .padtop .pad_title {
+    font-size: 32px;
+    padding-bottom: 30px;
+  }
+}
+.Wrap main .contentWrap #ps5 .ps5_contents2 .inner .padtop .pad_text {
+  width: 100%;
+  font-size: 40px;
+  font-weight: 300;
+}
+@media screen and (max-width: 767px) {
+  .Wrap main .contentWrap #ps5 .ps5_contents2 .inner .padtop .pad_text {
+    font-size: 20px;
+  }
+}
+.Wrap main .contentWrap #ps5 .ps5_contents2 .inner .padtop .pad_img {
+  max-width: 500px;
+  margin: 0 auto;
+  margin-top: -40px;
+}
+.Wrap main .contentWrap #ps5 .ps5_contents2 .inner .padtop .pad_img img {
+  width: 100%;
+}
+.Wrap main .contentWrap #ps5 .ps5_contents2 .inner .padleft {
+  width: 50%;
+  word-break: keep-all;
+  text-align: center;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+@media screen and (max-width: 767px) {
+  .Wrap main .contentWrap #ps5 .ps5_contents2 .inner .padleft {
+    width: 100%;
+  }
+}
+.Wrap main .contentWrap #ps5 .ps5_contents2 .inner .padleft .padtext .padvideo_title {
+  font-size: 48px;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+@media screen and (max-width: 850px) {
+  .Wrap main .contentWrap #ps5 .ps5_contents2 .inner .padleft .padtext .padvideo_title {
+    font-size: 26px;
+  }
+}
+.Wrap main .contentWrap #ps5 .ps5_contents2 .inner .padleft .padtext .padvideo_text {
+  max-width: 550px;
+  font-size: 18px;
+  font-weight: 300;
+  margin: 0 auto;
+  margin-bottom: 43px;
+  line-height: 1.3;
+}
+@media screen and (max-width: 850px) {
+  .Wrap main .contentWrap #ps5 .ps5_contents2 .inner .padleft .padtext .padvideo_text {
+    font-size: 14px;
+  }
+}
+.Wrap main .contentWrap #ps5 .ps5_contents2 .inner .padleft .pad_img {
+  max-width: 600px;
+  margin: 0 auto;
+}
+.Wrap main .contentWrap #ps5 .ps5_contents2 .inner .padleft .pad_img img {
+  width: 100%;
+}
+.Wrap main .contentWrap #ps5 .ps5_contents2 .inner .padright {
+  width: 50%;
+  word-break: keep-all;
+  text-align: center;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+@media screen and (max-width: 767px) {
+  .Wrap main .contentWrap #ps5 .ps5_contents2 .inner .padright {
+    width: 100%;
+  }
+}
+.Wrap main .contentWrap #ps5 .ps5_contents2 .inner .padright .padtext .padvideo_title {
+  font-size: 48px;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+@media screen and (max-width: 850px) {
+  .Wrap main .contentWrap #ps5 .ps5_contents2 .inner .padright .padtext .padvideo_title {
+    font-size: 26px;
+  }
+}
+.Wrap main .contentWrap #ps5 .ps5_contents2 .inner .padright .padtext .padvideo_text {
+  max-width: 550px;
+  font-size: 18px;
+  font-weight: 300;
+  margin: 0 auto;
+  margin-bottom: 43px;
+  line-height: 1.3;
+}
+@media screen and (max-width: 850px) {
+  .Wrap main .contentWrap #ps5 .ps5_contents2 .inner .padright .padtext .padvideo_text {
+    font-size: 14px;
+  }
+}
+.Wrap main .contentWrap #ps5 .ps5_contents2 .inner .padright .padtext .pad_img {
+  max-width: 500px;
+  margin: 0 auto;
+  margin-top: -40px;
+}
+.Wrap main .contentWrap #ps5 .ps5_contents2 .inner .padright .padtext .pad_img img {
+  width: 100%;
+}
+.Wrap main .contentWrap #ps5 .ps5_contents2 .inner .padright .pad_img {
+  max-width: 600px;
+  margin: 0 auto;
+}
+.Wrap main .contentWrap #ps5 .ps5_contents2 .inner .padright .pad_img img {
+  width: 100%;
+}
+.Wrap main .contentWrap #ps5 .ps5_gameVideo {
+  width: 100%;
+  height: 1080px;
+  background: -webkit-gradient(linear, left top, left bottom, from(#f5f5f5), to(#121212));
+  background: linear-gradient(to bottom, #f5f5f5, #121212);
+  overflow: hidden;
+}
+@media screen and (max-width: 1240px) {
+  .Wrap main .contentWrap #ps5 .ps5_gameVideo {
+    height: 800px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .Wrap main .contentWrap #ps5 .ps5_gameVideo {
+    height: 500px;
+  }
+}
+.Wrap main .contentWrap #ps5 .ps5_gameVideo .inner .ps5_videologo {
+  width: 100px;
+  padding: 140px 0 30px 0;
+}
+@media screen and (max-width: 767px) {
+  .Wrap main .contentWrap #ps5 .ps5_gameVideo .inner .ps5_videologo {
+    padding: 40px 0 30px 0;
+  }
+}
+.Wrap main .contentWrap #ps5 .ps5_gameVideo .inner .ps5_videologo img {
+  width: 100%;
+}
+.Wrap main .contentWrap #ps5 .ps5_gameVideo .inner .video_title {
+  font-size: 48px;
+  font-family: "Nanum";
+  padding-bottom: 100px;
+}
+@media screen and (max-width: 480px) {
+  .Wrap main .contentWrap #ps5 .ps5_gameVideo .inner .video_title {
+    font-size: 32px;
+    padding-bottom: 50px;
+  }
+}
+.Wrap main .contentWrap #ps5 .ps5_gameVideo .inner .gamewrap {
+  width: 100%;
+}
+.Wrap main .contentWrap #ps5 .ps5_gameVideo .inner .gamewrap ul {
+  width: 100%;
+}
+.Wrap main .contentWrap #ps5 .ps5_gameVideo .inner .gamewrap ul li {
+  position: relative;
+  width: 100%;
+  border-radius: 25px;
+  overflow: hidden;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+@media screen and (max-width: 360px) {
+  .Wrap main .contentWrap #ps5 .ps5_gameVideo .inner .gamewrap ul li {
+    border-radius: 15px;
+  }
+}
+.Wrap main .contentWrap #ps5 .ps5_gameVideo .inner .gamewrap ul li:hover {
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+}
+.Wrap main .contentWrap #ps5 .ps5_gameVideo .inner .gamewrap ul li a {
+  display: block;
+}
+.Wrap main .contentWrap #ps5 .ps5_gameVideo .inner .gamewrap ul li a img {
+  width: 100%;
+}
+.Wrap main .contentWrap #ps5 .ps5_gameVideo .inner .gamewrap ul li .playicon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+          transform: translateX(-50%) translateY(-50%);
+}
+.Wrap main .contentWrap #ps5 .ps5_gameVideo .inner .gamewrap ul li .youtube_logo {
+  position: absolute;
+  width: 80px;
+  right: 30px;
+  bottom: 30px;
+  padding: 5px 10px;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 8px;
+}
+@media screen and (max-width: 480px) {
+  .Wrap main .contentWrap #ps5 .ps5_gameVideo .inner .gamewrap ul li .youtube_logo {
+    width: 50px;
+    right: 15px;
+    bottom: 15px;
+    padding: 3px 5px;
+    border-radius: 4px;
+  }
+}
+.Wrap main .contentWrap #ps5 .ps5_gameVideo .inner .gamewrap ul li .youtube_logo img {
+  width: 100%;
+}
+.Wrap main .contentWrap #playstation_vr {
+  width: 100%;
+  height: 1080px;
+  background-image: url(../img/vrBack.jpg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+@media screen and (max-width: 1500px) {
+  .Wrap main .contentWrap #playstation_vr {
+    background-position: left center;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .Wrap main .contentWrap #playstation_vr {
+    height: 800px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .Wrap main .contentWrap #playstation_vr {
+    background-position: left center;
+    height: 650px;
+  }
+}
+.Wrap main .contentWrap #playstation_vr .inner .vr_textBox {
+  max-width: 400px;
+  font-family: "Nanum";
+  margin: 220px 0 0 500px;
+  float: left;
+  word-break: keep-all;
+}
+@media screen and (max-width: 1500px) {
+  .Wrap main .contentWrap #playstation_vr .inner .vr_textBox {
+    margin: 220px 0 0 100px;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .Wrap main .contentWrap #playstation_vr .inner .vr_textBox {
+    margin: 50px 0 0 0;
+    max-width: 300px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .Wrap main .contentWrap #playstation_vr .inner .vr_textBox {
+    margin: 30px 0 0 0;
+  }
+}
+.Wrap main .contentWrap #playstation_vr .inner .vr_textBox .vr_title {
+  font-size: 53px;
+  font-weight: 700;
+}
+@media screen and (max-width: 1024px) {
+  .Wrap main .contentWrap #playstation_vr .inner .vr_textBox .vr_title {
+    font-size: 36px;
+  }
+}
+.Wrap main .contentWrap #playstation_vr .inner .vr_textBox .vr_title::after {
+  content: "";
+  width: 1px;
+  height: 100px;
+  margin: 40px 0;
+  background: #121212;
+  display: block;
+}
+@media screen and (max-width: 480px) {
+  .Wrap main .contentWrap #playstation_vr .inner .vr_textBox .vr_title::after {
+    height: 50px;
+  }
+}
+.Wrap main .contentWrap #playstation_vr .inner .vr_textBox .vr_subtitle {
+  font-size: 22px;
+  padding-bottom: 20px;
+}
+@media screen and (max-width: 1024px) {
+  .Wrap main .contentWrap #playstation_vr .inner .vr_textBox .vr_subtitle {
+    font-size: 18px;
+  }
+}
+.Wrap main .contentWrap #playstation_vr .inner .vr_textBox .vr_text {
+  font-size: 16px;
+  font-family: "Roboto";
+  font-weight: 300;
+  line-height: 1.5;
+  padding-bottom: 20px;
+}
+@media screen and (max-width: 1024px) {
+  .Wrap main .contentWrap #playstation_vr .inner .vr_textBox .vr_text {
+    font-size: 14px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .Wrap main .contentWrap #playstation_vr .inner .vr_textBox .vr_text {
+    font-size: 12px;
+  }
+}
+.Wrap main .contentWrap #playstation_vr .inner .vr_textBox .more {
+  margin-top: 50px;
+  display: inline-block;
+}
+@media screen and (max-width: 480px) {
+  .Wrap main .contentWrap #playstation_vr .inner .vr_textBox .more {
+    margin-top: 20px;
+  }
+}
+.Wrap main .contentWrap #playstation_vr .inner .vr_textBox .more a {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+.Wrap main .contentWrap #playstation_vr .inner .vr_textBox .more a > p {
+  margin-right: 8px;
+}
+.Wrap main .contentWrap #playstation_vr .inner .vr_textBox .more a > div svg {
+  padding: 7px 0;
+}
+.Wrap main .contentWrap #playstation_vr .inner .vrimg {
+  max-width: 500px;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+@media screen and (max-width: 1024px) {
+  .Wrap main .contentWrap #playstation_vr .inner .vrimg {
+    max-width: 300px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .Wrap main .contentWrap #playstation_vr .inner .vrimg {
+    display: none;
+  }
+}
+.Wrap main .contentWrap #playstation_vr .inner .vrimg img {
+  width: 100%;
+}
+.Wrap main .contentWrap #Support .inner .sup_title {
+  text-align: center;
+  font-size: 54px;
+  font-family: "Nanum";
+  margin: 70px 0 100px 0;
+}
+@media screen and (max-width: 1500px) {
+  .Wrap main .contentWrap #Support .inner .sup_title {
+    font-size: 48px;
+  }
+}
+.Wrap main .contentWrap #Support .inner .supBox ul {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+@media screen and (max-width: 1024px) {
+  .Wrap main .contentWrap #Support .inner .supBox ul {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+.Wrap main .contentWrap #Support .inner .supBox ul li {
+  position: relative;
+  width: 400px;
+  height: 300px;
+  background: #e8e8e8;
+  border-radius: 20px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+@media screen and (max-width: 1300px) {
+  .Wrap main .contentWrap #Support .inner .supBox ul li {
+    width: 300px;
+    height: 200px;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .Wrap main .contentWrap #Support .inner .supBox ul li {
+    width: 90%;
+    margin-bottom: 30px;
+  }
+  .Wrap main .contentWrap #Support .inner .supBox ul li:last-child {
+    margin-bottom: 0;
+  }
+}
+.Wrap main .contentWrap #Support .inner .supBox ul li:last-child {
+  margin-right: 0;
+}
+.Wrap main .contentWrap #Support .inner .supBox ul li a {
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+  margin-top: 80px;
+}
+@media screen and (max-width: 1300px) {
+  .Wrap main .contentWrap #Support .inner .supBox ul li a {
+    margin-top: 30px;
+  }
+}
+.Wrap main .contentWrap #Support .inner .supBox ul li a:first-child {
+  display: block;
+  width: 58px;
+}
+.Wrap main .contentWrap #Support .inner .supBox ul li a:first-child img {
+  width: 100%;
+}
+.Wrap main .contentWrap #Support .inner .supBox ul li a:first-child p {
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  white-space: nowrap;
+  padding-top: 40px;
+  font-family: "Nanum";
+  font-size: 30px;
+  font-weight: 700;
+}
+@media screen and (max-width: 1300px) {
+  .Wrap main .contentWrap #Support .inner .supBox ul li a:first-child p {
+    font-size: 24px;
+  }
+}
+.Wrap main .contentWrap #Support .supCall {
+  width: 100%;
+  height: 350px;
+  margin-top: 120px;
+  background-color: #e8e8e8;
+  font-family: "Roboto";
+}
+@media screen and (max-width: 767px) {
+  .Wrap main .contentWrap #Support .supCall {
+    height: 600px;
+  }
+}
+.Wrap main .contentWrap #Support .supCall .inner .Call_title {
+  padding-top: 24px;
+}
+.Wrap main .contentWrap #Support .supCall .inner .Call_title h4 {
+  font-size: 38px;
+  font-weight: 700;
+}
+@media screen and (max-width: 640px) {
+  .Wrap main .contentWrap #Support .supCall .inner .Call_title h4 {
+    font-size: 24px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .Wrap main .contentWrap #Support .supCall .inner .Call_title h4 {
+    line-height: 1.5;
+  }
+}
+.Wrap main .contentWrap #Support .supCall .inner .Call_title h4 span {
+  font-size: 14px;
+  font-weight: 400;
+  margin-left: 10px;
+}
+@media screen and (max-width: 640px) {
+  .Wrap main .contentWrap #Support .supCall .inner .Call_title h4 span {
+    font-size: 12px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .Wrap main .contentWrap #Support .supCall .inner .Call_title h4 span {
+    display: block;
+    margin-left: 0;
+  }
+}
+.Wrap main .contentWrap #Support .supCall .inner .CallBox {
+  width: 50%;
+  float: left;
+}
+@media screen and (max-width: 767px) {
+  .Wrap main .contentWrap #Support .supCall .inner .CallBox {
+    width: 100%;
+    float: none;
+  }
+}
+.Wrap main .contentWrap #Support .supCall .inner .CallBox > div {
+  width: 42px;
+  display: inline-block;
+  white-space: nowrap;
+  padding: 20px 0;
+}
+@media screen and (max-width: 640px) {
+  .Wrap main .contentWrap #Support .supCall .inner .CallBox > div {
+    width: 32px;
+  }
+}
+.Wrap main .contentWrap #Support .supCall .inner .CallBox > div img {
+  width: 100%;
+  float: left;
+}
+.Wrap main .contentWrap #Support .supCall .inner .CallBox > div > span {
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 42px;
+  margin-left: 20px;
+}
+@media screen and (max-width: 640px) {
+  .Wrap main .contentWrap #Support .supCall .inner .CallBox > div > span {
+    font-size: 18px;
+    line-height: 32px;
+  }
+}
+.Wrap main .contentWrap #Support .supCall .inner .CallBox address p {
+  font-size: 22px;
+  font-weight: 300;
+  margin-bottom: 30px;
+}
+@media screen and (max-width: 640px) {
+  .Wrap main .contentWrap #Support .supCall .inner .CallBox address p {
+    font-size: 14px;
+  }
+}
+.Wrap main .contentWrap #Support .supCall .inner .ChatBox {
+  width: 50%;
+  float: left;
+}
+@media screen and (max-width: 767px) {
+  .Wrap main .contentWrap #Support .supCall .inner .ChatBox {
+    width: 100%;
+    float: none;
+  }
+}
+.Wrap main .contentWrap #Support .supCall .inner .ChatBox .Chat_title {
+  width: 42px;
+  display: inline-block;
+  white-space: nowrap;
+  padding: 20px 0;
+}
+@media screen and (max-width: 640px) {
+  .Wrap main .contentWrap #Support .supCall .inner .ChatBox .Chat_title {
+    width: 32px;
+  }
+}
+.Wrap main .contentWrap #Support .supCall .inner .ChatBox .Chat_title img {
+  width: 100%;
+  float: left;
+}
+.Wrap main .contentWrap #Support .supCall .inner .ChatBox .Chat_title span {
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 42px;
+  margin-left: 20px;
+}
+@media screen and (max-width: 640px) {
+  .Wrap main .contentWrap #Support .supCall .inner .ChatBox .Chat_title span {
+    font-size: 18px;
+    line-height: 32px;
+  }
+}
+.Wrap main .contentWrap #Support .supCall .inner .ChatBox > p {
+  font-size: 22px;
+  font-weight: 300;
+}
+@media screen and (max-width: 640px) {
+  .Wrap main .contentWrap #Support .supCall .inner .ChatBox > p {
+    font-size: 14px;
+    line-height: 1.3;
+  }
+}
+.Wrap main .contentWrap #Support .supCall .inner .ChatBox .ChatBtn {
+  width: 200px;
+  height: 55px;
+  margin-top: 64px;
+  border-radius: 27.5px;
+  background: #121212;
+}
+@media screen and (max-width: 640px) {
+  .Wrap main .contentWrap #Support .supCall .inner .ChatBox .ChatBtn {
+    width: 150px;
+    height: 40px;
+  }
+}
+.Wrap main .contentWrap #Support .supCall .inner .ChatBox .ChatBtn a {
+  display: block;
+  color: #f5f5f5;
+  text-align: center;
+  border-radius: 27.5px;
+  padding: 16.5px 0;
+  font-size: 22px;
+  font-weight: 700;
+}
+@media screen and (max-width: 640px) {
+  .Wrap main .contentWrap #Support .supCall .inner .ChatBox .ChatBtn a {
+    font-size: 16px;
+    font-weight: 400;
+    padding: 12px 0;
+  }
+}
+.Wrap footer {
+  background: #121212;
+  width: 100%;
+  height: 400px;
+}
+.Wrap footer .inner .footlogo {
+  float: left;
+  margin-right: 300px;
+}
+@media screen and (max-width: 1500px) {
+  .Wrap footer .inner .footlogo {
+    margin-right: 200px;
+  }
+}
+@media screen and (max-width: 1300px) {
+  .Wrap footer .inner .footlogo {
+    margin-right: 100px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .Wrap footer .inner .footlogo {
+    margin-right: 0;
+  }
+}
+.Wrap footer .inner .footlogo .foot_sonylogo {
+  width: 120px;
+  padding-top: 40px;
+}
+@media screen and (max-width: 1024px) {
+  .Wrap footer .inner .footlogo .foot_sonylogo {
+    float: left;
+    padding-right: 30px;
+  }
+}
+.Wrap footer .inner .footlogo .foot_sonylogo img {
+  width: 100%;
+}
+.Wrap footer .inner .footlogo .foot_pslogo {
+  width: 60px;
+  padding-top: 30px;
+}
+@media screen and (max-width: 1024px) {
+  .Wrap footer .inner .footlogo .foot_pslogo {
+    float: left;
+    padding-top: 20px;
+  }
+}
+.Wrap footer .inner .footlogo .foot_pslogo img {
+  width: 100%;
+}
+.Wrap footer .inner .foot_gnbBox {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  float: left;
+  margin-top: 80px;
+}
+@media screen and (max-width: 1024px) {
+  .Wrap footer .inner .foot_gnbBox {
+    margin-top: 30px;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .Wrap footer .inner .foot_gnbBox > div:nth-child(4) {
+    display: none;
+  }
+}
+@media screen and (max-width: 767px) {
+  .Wrap footer .inner .foot_gnbBox > div:nth-child(2) {
+    display: none;
+  }
+}
+.Wrap footer .inner .foot_gnbBox .foot_gnb {
+  width: 220px;
+}
+@media screen and (max-width: 1240px) {
+  .Wrap footer .inner .foot_gnbBox .foot_gnb {
+    width: 180px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .Wrap footer .inner .foot_gnbBox .foot_gnb {
+    width: 150px;
+  }
+}
+.Wrap footer .inner .foot_gnbBox .foot_gnb .foot_title {
+  color: #f5f5f5;
+  font-size: 16px;
+  font-weight: 400;
+  margin-bottom: 26px;
+}
+@media screen and (max-width: 767px) {
+  .Wrap footer .inner .foot_gnbBox .foot_gnb .foot_title {
+    font-size: 14px;
+  }
+}
+.Wrap footer .inner .foot_gnbBox .foot_gnb ul li {
+  margin-bottom: 10px;
+}
+@media screen and (max-width: 767px) {
+  .Wrap footer .inner .foot_gnbBox .foot_gnb ul li {
+    margin-bottom: 8px;
+  }
+}
+.Wrap footer .inner .foot_gnbBox .foot_gnb ul li a {
+  color: #aaa;
+  font-size: 14px;
+  font-weight: 300;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+@media screen and (max-width: 480px) {
+  .Wrap footer .inner .foot_gnbBox .foot_gnb ul li a {
+    font-size: 12px;
+  }
+}
+.Wrap footer .inner .foot_gnbBox .foot_gnb ul li a:hover {
+  color: #f5f5f5;
+}
+.Wrap footer .inner .copyright {
+  float: left;
+  position: absolute;
+  bottom: 12px;
+}
+.Wrap footer .inner .copyright .copybox {
+  margin-bottom: 8px;
+}
+.Wrap footer .inner .copyright .copybox span {
+  color: #aaa;
+  float: left;
+  font-size: 10px;
+}
+.Wrap footer .inner .copyright .copybox .copy1,
+.Wrap footer .inner .copyright .copybox .copy2 {
+  margin-right: 20px;
+}
+@media screen and (max-width: 480px) {
+  .Wrap footer .inner .copyright .copybox .copy1,
+.Wrap footer .inner .copyright .copybox .copy2 {
+    margin-right: 0;
+  }
+}
+.Wrap footer .inner .copyright p {
+  display: block;
+  color: #aaa;
+  font-family: "Noto-sans";
+  font-size: 8px;
+}

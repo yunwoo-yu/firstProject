@@ -1,0 +1,34 @@
+@media screen and (max-width:768px) {
+    .loginBox{
+        width: 350px;
+        height: 300px;
+    
+}
+#loginfrm{
+    width: 350px;
+}
+#loginfrm .logo{
+    padding: 15px;
+
+}
+#loginfrm .logo a{
+    font-size: 25px;
+}
+.login_text{
+    width: 200px;
+    height: 34px;
+}
+#loginid,#loginpw{
+    width: 176px;
+    height: 10px;
+}
+#login{
+    width: 200px;
+    height: 34px;
+    font-size: 13px;
+}
+.text_box {
+    width: 350px;
+    font-size: 12px;
+}
+}

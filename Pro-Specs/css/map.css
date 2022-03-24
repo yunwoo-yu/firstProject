@@ -1,0 +1,59 @@
+main {
+  width: 100%;
+  height: auto;
+  padding: 50px 0;
+}
+main #store {
+  max-width: 1080px;
+  margin: 0 auto;
+}
+main #store .storeBox {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  text-align: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+main #store .storeBox div {
+  width: 30%;
+  background: #0f4c81;
+  border: 1px solid #aaa;
+  padding: 15px 0;
+  cursor: pointer;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: "Noto-sans";
+  font-weight: 600;
+  font-size: 16px;
+  color: #f5f5f5;
+}
+main #store .storeBox div.active {
+  background: #121212;
+}
+@media screen and (max-width: 767px) {
+  main #store .storeBox div {
+    font-size: 12px;
+    line-height: 2;
+    word-break: keep-all;
+    padding: 6px 0;
+  }
+}
+main #store .markerinfo div {
+  padding: 10px;
+}
+main .mapWrap {
+  max-width: 1200px;
+  height: 500px;
+  margin: 0 auto;
+  position: relative;
+  margin-top: 30px;
+}
+main .mapWrap #map {
+  width: 100%;
+  height: 100%;
+}

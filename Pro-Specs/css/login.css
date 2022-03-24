@@ -1,0 +1,120 @@
+main {
+  width: 100%;
+  padding: 150px 0;
+  background: #121212;
+}
+main #login {
+  width: 500px;
+  margin: 0 auto;
+  position: relative;
+  background: white;
+  border-radius: 20px;
+}
+@media screen and (max-width: 640px) {
+  main #login {
+    width: 300px;
+  }
+}
+main #login .contents {
+  padding: 40px 25px;
+}
+main #login .contents .logo {
+  width: 100%;
+  text-align: center;
+}
+main #login .contents .logo h1 {
+  display: inline-block;
+}
+main #login .contents .logo h1 a {
+  display: block;
+}
+main #login .contents .loginBox {
+  max-width: 400px;
+  margin: 0 auto;
+}
+main #login .contents .loginBox .userform {
+  max-width: 100%;
+  margin: 30px 0;
+}
+main #login .contents .loginBox .userform > input {
+  width: 100%;
+  padding: 12px 10px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-size: 12px;
+}
+main #login .contents .loginBox .userform .uoption {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+main #login .contents .loginBox .userform .uoption div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+main #login .contents .loginBox .userform .uoption div input {
+  margin-right: 10px;
+  cursor: pointer;
+}
+main #login .contents .loginBox .userform .uoption div span {
+  color: #767676;
+  font-size: 11px;
+  font-family: "Noto-sans";
+  line-height: 1;
+  cursor: pointer;
+}
+main #login .contents .loginBox .userform .uoption div span:hover {
+  color: #121212;
+}
+main #login .contents .loginBox .userform .uoption a {
+  font-size: 11px;
+  font-family: "Noto-sans";
+  color: #767676;
+}
+main #login .contents .loginBox .userform .uoption a:hover {
+  color: #121212;
+}
+main #login .contents .loginBtn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  max-width: 400px;
+  margin: 0 auto;
+}
+main #login .contents .loginBtn button {
+  width: 100%;
+  padding: 8px 0;
+  margin-bottom: 10px;
+  background: #121212;
+  color: white;
+}
+main #login .contents .social {
+  width: 100%;
+}
+main #login .contents .social div {
+  width: 40px;
+  border-radius: 2px;
+  overflow: hidden;
+  float: left;
+  margin-left: 25px;
+  -webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+          box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+@media screen and (max-width: 640px) {
+  main #login .contents .social div:first-child {
+    margin-left: 0;
+  }
+}
+main #login .contents .social div a {
+  display: block;
+}
+main #login .contents .social div a img {
+  width: 100%;
+}

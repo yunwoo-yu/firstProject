@@ -1,0 +1,1829 @@
+@import "reset.css";
+
+//모바일 반응형
+
+$mb1880: 1880px;
+$mb1500: 1500px;
+$mb1300: 1300px;
+$mb1240: 1240px;
+$mb1024: 1024px;
+$mb850: 850px;
+$mb767: 767px;
+$mb640: 640px;
+$mb480: 480px;
+$mb360: 360px;
+
+@mixin mobile($mb) {
+    @media screen and (max-width: $mb) {
+        @content;
+    }
+}
+
+.inner {
+    max-width: 1440px;
+    height: 100%;
+    margin: 0 auto;
+    position: relative;
+
+    @include mobile($mb1500) {
+        width: 95%;
+    }
+}
+
+//header
+.Wrap {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+
+    header {
+        width: 100%;
+        background: #121212;
+        height: 70px;
+        position: relative;
+
+        h1 {
+            width: 100px;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translateX(-50%) translateY(-50%);
+            z-index: 9999;
+
+            @include mobile($mb1024) {
+                left: 52%;
+            }
+
+            @include mobile($mb767) {
+                left: 50%;
+            }
+
+            a {
+                display: table;
+
+                img {
+                    display: table-cell;
+                    width: 100%;
+                }
+            }
+        }
+
+        nav {
+            .inner {
+                display: flex;
+                justify-content: right;
+
+                .Lgnb {
+                    display: flex;
+                    position: absolute;
+                    left: 0;
+
+                    @include mobile($mb767) {
+                        display: none;
+                    }
+
+                    li {
+                        padding-right: 65px;
+                        line-height: 70px;
+
+                        @include mobile($mb1024) {
+                            padding-right: 30px;
+                        }
+
+                        &:last-child {
+                            padding-right: 0;
+                        }
+
+                        a {
+                            font-weight: 400;
+                            color: #f5f5f5;
+                            font-size: 16px;
+                        }
+                    }
+                }
+
+                .Rgnb {
+                    display: flex;
+
+                    @include mobile($mb767) {
+                        display: none;
+                    }
+
+                    li {
+                        padding-right: 70px;
+                        line-height: 70px;
+
+                        @include mobile($mb1024) {
+                            padding-right: 30px;
+                        }
+
+                        a {
+                            color: #f5f5f5;
+                            font-weight: 400;
+                            font-size: 16px;
+                        }
+                    }
+                }
+
+                .gnbicon {
+                    display: flex;
+
+                    @include mobile($mb767) {
+                        display: none;
+                    }
+
+                    > li {
+                        width: 50px;
+                        height: 70px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        border-left: 1px solid #333;
+                        box-sizing: border-box;
+                        position: relative;
+
+                        &:last-child {
+                            border-right: 1px solid #333;
+                        }
+
+                        .searchBox {
+                            width: 24px;
+                            button {
+                                background: #121212;
+                                border: none;
+                            }
+
+                            > div {
+                                display: none;
+                                width: 175px;
+                                height: 40px;
+                                position: absolute;
+                                top: 70px;
+                                left: 0;
+                                z-index: 9999;
+                                border: 1px solid #aaa;
+
+                                &.active {
+                                    display: block;
+                                }
+
+                                @include mobile($mb1240) {
+                                    left: -50px;
+                                }
+                                input {
+                                    width: 150px;
+                                    padding: 12.5px;
+                                    outline: none;
+                                    border: none;
+                                    text-align: left;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    //mobileHeader
+    .mobile_header {
+        width: 100%;
+        height: 100vh;
+        position: absolute;
+        top: 0;
+        right: -100%;
+        z-index: 9000;
+        display: none;
+        transition: 0.5s;
+
+        @include mobile($mb767) {
+            display: block;
+
+            &.active {
+                right: 0;
+                position: fixed;
+            }
+        }
+
+        .m_nav {
+            width: 60%;
+            height: 100%;
+            background-color: #121212;
+            position: relative;
+            top: 70px;
+            right: -100%;
+            float: right;
+            transition: 0.5s;
+            z-index: 9000;
+            .m_gnb {
+                width: 100%;
+
+                ul {
+                    &:first-child {
+                        li {
+                            &::after {
+                                content: "";
+                                width: 95%;
+                                height: 1px;
+                                display: block;
+                                background: #f5f5f5;
+                                float: right;
+                            }
+                            a {
+                                display: block;
+                                padding: 20px 0;
+                                text-indent: 25px;
+                                color: #f5f5f5;
+                            }
+                        }
+                    }
+                    &:last-child {
+                        margin-top: 30px;
+
+                        li {
+                            width: 100%;
+
+                            &::after {
+                                content: "";
+                                width: 95%;
+                                height: 1px;
+                                display: block;
+                                background: #f5f5f5;
+                                float: right;
+                            }
+                            &:first-child {
+                                margin-bottom: 35px;
+                            }
+                            a {
+                                width: 100%;
+                                display: block;
+                                color: #f5f5f5;
+                                font-size: 16px;
+                                text-indent: 25px;
+                                line-height: 32px;
+
+                                > div {
+                                    width: 32px;
+                                    float: left;
+                                    margin-right: 15px;
+                                    padding-bottom: 15px;
+                                    img {
+                                        width: 100%;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .backClick {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            float: right;
+            background: rgba(0, 0, 0, 0.9);
+            transition: 0.5s;
+        }
+    }
+
+    .ham_Btn {
+        width: 70px;
+        height: 70px;
+        position: absolute;
+        z-index: 9999;
+        text-align: center;
+        top: 0;
+        right: 0;
+        display: none;
+        transition: 0.5s;
+
+        @include mobile($mb767) {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            &.active {
+                position: fixed;
+            }
+        }
+
+        .menu-trigger {
+            position: relative;
+            width: 35px;
+            height: 30px;
+            display: inline-block;
+            transition: all 0.4s;
+            box-sizing: border-box;
+
+            @include mobile($mb480) {
+                width: 30px;
+                height: 25px;
+            }
+            &.active {
+                span:nth-of-type(1) {
+                    width: 20px;
+                    transform: translate(20px, 7px) rotate(45deg);
+
+                    @include mobile($mb480) {
+                        transform: translate(13px, 5px) rotate(45deg);
+                    }
+                }
+
+                span:nth-of-type(3) {
+                    width: 20px;
+                    transform: translate(20px, -7px) rotate(-45deg);
+
+                    @include mobile($mb480) {
+                        transform: translate(13px, -5px) rotate(-45deg);
+                    }
+                }
+            }
+        }
+
+        .menu-trigger span {
+            position: absolute;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background-color: #fff;
+            border-radius: 4px;
+            display: inline-block;
+            transition: all 0.4s;
+            box-sizing: border-box;
+
+            @include mobile($mb480) {
+                height: 3px;
+                border-radius: 3px;
+            }
+
+            &:nth-of-type(1) {
+                top: 0;
+            }
+
+            &:nth-of-type(2) {
+                top: 50%;
+                transform: translateY(-50%);
+            }
+
+            &:nth-of-type(3) {
+                bottom: 0px;
+            }
+        }
+    }
+    //main
+
+    main {
+        width: 100%;
+        .contentWrap {
+            width: 100%;
+            height: 100%;
+            //메인배너
+            #main_banner {
+                width: 100%;
+                height: 1080px;
+                background-image: url(../img/mainback.jpg);
+                background-repeat: no-repeat;
+                background-position: center center;
+                background-size: cover;
+
+                @include mobile($mb767) {
+                    height: 650px;
+                    background-position: right center;
+                }
+                @include mobile($mb480) {
+                    height: 500px;
+                }
+                .inner {
+                    .swiper {
+                        width: 900px;
+                        position: absolute;
+                        left: 0;
+                        top: 50%;
+                        transform: translateY(-50%);
+
+                        @include mobile($mb1500) {
+                            width: 420px;
+                        }
+                        @include mobile($mb1024) {
+                            width: 360px;
+                        }
+                        @include mobile($mb850) {
+                            width: 240px;
+                        }
+                        @include mobile($mb767) {
+                            transform: translateY(-30%) translateX(-50%);
+                            left: 50%;
+                            width: 420px;
+                        }
+                        @include mobile($mb480) {
+                            width: 280px;
+                        }
+                        @include mobile($mb360) {
+                            width: 260px;
+                        }
+                        .swiper-wrapper {
+                            .swiper-slide {
+                                width: 420px;
+                                @include mobile($mb1024) {
+                                    width: 240px;
+                                }
+                                @include mobile($mb480) {
+                                    width: 180px;
+                                }
+                                a {
+                                    cursor: grab;
+                                    display: block;
+
+                                    img {
+                                        width: 100%;
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    .maintext {
+                        width: 480px;
+                        height: 300px;
+                        position: absolute;
+                        right: 0;
+                        top: 30%;
+                        @include mobile($mb1024) {
+                            width: 400px;
+                            top: 50%;
+                            transform: translateY(-50%);
+                        }
+                        @include mobile($mb767) {
+                            left: 50%;
+                            top: 5%;
+                            transform: translateX(-50%) translateY(0);
+                        }
+                        @include mobile($mb480) {
+                            width: 250px;
+                        }
+                        @include mobile($mb360) {
+                            width: 200px;
+                        }
+                        .textBox {
+                            position: absolute;
+                            width: inherit;
+                            height: inherit;
+
+                            h4 {
+                                color: #f5f5f5;
+                                font-size: 58px;
+                                margin-bottom: 42px;
+
+                                @include mobile($mb1024) {
+                                    font-size: 40px;
+                                }
+                                @include mobile($mb480) {
+                                    font-size: 18px;
+                                    margin-bottom: 20px;
+                                }
+                                @include mobile($mb360) {
+                                    font-size: 16px;
+                                }
+                            }
+
+                            p {
+                                color: #f5f5f5;
+                                font-size: 24px;
+                                line-height: 1.3;
+                                word-break: keep-all;
+
+                                @include mobile($mb1024) {
+                                    font-size: 18px;
+                                }
+                                @include mobile($mb480) {
+                                    font-size: 14px;
+                                }
+                                @include mobile($mb360) {
+                                    font-size: 12px;
+                                }
+                            }
+                        }
+                    }
+
+                    .pager {
+                        width: 400px;
+                        height: 5px;
+                        position: absolute;
+                        bottom: 150px;
+
+                        @include mobile($mb1024) {
+                            bottom: 30%;
+                        }
+                        @include mobile($mb767) {
+                            bottom: 5%;
+                            left: 50%;
+                            transform: translateX(-50%);
+                        }
+                        @include mobile($mb480) {
+                            bottom: 10%;
+                            width: 250px;
+                        }
+                        @include mobile($mb360) {
+                            width: 200px;
+                        }
+
+                        > .swiper-pagination {
+                            width: 100%;
+                            height: 5px;
+                            background-color: #b1b1b1;
+
+                            span {
+                                background-color: #f5f5f5;
+                            }
+                        }
+                    }
+                }
+            }
+
+            //제품탭
+            #Products {
+                width: 100%;
+                height: 1080px;
+
+                @include mobile($mb1500) {
+                    height: 800px;
+                }
+                @include mobile($mb1024) {
+                    height: 600px;
+                    padding-bottom: 200px;
+                }
+                @include mobile($mb850) {
+                    height: 500px;
+                }
+                @include mobile($mb480) {
+                    height: 450px;
+                    padding-bottom: 100px;
+                }
+                .inner {
+                    display: flex;
+                    justify-content: space-between;
+
+                    @include mobile($mb1024) {
+                        justify-content: center;
+                    }
+
+                    .Products_Lefttext {
+                        max-width: 220px;
+                        height: 100%;
+                        font-family: "Nanum";
+                        display: flex;
+                        justify-content: center;
+                        flex-direction: column;
+
+                        @include mobile($mb850) {
+                            width: 150px;
+                        }
+                        @include mobile($mb767) {
+                            margin-right: 50px;
+                        }
+                        @include mobile($mb480) {
+                            width: 100px;
+                            margin-right: 0;
+                        }
+
+                        .Products_title {
+                            h4 {
+                                font-size: 50px;
+                                font-family: "Nanum";
+                                font-weight: 700;
+                                line-height: 1.2;
+
+                                @include mobile($mb850) {
+                                    font-size: 30px;
+                                }
+                                @include mobile($mb480) {
+                                    font-size: 22px;
+                                }
+                            }
+
+                            &::after {
+                                content: "";
+                                display: block;
+                                width: 1px;
+                                height: 100px;
+                                background: #121212;
+                                margin: 20px 0;
+                            }
+                        }
+
+                        .Products_gnb {
+                            p {
+                                font-size: 22px;
+                                font-weight: 400;
+                                color: #b1b1b1;
+                                margin-bottom: 22px;
+                                cursor: pointer;
+
+                                @include mobile($mb850) {
+                                    font-size: 16px;
+                                }
+                                @include mobile($mb480) {
+                                    font-size: 13px;
+                                }
+
+                                &.active {
+                                    color: #121212;
+                                }
+                            }
+                        }
+                    }
+
+                    .Products_slideBox {
+                        width: 500px;
+                        height: 100%;
+                        position: relative;
+
+                        @include mobile($mb1500) {
+                            width: 350px;
+                        }
+                        @include mobile($mb1024) {
+                            width: 300px;
+                        }
+                        @include mobile($mb850) {
+                            width: 250px;
+                        }
+                        .Products_slide {
+                            width: 100%;
+                            height: 100%;
+                            position: absolute;
+                            display: none;
+                            &.active {
+                                display: block;
+                            }
+
+                            > ul {
+                                width: 100%;
+                                height: 100%;
+                                display: flex;
+                                justify-content: center;
+
+                                > li {
+                                    position: absolute;
+                                    top: 50%;
+                                    transform: translateY(-50%);
+                                    display: none;
+
+                                    &.active {
+                                        display: block;
+                                    }
+
+                                    a {
+                                        display: block;
+
+                                        img {
+                                            width: 100%;
+                                        }
+                                    }
+                                }
+                            }
+
+                            .Products_pager {
+                                position: absolute;
+                                width: 108px;
+                                height: 12px;
+                                left: 50%;
+                                transform: translateX(-50%);
+                                bottom: 300px;
+                                z-index: 8000;
+
+                                @include mobile($mb1500) {
+                                    bottom: 200px;
+                                }
+                                @include mobile($mb1024) {
+                                    bottom: 150px;
+                                }
+                                @include mobile($mb850) {
+                                    bottom: 100px;
+                                }
+                                @include mobile($mb360) {
+                                    width: 90px;
+                                }
+                                ul {
+                                    display: flex;
+                                    justify-content: space-between;
+
+                                    li {
+                                        width: 12px;
+                                        height: 12px;
+                                        border-radius: 50%;
+                                        border: 1px solid #747474;
+                                        cursor: pointer;
+
+                                        @include mobile($mb480) {
+                                            width: 10px;
+                                            height: 10px;
+                                        }
+                                        &.active {
+                                            background: #747474;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    .Products_bigimg {
+                        max-width: 660px;
+                        height: 100%;
+                        flex: 1;
+
+                        @include mobile($mb1500) {
+                            max-width: 400px;
+                        }
+                        @include mobile($mb767) {
+                            display: none;
+                        }
+                        .Products_fade {
+                            height: 100%;
+                            display: none;
+
+                            &.active {
+                                display: block;
+                            }
+
+                            li {
+                                height: 100%;
+                                display: none;
+                                position: absolute;
+                                top: 0;
+
+                                &.active {
+                                    display: block;
+                                }
+
+                                img {
+                                    width: 100%;
+                                }
+
+                                .Products_explanation {
+                                    position: absolute;
+                                    max-width: 550px;
+                                    height: auto;
+                                    top: 50%;
+                                    transform: translateY(-50%);
+                                    margin-left: 30px;
+                                    font-family: "Nanum";
+                                    color: #f5f5f5;
+
+                                    @include mobile($mb1500) {
+                                        max-width: 400px;
+                                    }
+                                    span {
+                                        display: block;
+                                        font-size: 14px;
+                                        margin-bottom: 16px;
+                                        font-weight: 700;
+                                    }
+
+                                    h4 {
+                                        font-size: 38px;
+                                        margin-bottom: 36px;
+                                        font-weight: 700;
+
+                                        @include mobile($mb1500) {
+                                            font-size: 22px;
+                                        }
+                                    }
+
+                                    p {
+                                        font-family: "Roboto";
+                                        font-size: 18px;
+                                        font-weight: 400;
+                                        line-height: 1.5;
+                                        word-break: keep-all;
+
+                                        @include mobile($mb1500) {
+                                            font-size: 14px;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            //TV탭
+            #TV_tab {
+                width: 100%;
+                height: 1080px;
+
+                @include mobile($mb1240) {
+                    height: 800px;
+                }
+                @include mobile($mb480) {
+                    height: 600px;
+                }
+                .inner {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+                    @include mobile($mb1024) {
+                        display: block;
+                    }
+                    .tv_img {
+                        max-width: 720px;
+                        margin: 0 auto;
+
+                        img {
+                            width: 100%;
+                        }
+                    }
+
+                    .tv_textbox {
+                        max-width: 570px;
+                        margin-left: 80px;
+                        font-family: "Roboto";
+
+                        @include mobile($mb1240) {
+                            max-width: 480px;
+                            margin-left: 40px;
+                        }
+
+                        @include mobile($mb1024) {
+                            max-width: 720px;
+                            margin: 0 auto;
+                            padding-top: 40px;
+                        }
+
+                        span {
+                            display: block;
+                            font-family: "Nanum";
+                            font-size: 14px;
+                            margin-bottom: 16px;
+                            font-weight: 700;
+
+                            @include mobile($mb1024) {
+                                margin-bottom: 12px;
+                            }
+                        }
+
+                        h4 {
+                            font-family: "Roboto";
+                            font-size: 38px;
+                            margin-bottom: 36px;
+                            font-weight: 700;
+
+                            @include mobile($mb1240) {
+                                font-size: 28px;
+                            }
+                            @include mobile($mb1024) {
+                                margin-bottom: 24px;
+                            }
+                            @include mobile($mb480) {
+                                font-size: 22px;
+                            }
+                        }
+
+                        > p {
+                            font-size: 18px;
+                            font-weight: 400;
+                            line-height: 1.5;
+                            word-break: keep-all;
+                            margin-bottom: 60px;
+
+                            @include mobile($mb1240) {
+                                font-size: 16px;
+                            }
+                            @include mobile($mb1024) {
+                                margin-bottom: 40px;
+                            }
+                            @include mobile($mb480) {
+                                font-size: 12px;
+                            }
+                        }
+
+                        .more {
+                            display: inline-block;
+
+                            a {
+                                display: inline-flex;
+
+                                @include mobile($mb480) {
+                                    font-size: 14px;
+                                }
+                                > p {
+                                    color: #c9ae7e;
+                                    margin-right: 8px;
+                                }
+
+                                > div {
+                                    svg {
+                                        padding: 7px 0;
+
+                                        @include mobile($mb480) {
+                                            padding: 4px 0;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            //플레이스테이션5
+            #ps5 {
+                width: 100%;
+                height: 100%;
+
+                .ps5_contents1 {
+                    width: 100%;
+                    height: 1080px;
+                    background-color: #f5f5f5;
+                    background-image: url(../img/ps5back.jpg);
+                    background-size: contain;
+                    background-repeat: no-repeat;
+                    background-position: right center;
+
+                    @include mobile($mb1240) {
+                        height: 800px;
+                    }
+                    @include mobile($mb767) {
+                        height: 600px;
+                    }
+
+                    .inner {
+                        .ps5_textBox {
+                            padding-top: 120px;
+                            max-width: 560px;
+
+                            @include mobile($mb1240) {
+                                max-width: 400px;
+                            }
+                            @include mobile($mb767) {
+                                padding-top: 60px;
+                                max-width: 300px;
+                            }
+                            .ps5_logo {
+                                max-width: 350px;
+
+                                @include mobile($mb1240) {
+                                    max-width: 200px;
+                                }
+                                @include mobile($mb767) {
+                                    max-width: 150px;
+                                }
+                                img {
+                                    width: 100%;
+                                }
+                            }
+
+                            .ps5_title {
+                                font-size: 45px;
+                                font-weight: 500;
+                                padding-top: 140px;
+
+                                @include mobile($mb1240) {
+                                    font-size: 32px;
+                                }
+                                @include mobile($mb767) {
+                                    padding-top: 60px;
+                                    font-size: 30px;
+                                }
+
+                                &::after {
+                                    content: "";
+                                    width: 1px;
+                                    height: 100px;
+                                    display: block;
+                                    background: #121212;
+                                    margin: 20px 0;
+
+                                    @include mobile($mb480) {
+                                        height: 70px;
+                                    }
+                                }
+                            }
+
+                            .ps5_text {
+                                font-family: "Nanum";
+                                font-size: 20px;
+                                line-height: 1.5;
+                                word-break: keep-all;
+
+                                @include mobile($mb1240) {
+                                    font-size: 16px;
+                                }
+                                @include mobile($mb767) {
+                                    font-size: 14px;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .ps5_contents2 {
+                    width: 100%;
+                    height: 1080px;
+                    background-color: #f5f5f5;
+
+                    @include mobile($mb767) {
+                        height: 1600px;
+                    }
+                    @include mobile($mb480) {
+                        height: 1300px;
+                    }
+                    @include mobile($mb360) {
+                        height: 1000px;
+                    }
+                    .inner {
+                        display: flex;
+                        flex-wrap: wrap;
+
+                        .padtop {
+                            width: 100%;
+                            text-align: center;
+                            word-break: keep-all;
+                            margin-top: -170px;
+
+                            @include mobile($mb767) {
+                                margin-top: -80px;
+                            }
+                            @include mobile($mb480) {
+                                height: 350px;
+                            }
+
+                            .pad_title {
+                                max-width: 400px;
+                                font-size: 48px;
+                                font-weight: 500;
+                                margin: 0 auto;
+                                padding-bottom: 50px;
+
+                                @include mobile($mb767) {
+                                    font-size: 32px;
+                                    padding-bottom: 30px;
+                                }
+                            }
+
+                            .pad_text {
+                                width: 100%;
+                                font-size: 40px;
+                                font-weight: 300;
+
+                                @include mobile($mb767) {
+                                    font-size: 20px;
+                                }
+                            }
+
+                            .pad_img {
+                                max-width: 500px;
+                                margin: 0 auto;
+                                margin-top: -40px;
+
+                                img {
+                                    width: 100%;
+                                }
+                            }
+                        }
+
+                        .padleft {
+                            width: 50%;
+                            word-break: keep-all;
+                            text-align: center;
+                            box-sizing: border-box;
+
+                            @include mobile($mb767) {
+                                width: 100%;
+                            }
+
+                            .padtext {
+                                .padvideo_title {
+                                    font-size: 48px;
+                                    font-weight: 500;
+                                    margin-bottom: 20px;
+
+                                    @include mobile($mb850) {
+                                        font-size: 26px;
+                                    }
+                                }
+
+                                .padvideo_text {
+                                    max-width: 550px;
+                                    font-size: 18px;
+                                    font-weight: 300;
+                                    margin: 0 auto;
+                                    margin-bottom: 43px;
+                                    line-height: 1.3;
+
+                                    @include mobile($mb850) {
+                                        font-size: 14px;
+                                    }
+                                }
+                            }
+
+                            .pad_img {
+                                max-width: 600px;
+                                margin: 0 auto;
+
+                                img {
+                                    width: 100%;
+                                }
+                            }
+                        }
+
+                        .padright {
+                            width: 50%;
+                            word-break: keep-all;
+                            text-align: center;
+                            box-sizing: border-box;
+
+                            @include mobile($mb767) {
+                                width: 100%;
+                            }
+
+                            .padtext {
+                                .padvideo_title {
+                                    font-size: 48px;
+                                    font-weight: 500;
+                                    margin-bottom: 20px;
+
+                                    @include mobile($mb850) {
+                                        font-size: 26px;
+                                    }
+                                }
+
+                                .padvideo_text {
+                                    max-width: 550px;
+                                    font-size: 18px;
+                                    font-weight: 300;
+                                    margin: 0 auto;
+                                    margin-bottom: 43px;
+                                    line-height: 1.3;
+
+                                    @include mobile($mb850) {
+                                        font-size: 14px;
+                                    }
+                                }
+
+                                .pad_img {
+                                    max-width: 500px;
+                                    margin: 0 auto;
+                                    margin-top: -40px;
+
+                                    img {
+                                        width: 100%;
+                                    }
+                                }
+                            }
+
+                            .pad_img {
+                                max-width: 600px;
+                                margin: 0 auto;
+
+                                img {
+                                    width: 100%;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .ps5_gameVideo {
+                    width: 100%;
+                    height: 1080px;
+                    background: linear-gradient(to bottom, #f5f5f5, #121212);
+                    overflow: hidden;
+
+                    @include mobile($mb1240) {
+                        height: 800px;
+                    }
+                    @include mobile($mb480) {
+                        height: 500px;
+                    }
+
+                    .inner {
+                        .ps5_videologo {
+                            width: 100px;
+                            padding: 140px 0 30px 0;
+
+                            @include mobile($mb767) {
+                                padding: 40px 0 30px 0;
+                            }
+
+                            img {
+                                width: 100%;
+                            }
+                        }
+
+                        .video_title {
+                            font-size: 48px;
+                            font-family: "Nanum";
+                            padding-bottom: 100px;
+
+                            @include mobile($mb480) {
+                                font-size: 32px;
+                                padding-bottom: 50px;
+                            }
+                        }
+
+                        .gamewrap {
+                            width: 100%;
+
+                            ul {
+                                width: 100%;
+
+                                li {
+                                    position: relative;
+                                    width: 100%;
+                                    border-radius: 25px;
+                                    overflow: hidden;
+                                    transition: 0.3s;
+                                    @include mobile($mb360) {
+                                        border-radius: 15px;
+                                    }
+
+                                    &:hover {
+                                        transform: scale(1.05);
+                                    }
+
+                                    a {
+                                        display: block;
+
+                                        img {
+                                            width: 100%;
+                                        }
+                                    }
+
+                                    .playicon {
+                                        position: absolute;
+                                        top: 50%;
+                                        left: 50%;
+                                        transform: translateX(-50%) translateY(-50%);
+                                    }
+
+                                    .youtube_logo {
+                                        position: absolute;
+                                        width: 80px;
+                                        right: 30px;
+                                        bottom: 30px;
+                                        padding: 5px 10px;
+                                        background: rgba(255, 255, 255, 0.3);
+                                        border-radius: 8px;
+
+                                        @include mobile($mb480) {
+                                            width: 50px;
+                                            right: 15px;
+                                            bottom: 15px;
+                                            padding: 3px 5px;
+                                            border-radius: 4px;
+                                        }
+
+                                        img {
+                                            width: 100%;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            //VR기기
+            #playstation_vr {
+                width: 100%;
+                height: 1080px;
+                background-image: url(../img/vrBack.jpg);
+                background-position: center center;
+                background-repeat: no-repeat;
+                background-size: cover;
+
+                @include mobile($mb1500) {
+                    background-position: left center;
+                }
+                @include mobile($mb1024) {
+                    height: 800px;
+                }
+                @include mobile($mb480) {
+                    background-position: left center;
+                    height: 650px;
+                }
+
+                .inner {
+                    .vr_textBox {
+                        max-width: 400px;
+                        font-family: "Nanum";
+                        margin: 220px 0 0 500px;
+                        float: left;
+                        word-break: keep-all;
+
+                        @include mobile($mb1500) {
+                            margin: 220px 0 0 100px;
+                        }
+                        @include mobile($mb1024) {
+                            margin: 50px 0 0 0;
+                            max-width: 300px;
+                        }
+                        @include mobile($mb480) {
+                            margin: 30px 0 0 0;
+                        }
+
+                        .vr_title {
+                            font-size: 53px;
+                            font-weight: 700;
+
+                            @include mobile($mb1024) {
+                                font-size: 36px;
+                            }
+
+                            &::after {
+                                content: "";
+                                width: 1px;
+                                height: 100px;
+                                margin: 40px 0;
+                                background: #121212;
+                                display: block;
+
+                                @include mobile($mb480) {
+                                    height: 50px;
+                                }
+                            }
+                        }
+
+                        .vr_subtitle {
+                            font-size: 22px;
+                            padding-bottom: 20px;
+
+                            @include mobile($mb1024) {
+                                font-size: 18px;
+                            }
+                        }
+
+                        .vr_text {
+                            font-size: 16px;
+                            font-family: "Roboto";
+                            font-weight: 300;
+                            line-height: 1.5;
+                            padding-bottom: 20px;
+
+                            @include mobile($mb1024) {
+                                font-size: 14px;
+                            }
+                            @include mobile($mb480) {
+                                font-size: 12px;
+                            }
+                        }
+
+                        .more {
+                            margin-top: 50px;
+                            display: inline-block;
+
+                            @include mobile($mb480) {
+                                margin-top: 20px;
+                            }
+                            a {
+                                display: inline-flex;
+
+                                > p {
+                                    margin-right: 8px;
+                                }
+
+                                > div {
+                                    svg {
+                                        padding: 7px 0;
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    .vrimg {
+                        max-width: 500px;
+                        position: absolute;
+                        right: 0;
+                        top: 50%;
+                        transform: translateY(-50%);
+
+                        @include mobile($mb1024) {
+                            max-width: 300px;
+                        }
+                        @include mobile($mb767) {
+                            display: none;
+                        }
+
+                        img {
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+
+            // A/S 고객센터
+            #Support {
+                .inner {
+                    .sup_title {
+                        text-align: center;
+                        font-size: 54px;
+                        font-family: "Nanum";
+                        margin: 70px 0 100px 0;
+
+                        @include mobile($mb1500) {
+                            font-size: 48px;
+                        }
+                    }
+
+                    .supBox {
+                        ul {
+                            width: 100%;
+                            display: flex;
+                            justify-content: space-between;
+
+                            @include mobile($mb1024) {
+                                flex-wrap: wrap;
+                                justify-content: center;
+                            }
+
+                            li {
+                                position: relative;
+                                width: 400px;
+                                height: 300px;
+                                background: #e8e8e8;
+                                border-radius: 20px;
+                                box-sizing: border-box;
+
+                                @include mobile($mb1300) {
+                                    width: 300px;
+                                    height: 200px;
+                                }
+                                @include mobile($mb1024) {
+                                    width: 90%;
+                                    margin-bottom: 30px;
+
+                                    &:last-child {
+                                        margin-bottom: 0;
+                                    }
+                                }
+
+                                &:last-child {
+                                    margin-right: 0;
+                                }
+
+                                a {
+                                    display: block;
+                                    margin: 0 auto;
+                                    text-align: center;
+                                    margin-top: 80px;
+
+                                    @include mobile($mb1300) {
+                                        margin-top: 30px;
+                                    }
+
+                                    &:first-child {
+                                        display: block;
+                                        width: 58px;
+                                        img {
+                                            width: 100%;
+                                        }
+
+                                        p {
+                                            position: absolute;
+                                            left: 50%;
+                                            transform: translateX(-50%);
+                                            white-space: nowrap;
+                                            padding-top: 40px;
+                                            font-family: "Nanum";
+                                            font-size: 30px;
+                                            font-weight: 700;
+
+                                            @include mobile($mb1300) {
+                                                font-size: 24px;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .supCall {
+                    width: 100%;
+                    height: 350px;
+                    margin-top: 120px;
+                    background-color: #e8e8e8;
+                    font-family: "Roboto";
+
+                    @include mobile($mb767) {
+                        height: 600px;
+                    }
+                    .inner {
+                        .Call_title {
+                            padding-top: 24px;
+
+                            h4 {
+                                font-size: 38px;
+                                font-weight: 700;
+
+                                @include mobile($mb640) {
+                                    font-size: 24px;
+                                }
+                                @include mobile($mb480) {
+                                    line-height: 1.5;
+                                }
+
+                                span {
+                                    font-size: 14px;
+                                    font-weight: 400;
+                                    margin-left: 10px;
+
+                                    @include mobile($mb640) {
+                                        font-size: 12px;
+                                    }
+                                    @include mobile($mb480) {
+                                        display: block;
+                                        margin-left: 0;
+                                    }
+                                }
+                            }
+                        }
+
+                        .CallBox {
+                            width: 50%;
+                            float: left;
+
+                            @include mobile($mb767) {
+                                width: 100%;
+                                float: none;
+                            }
+
+                            > div {
+                                width: 42px;
+                                display: inline-block;
+                                white-space: nowrap;
+                                padding: 20px 0;
+
+                                @include mobile($mb640) {
+                                    width: 32px;
+                                }
+
+                                img {
+                                    width: 100%;
+                                    float: left;
+                                }
+
+                                > span {
+                                    font-size: 24px;
+                                    font-weight: 400;
+                                    line-height: 42px;
+                                    margin-left: 20px;
+
+                                    @include mobile($mb640) {
+                                        font-size: 18px;
+                                        line-height: 32px;
+                                    }
+                                }
+                            }
+
+                            address {
+                                p {
+                                    font-size: 22px;
+                                    font-weight: 300;
+                                    margin-bottom: 30px;
+
+                                    @include mobile($mb640) {
+                                        font-size: 14px;
+                                    }
+                                }
+                            }
+                        }
+
+                        .ChatBox {
+                            width: 50%;
+                            float: left;
+
+                            @include mobile($mb767) {
+                                width: 100%;
+                                float: none;
+                            }
+
+                            .Chat_title {
+                                width: 42px;
+                                display: inline-block;
+                                white-space: nowrap;
+                                padding: 20px 0;
+
+                                @include mobile($mb640) {
+                                    width: 32px;
+                                }
+
+                                img {
+                                    width: 100%;
+                                    float: left;
+                                }
+
+                                span {
+                                    font-size: 24px;
+                                    font-weight: 400;
+                                    line-height: 42px;
+                                    margin-left: 20px;
+
+                                    @include mobile($mb640) {
+                                        font-size: 18px;
+                                        line-height: 32px;
+                                    }
+                                }
+                            }
+
+                            > p {
+                                font-size: 22px;
+                                font-weight: 300;
+
+                                @include mobile($mb640) {
+                                    font-size: 14px;
+                                    line-height: 1.3;
+                                }
+                            }
+
+                            .ChatBtn {
+                                width: 200px;
+                                height: 55px;
+                                margin-top: 64px;
+                                border-radius: 27.5px;
+                                background: #121212;
+
+                                @include mobile($mb640) {
+                                    width: 150px;
+                                    height: 40px;
+                                }
+
+                                a {
+                                    display: block;
+                                    color: #f5f5f5;
+                                    text-align: center;
+                                    border-radius: 27.5px;
+                                    padding: 16.5px 0;
+                                    font-size: 22px;
+                                    font-weight: 700;
+
+                                    @include mobile($mb640) {
+                                        font-size: 16px;
+                                        font-weight: 400;
+                                        padding: 12px 0;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    footer {
+        background: #121212;
+        width: 100%;
+        height: 400px;
+
+        .inner {
+            .footlogo {
+                float: left;
+                margin-right: 300px;
+
+                @include mobile($mb1500) {
+                    margin-right: 200px;
+                }
+                @include mobile($mb1300) {
+                    margin-right: 100px;
+                }
+                @include mobile($mb767) {
+                    margin-right: 0;
+                }
+                .foot_sonylogo {
+                    width: 120px;
+                    padding-top: 40px;
+
+                    @include mobile($mb1024) {
+                        float: left;
+                        padding-right: 30px;
+                    }
+                    img {
+                        width: 100%;
+                    }
+                }
+
+                .foot_pslogo {
+                    width: 60px;
+                    padding-top: 30px;
+
+                    @include mobile($mb1024) {
+                        float: left;
+                        padding-top: 20px;
+                    }
+
+                    img {
+                        width: 100%;
+                    }
+                }
+            }
+
+            .foot_gnbBox {
+                display: flex;
+                float: left;
+                margin-top: 80px;
+
+                @include mobile($mb1024) {
+                    margin-top: 30px;
+                }
+
+                > div {
+                    @include mobile($mb1024) {
+                        &:nth-child(4) {
+                            display: none;
+                        }
+                    }
+                    @include mobile($mb767) {
+                        &:nth-child(2) {
+                            display: none;
+                        }
+                    }
+                }
+
+                .foot_gnb {
+                    width: 220px;
+
+                    @include mobile($mb1240) {
+                        width: 180px;
+                    }
+                    @include mobile($mb480) {
+                        width: 150px;
+                    }
+                    .foot_title {
+                        color: #f5f5f5;
+                        font-size: 16px;
+                        font-weight: 400;
+                        margin-bottom: 26px;
+                        @include mobile($mb767) {
+                            font-size: 14px;
+                        }
+                    }
+
+                    ul {
+                        li {
+                            margin-bottom: 10px;
+
+                            @include mobile($mb767) {
+                                margin-bottom: 8px;
+                            }
+                            a {
+                                color: #aaa;
+                                font-size: 14px;
+                                font-weight: 300;
+                                transition: 0.3s;
+
+                                @include mobile($mb480) {
+                                    font-size: 12px;
+                                }
+
+                                &:hover {
+                                    color: #f5f5f5;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            .copyright {
+                float: left;
+                position: absolute;
+                bottom: 12px;
+
+                .copybox {
+                    margin-bottom: 8px;
+
+                    span {
+                        color: #aaa;
+                        float: left;
+                        font-size: 10px;
+                    }
+
+                    .copy1,
+                    .copy2 {
+                        margin-right: 20px;
+
+                        @include mobile($mb480) {
+                            margin-right: 0;
+                        }
+                    }
+                }
+
+                p {
+                    display: block;
+                    color: #aaa;
+                    font-family: "Noto-sans";
+                    font-size: 8px;
+                }
+            }
+        }
+    }
+}

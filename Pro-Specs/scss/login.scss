@@ -1,0 +1,138 @@
+//모바일 반응형
+
+$mb1880: 1880px;
+$mb1680: 1680px;
+$mb1480: 1480px;
+$mb1380: 1380px;
+$mb1180: 1180px;
+$mb1152: 1152px;
+$mb1024: 1024px;
+$mb874: 874px;
+$mb767: 767px;
+$mb666: 666px;
+$mb640: 640px;
+$mb480: 480px;
+
+@mixin mobile($mb) {
+    @media screen and (max-width: $mb) {
+        @content;
+    }
+}
+
+main {
+    width: 100%;
+    padding: 150px 0;
+    background: #121212;
+    #login {
+        width: 500px;
+        margin: 0 auto;
+        position: relative;
+        background: white;
+        border-radius: 20px;
+
+        @include mobile($mb640){
+            width: 300px;
+        }
+        .contents {
+            padding: 40px 25px;
+
+            .logo {
+                width: 100%;
+                text-align: center;
+                h1 {
+                    display: inline-block;
+                    a {
+                        display: block;
+                    }
+                }
+            }
+
+            .loginBox {
+                max-width: 400px;
+                margin: 0 auto;
+                .userform {
+                    max-width: 100%;
+                    margin: 30px 0;
+
+                    > input {
+                        width: 100%;
+                        padding: 12px 10px;
+                        box-sizing: border-box;
+                        font-size: 12px;
+                        // border-radius: 0.5px;
+                        // border-color: rgb(118, 118, 118);
+                    }
+                    .uoption {
+                        display: flex;
+                        position: relative;
+                        justify-content: space-between;
+
+                        div {
+                            display: flex;
+                            input {
+                                margin-right: 10px;
+                                cursor: pointer;
+                            }
+                            span {
+                                color: #767676;
+                                font-size: 11px;
+                                font-family: "Noto-sans";
+                                line-height: 1;
+                                cursor: pointer;
+                                &:hover{
+                                    color: #121212;
+                                }
+                            }
+                        }
+                        a {
+                            font-size: 11px;
+                            font-family: "Noto-sans";
+                            color: #767676;
+                            &:hover{
+                                color: #121212;
+                            }
+                        }
+                    }
+                }
+            }
+            .loginBtn{
+                display: flex;
+                flex-wrap: wrap;
+                max-width: 400px;
+                margin: 0 auto;
+                button{
+                    width: 100%;
+                    padding: 8px 0;
+                    margin-bottom: 10px;
+                    background: #121212;
+                    color: white;
+                }
+            }
+            .social{
+                width: 100%;
+                div{
+                    width: 40px;
+                    border-radius: 2px;
+                    overflow: hidden;
+                    float: left;
+                    margin-left:25px;
+                    box-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+
+                    @include mobile($mb640){
+                       &:first-child{
+                           margin-left: 0;
+                       } 
+                        
+                    }
+                    a{
+                        display: block;
+                        
+                        img{
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,683 @@
+@import "reset.css";
+
+$jost: "jost";
+$Noto: "Noto-sans";
+
+@keyframes line-top {
+    0% {
+        transform: translateY(0px);
+    }
+
+    100% {
+        transform: translateY(10px);
+    }
+}
+
+@keyframes line-mid {
+    0% {
+        transform: scale(1);
+    }
+
+    100% {
+        transform: scale(0);
+    }
+}
+
+@keyframes line-bot {
+    0% {
+        transform: translateY(0px);
+    }
+
+    100% {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes line-top-rotate {
+    0% {
+        transform: translateY(10px) rotateZ(0deg);
+    }
+
+    100% {
+        transform: translateY(10px) rotateZ(45deg);
+    }
+}
+
+@keyframes line-bot-rotate {
+    0% {
+        transform: translateY(-10px) rotateZ(0deg);
+    }
+
+    100% {
+        transform: translateY(-10px) rotateZ(135deg);
+    }
+}
+
+//모바일 반응형
+
+$mb1880: 1880px;
+$mb1680: 1680px;
+$mb1480: 1480px;
+$mb1380: 1380px;
+$mb1180: 1180px;
+$mb1152: 1152px;
+$mb1024: 1024px;
+$mb874: 874px;
+$mb767: 767px;
+$mb666: 666px;
+$mb640: 640px;
+$mb480: 480px;
+
+@mixin mobile($mb) {
+    @media screen and (max-width: $mb) {
+        @content;
+    }
+}
+
+//폰트
+@mixin font($ff, $fw, $fz, $fs, $cl) {
+    font-family: $ff;
+    font-weight: $fw;
+    font-size: $fz;
+    font-style: $fs;
+    color: $cl;
+}
+
+.innerbox {
+    width: 90%;
+    height: 100%;
+    max-width: 1920px;
+    position: relative;
+    margin: 0 auto;
+
+    @include mobile($mb767) {
+        width: 95%;
+    }
+}
+
+
+header {
+    width: 100%;
+    z-index: 9999;
+    transition: 0.6s;
+
+    .top {
+        height: 80px;
+        background-color: #121212;
+
+        @include mobile($mb767) {
+            height: 60px;
+        }
+
+        .innerbox {
+
+            .logo {
+                width: 140px;
+                margin: 0 auto;
+                padding: 10px 0;
+
+                @include mobile($mb767) {
+                    width: 90px;
+                }
+
+                a {
+                    display: block;
+
+                    img {
+                        width: 100%;
+                    }
+                }
+            }
+
+            > ul {
+                display: flex;
+                justify-content: space-between;
+                width: 80px;
+                position: absolute;
+                top: 50%;
+                right: 0;
+                transform: translateY(-50%);
+
+                @include mobile($mb767) {
+                    width: 70px;
+                }
+
+                @include mobile($mb1180) {
+                    position: absolute;
+                    right: 0;
+                    top: 50%;
+                    transform: translateY(-50%);
+                }
+
+                li {
+                    width: 28px;
+
+                    @include mobile($mb767) {
+                        display: none;
+                    }
+
+                    a {
+                        display: block;
+
+                        img {
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+
+            .ham_Btn {
+                width: 80px;
+                height: 80px;
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: 1000;
+                display: none;
+                z-index: 9000;
+                transition: 0.6s;
+
+                &.active {
+                    left: 70%;
+
+                    @include mobile($mb480) {
+                        left: 60%;
+                    }
+                }
+
+                @include mobile($mb1180) {
+                    display: block;
+                }
+
+                @include mobile($mb767) {
+                    width: 60px;
+                    height: 60px;
+                }
+
+                .line_box {
+                    width: 35px;
+                    height: 26px;
+                    position: relative;
+                    // background-color: green;
+                    top: 50%;
+                    left: 50%;
+                    transform: translateX(-50%) translateY(-50%);
+                    cursor: pointer;
+
+                    @include mobile($mb767) {
+                        width: 30px;
+                        height: 23px;
+                    }
+
+                    .line {
+                        width: 35px;
+                        height: 5px;
+                        background: white;
+                        margin-bottom: 5px;
+                        border-radius: 2px;
+                        transition: 0.6s;
+
+                        &.active {
+                            background: #121212;
+                        }
+
+                        @include mobile($mb767) {
+                            width: 30px;
+                            height: 4px;
+                            margin-bottom: 6px;
+                        }
+                    }
+
+                    .line_top {
+                        animation: line-top 0.3s forwards ease-out, line-top-rotate 0.3s 0.5s forwards ease-out;
+                    }
+
+                    .line_mid {
+                        animation: line-mid 0.3s forwards ease-out;
+                    }
+
+                    .line_bot {
+                        animation: line-bot 0.3s forwards ease-out, line-bot-rotate 0.3s 0.5s forwards ease-out;
+                    }
+                }
+            }
+        }
+
+        .m_nav {
+            position: absolute;
+            width: 80%;
+            height: 100vh;
+            background: rgba(255, 255, 255, 1);
+            top: 0;
+            left: -100%;
+            z-index: 8000;
+            transition: 0.6s;
+            display: none;
+
+            @include mobile($mb1180) {
+                display: block;
+            }
+
+            &.active {
+                left: 0;
+            }
+
+            .m_menu {
+                width: 100%;
+                position: relative;
+                top: 80px;
+
+                @include mobile($mb767) {
+                    top: 60px;
+                }
+
+                li {
+                    display: block;
+
+                    a {
+                        display: block;
+                        padding: 28px 0;
+                        text-indent: 5%;
+                        color: #121212;
+                        font-size: 22px;
+                        border-bottom: 1px solid black;
+                    }
+                }
+            }
+
+            .m_icon {
+                position: relative;
+                top: 79px;
+                margin-top: 70px;
+
+                li {
+                    width: 100%;
+                    padding: 15px 0;
+
+                    a {
+                        display: flex;
+                        align-items: center;
+                        text-indent: 5%;
+
+                        i {
+                            width: 28px;
+                            display: inline-block;
+                            margin-left: 5%;
+
+                            img {
+                                width: 100%;
+                            }
+                        }
+
+                        span {
+                            width: 20%;
+                            text-indent: 20px;
+
+                            @include mobile($mb767) {
+                                width: 50%;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    nav {
+        width: 100%;
+        background-color: #fff;
+        border-bottom: 1px solid #eee;
+
+        .innerbox {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 75px;
+
+            @include mobile($mb1180) {
+                display: block;
+            }
+
+            @include mobile($mb767) {
+                height: 60px;
+            }
+
+            .search_box {
+                @include mobile($mb1180) {
+                    position: absolute;
+                    width: 36px;
+                    height: 36px;
+                    border-radius: 50%;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    left: 2%;
+                }
+
+                @include mobile($mb767) {
+                    left: 12px;
+                }
+
+                &.active {
+                    .input_box {
+                        width: 200px;
+
+                        background: rgba(0, 0, 0, 1);
+                        transition: all 0.5s cubic-bezier(0, 0.105, 0.035, 1.57);
+
+                        .search_input {
+                            opacity: 1;
+                            transform: translate(0px, 0px);
+                        }
+
+                        .search_icon {
+                            background: #f5f5f5;
+                        }
+
+                        @include mobile($mb767) {
+                            width: 150px;
+                        }
+                    }
+                }
+
+                .input_box {
+                    width: 42px;
+                    height: 42px;
+                    overflow: hidden;
+                    background: rgba(255, 255, 255, 0);
+                    border-radius: 24px;
+                    position: relative;
+                    transition: all 0.2s ease-in-out;
+
+                    @include mobile($mb767) {
+                        width: 36px;
+                        height: 36px;
+                    }
+
+                    .search_input {
+                        width: 100%;
+                        height: 42px;
+                        padding: 0px 20px 0 50px;
+                        opacity: 0;
+                        position: absolute;
+                        top: 0px;
+                        left: 0px;
+                        background: transparent;
+                        box-sizing: border-box;
+                        border: none;
+                        outline: none;
+                        @include font($Noto, 500, 16px, normal, #525252);
+                        line-height: 20px;
+
+                        transform: translate(0, 60px);
+                        transition: all 0.2s cubic-bezier(0, 0.105, 0.035, 1.57);
+                        transition-delay: 0.3s;
+
+                        @include mobile($mb767) {
+                            height: 36px;
+                        }
+                    }
+
+                    .search_icon {
+                        width: 42px;
+                        height: 42px;
+                        border: none;
+                        border-radius: 50%;
+                        background: #eee;
+                        padding: 0px;
+                        outline: none;
+                        position: absolute;
+                        z-index: 2;
+                        cursor: pointer;
+                        transition: all 0.2s ease-in-out;
+
+                        @include mobile($mb767) {
+                            width: 36px;
+                            height: 36px;
+                        }
+
+                        img {
+                            width: 24px;
+                            position: absolute;
+                            top: 50%;
+                            left: 50%;
+                            transform: translateX(-50%) translateY(-50%);
+                            @include mobile($mb767) {
+                                width: 18px;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .nav {
+                width: 650px;
+                height: 75px;
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+                
+                @include mobile($mb1180) {
+                    display: none;
+                }
+
+                li {
+                    width: 100px;
+                    text-align: center;
+
+                    &:hover a {
+                        color: #e8e8e8;
+                    }
+
+                    a {
+                        width: 100%;
+                        display: block;
+                        padding: 20px 0;
+                        font-size: 20px;
+                        transition: 0.3s;
+                    }
+                }
+            }
+
+            .nav_icon {
+                width: 80px;
+                display: inline-flex;
+                justify-content: space-between;
+
+                @include mobile($mb767) {
+                    display: none;
+                }
+
+                @include mobile($mb1180) {
+                    position: absolute;
+                    right: 0;
+                    top: 50%;
+                    transform: translateY(-50%);
+                }
+
+                li {
+                    width: 28px;
+
+                    @include mobile($mb767) {
+                        width: 24px;
+                    }
+
+                    a {
+                        display: block;
+
+                        img {
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+footer {
+    height: auto;
+    background: #0f4c81;
+    padding: 25px 0;
+    
+
+    .innerbox {
+        display: flex;
+        flex-wrap: wrap;
+        position: relative;
+        
+        h3 {
+            width: 100%;
+            @include font($jost, 800, 36px, null, #f5f5f5);
+            padding: 10px 0 5px 0;
+
+            @include mobile($mb767) {
+                font-size: 24px;
+            }
+        }
+
+        address {
+            width: auto;
+            padding-right: 150px;
+
+            @include mobile($mb1380) {
+                padding-right: 80px;
+            }
+
+            @include mobile($mb767) {
+                font-size: 12px;
+                padding-right: 0;
+            }
+
+            p {
+                color: #f5f5f5;
+                padding: 5px 0;
+                position: relative;
+            }
+        }
+
+        .contact {
+            width: auto;
+            margin-top: -30px;
+            padding-right: 150px;
+            text-align: center;
+
+            @include mobile($mb1380) {
+                padding-right: 80px;
+            }
+
+            @include mobile($mb874) {
+                margin-top: 20px;
+                text-align: left;
+                width: 100%;
+                padding-right: 0;
+            }
+
+            @include mobile($mb767) {
+                padding-bottom: 10px;
+            }
+
+            h4 {
+                @include font($Noto, 800, 20px, null, #f5f5f5);
+                width: 100%;
+                padding-bottom: 15px;
+                text-decoration: underline;
+
+                @include mobile($mb767) {
+                    font-size: 14px;
+                }
+            }
+
+            div {
+                @include font($Noto, 400, 15px, null, #f5f5f5);
+                padding: 3px 5px;
+
+                @include mobile($mb874) {
+                    padding: 3px 0;
+                    font-size: 14px;
+                }
+
+                @include mobile($mb767) {
+                    font-size: 12px;
+                }
+
+                p {
+                    padding: 3px 0;
+                }
+            }
+        }
+
+        .foot_menu {
+            width: auto;
+            margin-top: -30px;
+            text-align: center;
+
+            @include mobile($mb666) {
+                text-align: left;
+                padding-bottom: 15px;
+            }
+
+            @include mobile($mb1152) {
+                margin-top: 20px;
+            }
+
+            @include mobile($mb874) {
+                width: 100%;
+                text-align: left;
+            }
+
+            @include mobile($mb767) {
+                display: none;
+            }
+
+            h4 {
+                @include font($Noto, 800, 20px, null, #f5f5f5);
+                text-decoration: underline;
+                padding-bottom: 15px;
+
+                @include mobile($mb767) {
+                    font-size: 16px;
+                }
+            }
+
+            div {
+                max-width: 250px;
+                display: flex;
+                flex-wrap: wrap;
+
+                p {
+                    padding: 7px 0;
+                    width: 50%;
+
+                    a {
+                        @include font($Noto, 400, 15px, null, #f5f5f5);
+
+                        @include mobile($mb767) {
+                            font-size: 12px;
+                        }
+                    }
+                }
+            }
+        }
+
+        .copy {
+            position: absolute;
+            right: 0;
+            bottom: -20px;
+
+            @include mobile($mb767) {
+                left: 0;
+            }
+
+            p {
+                font-size: 12px;
+                color: #f5f5f5;
+            }
+            span{
+                font-size: 6px;
+                color: #f5f5f5;
+            }
+        }
+    }
+}
+
+//공통사항
+

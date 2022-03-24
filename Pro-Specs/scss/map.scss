@@ -1,0 +1,88 @@
+$jost: "jost";
+$Noto: "Noto-sans";
+
+//모바일 반응형
+
+$mb1880: 1880px;
+$mb1680: 1680px;
+$mb1480: 1480px;
+$mb1380: 1380px;
+$mb1180: 1180px;
+$mb1152: 1152px;
+$mb1024: 1024px;
+$mb874: 874px;
+$mb767: 767px;
+$mb666: 666px;
+$mb640: 640px;
+$mb480: 480px;
+
+@mixin mobile($mb) {
+    @media screen and (max-width: $mb) {
+        @content;
+    }
+}
+
+//폰트
+@mixin font($ff, $fw, $fz, $fs, $cl) {
+    font-family: $ff;
+    font-weight: $fw;
+    font-size: $fz;
+    font-style: $fs;
+    color: $cl;
+}
+
+main{
+    width: 100%;
+    height: auto;
+    padding: 50px 0;
+
+    #store{
+        max-width: 1080px;
+        margin: 0 auto;
+        .storeBox{
+            width: 100%;
+            display: flex;
+            text-align: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            div{
+                width: 30%;
+                background: #0f4c81;
+                border: 1px solid #aaa;
+                padding: 15px 0;
+                cursor: pointer;
+                box-sizing: border-box;
+
+                @include font($Noto, 600, 16px, null, #f5f5f5);
+
+                &.active{
+                    background: #121212;
+                }
+                @include mobile($mb767){
+                    font-size: 12px;
+                    line-height: 2;
+                    word-break: keep-all;
+                    padding: 6px 0;
+                }
+            }
+        }
+        .markerinfo{
+
+            div{
+                padding: 10px;
+            }
+        }
+    }
+
+    .mapWrap{
+        max-width: 1200px;
+        height: 500px;
+        margin: 0 auto;
+        position: relative;
+        margin-top: 30px;
+        #map{
+            width: 100%;
+            height: 100%;
+        }
+    }
+}
