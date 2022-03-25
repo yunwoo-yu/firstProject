@@ -105,3 +105,8 @@ address,i{
     font-weight: 700;
     src:url(../font/Roboto-Bold.woff)
 }
+@font-face{
+    font-family:"New";
+    font-weight: 700;
+    src:url(../font/ScheherazadeNew-Bold.woff)
+}

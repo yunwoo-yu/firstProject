@@ -4,9 +4,12 @@
   height: 100%;
 }
 #Wrap .full {
+  width: 100%;
+  height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  position: absolute;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -16,13 +19,14 @@
   min-height: 100vh;
   overflow: hidden;
   background: #121212;
+  z-index: 9999;
 }
-#Wrap .full .loding {
+#Wrap .full .loading {
   position: relative;
   width: 300px;
   height: 300px;
 }
-#Wrap .full .loding a {
+#Wrap .full .loading a {
   width: 200px;
   display: block;
   position: relative;
@@ -32,16 +36,16 @@
   text-align: center;
   font-family: "Nanum";
 }
-#Wrap .full .loding a:hover ~ span::before {
+#Wrap .full .loading a:hover ~ span::before {
   -webkit-box-shadow: 0 0 20px #f5cef1, -200px -200px 0 #f5cef1, -200px -200px 20px #f5cef1, 200px 200px 0 #f5cef1, 200px 200px 20px #f5cef1, 200px -200px 0 #f5cef1, 200px -200px 20px #f5cef1, -200px 200px 0 #f5cef1, -200px 200px 20px #f5cef1;
           box-shadow: 0 0 20px #f5cef1, -200px -200px 0 #f5cef1, -200px -200px 20px #f5cef1, 200px 200px 0 #f5cef1, 200px 200px 20px #f5cef1, 200px -200px 0 #f5cef1, 200px -200px 20px #f5cef1, -200px 200px 0 #f5cef1, -200px 200px 20px #f5cef1;
   -webkit-transform-origin: 250px;
           transform-origin: 250px;
 }
-#Wrap .full .loding a:hover h2 {
+#Wrap .full .loading a:hover h2 {
   opacity: 1;
 }
-#Wrap .full .loding a h1 {
+#Wrap .full .loading a h1 {
   position: relative;
   font-size: 48px;
   -webkit-transform-origin: left;
@@ -51,9 +55,9 @@
   -webkit-animation: lodingtext 1s ease-in-out forwards;
           animation: lodingtext 1s ease-in-out forwards;
   background: transparent;
-  text-shadow: -5px 5px #A499F2;
+  text-shadow: -5px 5px #a499f2;
 }
-#Wrap .full .loding a h1::before {
+#Wrap .full .loading a h1::before {
   content: "";
   position: absolute;
   top: 0;
@@ -68,7 +72,7 @@
   -webkit-animation-delay: 1s;
           animation-delay: 1s;
 }
-#Wrap .full .loding a h2 {
+#Wrap .full .loading a h2 {
   position: relative;
   font-size: 48px;
   -webkit-transform-origin: left;
@@ -83,7 +87,7 @@
   -webkit-transition: 0.3s;
   transition: 0.3s;
 }
-#Wrap .full .loding a h2::before {
+#Wrap .full .loading a h2::before {
   content: "";
   position: absolute;
   top: 0;
@@ -138,7 +142,7 @@
             transform: scaleX(1);
   }
 }
-#Wrap .full .loding span {
+#Wrap .full .loading span {
   position: absolute;
   top: 0;
   left: 0;
@@ -175,7 +179,7 @@
             filter: hue-rotate(360deg);
   }
 }
-#Wrap .full .loding span::before {
+#Wrap .full .loading span::before {
   content: "";
   position: absolute;
   top: 0;
@@ -197,4 +201,68 @@
           transform-origin: 20px;
   -webkit-transition: 2s;
   transition: 2s;
+}
+#Wrap .load1 {
+  width: 100%;
+  height: 100%;
+  background: #dcaff2;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+#Wrap header {
+  width: 100%;
+  height: 80px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+#Wrap header .logo {
+  width: 100px;
+  height: 60px;
+  margin: 0 50px;
+  background-image: url(../img/logoback.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+#Wrap header .logo h1 {
+  margin-top: 5px;
+}
+#Wrap header .logo h1 a {
+  font-size: 40px;
+  font-family: "New";
+  text-indent: 10px;
+  display: block;
+}
+#Wrap header .gnb {
+  width: 100%;
+  height: 100%;
+}
+#Wrap header .gnb ul {
+  width: 100%;
+  height: 100%;
+  -webkit-box-pack: right;
+      -ms-flex-pack: right;
+          justify-content: right;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+#Wrap header .gnb ul li {
+  padding-right: 100px;
+}
+#Wrap header .gnb ul li a {
+  font-family: "Nanum";
+  font-weight: 700;
+  font-size: 22px;
+}
+#Wrap #contentBox {
+  width: 100%;
+  height: 100%;
 }

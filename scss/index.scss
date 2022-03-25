@@ -3,16 +3,18 @@
 #Wrap {
     width: 100%;
     height: 100%;
-
     .full {
+        width: 100%;
+        height: 100%;
         display: flex;
+        position: absolute;
         justify-content: center;
         align-items: center;
         min-height: 100vh;
         overflow: hidden;
         background: #121212;
-
-        .loding {
+        z-index: 9999;
+        .loading {
             position: relative;
             width: 300px;
             height: 300px;
@@ -26,7 +28,7 @@
                 color: #fff;
                 text-align: center;
                 font-family: "Nanum";
-                
+
                 &:hover ~ span {
                     &::before {
                         box-shadow: 0 0 20px #f5cef1, -200px -200px 0 #f5cef1, -200px -200px 20px #f5cef1,
@@ -35,8 +37,8 @@
                         transform-origin: 250px;
                     }
                 }
-                &:hover{
-                    h2{
+                &:hover {
+                    h2 {
                         opacity: 1;
                     }
                 }
@@ -47,8 +49,8 @@
                     transform: scaleX(0);
                     animation: lodingtext 1s ease-in-out forwards;
                     background: transparent;
-                    text-shadow: -5px 5px #A499F2;
-                    
+                    text-shadow: -5px 5px #a499f2;
+
                     &::before {
                         content: "";
                         position: absolute;
@@ -71,7 +73,7 @@
                     animation-delay: 1s;
                     opacity: 0.5;
                     transition: 0.3s;
-                    
+
                     &::before {
                         content: "";
                         position: absolute;
@@ -145,5 +147,66 @@
                 }
             }
         }
+    }
+
+    .load1 {
+        width: 100%;
+        height: 100%;
+        background: #dcaff2;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+
+    header {
+        width: 100%;
+        height: 80px;
+        display: flex;
+        align-items: center;
+        .logo {
+            width: 100px;
+            height: 60px;
+            margin: 0 50px;
+            background-image: url(../img/logoback.png);
+            background-size: contain;
+            background-repeat: no-repeat;
+            
+            h1 {
+                margin-top: 5px;
+                a {
+                    font-size: 40px;
+                    font-family: "New";
+                    text-indent: 10px;
+                    display: block;
+                }
+            }
+        }
+
+        .gnb {
+            width: 100%;
+            height: 100%;
+            ul {
+                width: 100%;
+                height: 100%;
+                justify-content: right;
+                display: flex;
+                align-items: center;
+
+                li{
+                    padding-right: 100px;
+
+                    a{
+                        font-family: "Nanum";
+                        font-weight: 700;
+                        font-size: 22px;
+                    }
+                }
+            }
+        }
+    }
+
+    #contentBox {
+        width: 100%;
+        height: 100%;
     }
 }
