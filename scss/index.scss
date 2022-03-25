@@ -38,11 +38,11 @@
                     }
                 }
                 &:hover {
-                    h2 {
+                    h3 {
                         opacity: 1;
                     }
                 }
-                h1 {
+                >h2 {
                     position: relative;
                     font-size: 48px;
                     transform-origin: left;
@@ -64,7 +64,7 @@
                         animation-delay: 1s;
                     }
                 }
-                h2 {
+                h3 {
                     position: relative;
                     font-size: 48px;
                     transform-origin: left;
@@ -168,7 +168,7 @@
             background-image: url(../img/logoback.png);
             background-size: contain;
             background-repeat: no-repeat;
-            h1 {
+            >h1 {
                 margin-top: 5px;
                 a {
                     font-size: 40px;

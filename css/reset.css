@@ -78,35 +78,35 @@ address,i{
 @font-face{
     font-family:"Nanum";
     font-weight: 700;
-    src:url(../font/NanumMyeongjo-Bold.woff)
+    src:url(../font/NanumMyeongjo-Bold.woff);
 }
 @font-face{
     font-family:"Nanum";
     font-weight: 400;
-    src:url(../font/NanumMyeongjo-Regular.woff)
+    src:url(../font/NanumMyeongjo-Regular.woff);
 }
 @font-face{
     font-family:"Roboto";
     font-weight: 300;
-    src:url(../font/Roboto-Light.woff)
+    src:url(../font/Roboto-Light.woff);
 }
 @font-face{
     font-family:"Roboto";
     font-weight: 400;
-    src:url(../font/Roboto-Regular.woff)
+    src:url(../font/Roboto-Regular.woff);
 }
 @font-face{
     font-family:"Roboto";
     font-weight: 500;
-    src:url(../font/Roboto-Medium.woff)
+    src:url(../font/Roboto-Medium.woff);
 }
 @font-face{
     font-family:"Roboto";
     font-weight: 700;
-    src:url(../font/Roboto-Bold.woff)
+    src:url(../font/Roboto-Bold.woff);
 }
 @font-face{
     font-family:"New";
     font-weight: 700;
-    src:url(../font/ScheherazadeNew-Bold.woff)
+    src:url(../font/ScheherazadeNew-Bold.woff);
 }
