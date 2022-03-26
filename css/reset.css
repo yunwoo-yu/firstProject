@@ -26,10 +26,12 @@ body{
     font-size:18px;
     color:#121212;
     line-height: 1;
+    /* -ms-overflow-style: none; /* IE and Edge */
+    /* scrollbar-width: none; Firefox */
 }
 
-.screen-box::-webkit-scrollbar {
-	display:none; /* Chrome , Safari , Opera */
+body::-webkit-scrollbar {
+	/* display:none; Chrome , Safari , Opera */
 }
 img{
     vertical-align: top;
