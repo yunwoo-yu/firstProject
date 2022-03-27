@@ -26,9 +26,13 @@ $(function () {
 
     shadow();
     gnbscrollEvent();
+    parallax();
+    AOS.init({
+        duration:800,
+    });
 })
 function shadow() {
-    var cnt1text = $(".cnt1_welcome")
+    var cnt1text = $(".cnt1_title")
     var shadow = '';
     for (var i = 0; i < 30; i++) {
         shadow += (shadow ? ',' : '') + i * 1 + 'px ' + i * 1 + 'px 0 #191919'
@@ -69,8 +73,16 @@ function gnbscrollEvent() {
         })
     })
 
-
 }
+function parallax() {
 
+    let stars = $(".stars");
+    let moon = $(".moon");
 
+    $(window).on("scroll", function () {
 
+        let value = $(this).scrollTop();
+        $(stars).css("left", value * 0.3 + "px");
+        $(moon).css("top", value * 0.6 + "px");
+    })
+}

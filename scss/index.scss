@@ -1,7 +1,8 @@
 @import "reset.css";
 
 .inner {
-    width: 95%;
+    width: 90%;
+    height: 100%;
     margin: 0 auto;
     position: relative;
 }
@@ -165,21 +166,21 @@
     header {
         width: 100%;
         height: 80px;
-        background: #fff;
+        position: absolute;
         display: flex;
         align-items: center;
         z-index: 9800;
+        top: 0;
+        left: 0;
         .logo {
             width: 100px;
             height: 60px;
             margin: 0 50px;
-            background-image: url(../img/logoback.png);
-            background-size: contain;
-            background-repeat: no-repeat;
             > h1 {
                 margin-top: 5px;
                 a {
-                    font-size: 40px;
+                    color: #fff;
+                    font-size: 60px;
                     font-family: "New";
                     text-indent: 10px;
                     display: block;
@@ -218,43 +219,170 @@
 
         #cnt1 {
             width: 100%;
-            height: calc(100% - 80px);
-            background: #121212;
+            height: 100%;
             display: flex;
-            overflow: hidden;
             justify-content: left;
             align-items: center;
             position: relative;
-            .inner {
-
-                .cnt1_welcome {
+            overflow: hidden;
+            .parallaximg {
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translateX(-50%) translateY(-50%);
+                width: 100%;
+                height: 100%;
+                background: linear-gradient(#2b1055, #7597de);
+                img {
                     position: absolute;
-                    left: 50%;
-                    top: 50%;
-                    width: 720px;
-                    transform: translateX(-50%) translateY(-30%);
-                    color: #fff;
-                    font-family: "Roboto";
-                    font-weight: 700;
-                    font-size: 6em;
-                    text-align: center;
-                    text-shadow: 1px 1px 0 #121212;
-                    opacity: 0;
-                    transition: 1.5s;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+
+                    &.moon {
+                        mix-blend-mode: screen;
+                    }
                 }
+            }
+            .cnt1_title {
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                width: 720px;
+                transform: translateX(-50%) translateY(-30%);
+                color: #fff;
+                font-family: "Roboto";
+                font-weight: 700;
+                font-size: 6em;
+                text-align: center;
+                text-shadow: 1px 1px 0 #121212;
+                opacity: 0;
+                transition: 1.5s;
             }
         }
 
         #cnt2 {
             width: 100%;
             height: 100%;
-            background: pink;
+            background: #121212;
+
+            .inner {
+                .profile {
+                    width: auto;
+                    display: flex;
+                    flex-wrap: wrap;
+                    padding-left: 150px;
+                    .cnt2_title {
+                        width: 100%;
+                        font-family: "Roboto";
+                        font-weight: 700;
+                        font-size: 68px;
+                        color: #fff;
+                        letter-spacing: 10px;
+                        padding: 80px 0;
+                    }
+                    .cnt2_imgbox {
+                        margin-right: 200px;
+                        img {
+                            width: 100%;
+                        }
+                    }
+                    .cnt2_text {
+                        width: 50%;
+                        color: #f5f5f5;
+                        line-height: 1.7;
+                        word-break: keep-all;
+                        font-size: 20px;
+                        p {
+                            font-family: "Noto";
+                            font-weight: 300;
+                            letter-spacing: -2px;
+
+                            &:first-child {
+                                padding-bottom: 20px;
+                                font-size: 28px;
+                                font-weight: 400;
+                            }
+
+                            span {
+                                font-family: "Roboto";
+                                font-weight: 400;
+                                color: #fff;
+                            }
+                        }
+                    }
+                    .info {
+                        width: 100%;
+                        margin-top: 50px;
+                        letter-spacing: 2px;
+                        position: relative;
+                        h3 {
+                            color: #f5f5f5;
+                            font-size: 38px;
+
+                            &::after {
+                                content: "";
+                                display: block;
+                                width: 20%;
+                                height: 1px;
+                                background: #fff;
+                                margin-top: 10px;
+                            }
+                        }
+                        .cnt2_infobox {
+                            width: 100%;
+                            height: 200px;
+                            margin-top: 30px;
+                            background: rgba(255, 255, 255, 0.3);
+                            border-radius: 20px;
+
+                            > div {
+                                padding: 30px;
+
+                                > div {
+                                    line-height: 32px;
+                                    padding-bottom: 15px;
+                                    span {
+                                        padding-left: 15px;
+                                    }
+                                }
+                                .git{
+                                    a:hover{
+                                        color: #fff;
+                                    }
+                                }
+                                .portfolio{
+                                    position: absolute;
+                                    right: 5%;
+                                    bottom: 5%;
+                                    font-family: "Nanum";
+                                    >a{
+                                        
+                                        &:first-child{
+                                            padding-right:10px;
+                                        }
+
+                                        &:hover{
+                                            color: #fff;
+                                        }
+                                        >span{
+                                            padding-left: 0;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
         }
 
         #cnt3 {
             width: 100%;
             height: 100%;
-            background: purple;
+            background: #121212;
         }
 
         #cnt4 {

@@ -22,7 +22,7 @@ a {
 }
 
 body{
-    font-family:"Roboto","Nanum";
+    font-family:"Roboto","Nanum","Noto";
     font-size:18px;
     color:#121212;
     line-height: 1;
@@ -111,4 +111,24 @@ address,i{
     font-family:"New";
     font-weight: 700;
     src:url(../font/ScheherazadeNew-Bold.woff);
+}
+@font-face{
+    font-family:"Noto";
+    font-weight: 700;
+    src:url(../font/NotoSansCJKkr-Bold.woff);
+}
+@font-face{
+    font-family:"Noto";
+    font-weight: 500;
+    src:url(../font/NotoSansCJKkr-Medium.woff);
+}
+@font-face{
+    font-family:"Noto";
+    font-weight: 400;
+    src:url(../font/NotoSansCJKkr-Regular.woff);
+}
+@font-face{
+    font-family:"Noto";
+    font-weight: 300;
+    src:url(../font/NotoSansCJKkr-Light.woff);
 }
