@@ -6,9 +6,287 @@
   position: relative;
 }
 
+::-webkit-scrollbar {
+  width: 0;
+}
+
+#scrollpath {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 7px;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+#scrollbar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 7px;
+  background: -webkit-gradient(linear, left bottom, left top, from(#2b1055), to(#7597de));
+  background: linear-gradient(to top, #2b1055, #7597de);
+  -webkit-animation: scrollani 5s linear infinite;
+          animation: scrollani 5s linear infinite;
+  z-index: 9000;
+}
+#scrollbar::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: -webkit-gradient(linear, left bottom, left top, from(#2b1055), to(#7597de));
+  background: linear-gradient(to top, #2b1055, #7597de);
+  -webkit-filter: blur(10px);
+          filter: blur(10px);
+}
+#scrollbar::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: -webkit-gradient(linear, left bottom, left top, from(#2b1055), to(#7597de));
+  background: linear-gradient(to top, #2b1055, #7597de);
+  -webkit-filter: blur(30px);
+          filter: blur(30px);
+}
+
+@-webkit-keyframes scrollani {
+  0%, 100% {
+    -webkit-filter: hue-rotate(0deg);
+            filter: hue-rotate(0deg);
+  }
+  50% {
+    -webkit-filter: hue-rotate(360deg);
+            filter: hue-rotate(360deg);
+  }
+}
+
+@keyframes scrollani {
+  0%, 100% {
+    -webkit-filter: hue-rotate(0deg);
+            filter: hue-rotate(0deg);
+  }
+  50% {
+    -webkit-filter: hue-rotate(360deg);
+            filter: hue-rotate(360deg);
+  }
+}
 #Wrap {
   width: 100%;
   height: 100%;
+}
+#Wrap .lodingBox {
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  min-height: 100vh;
+  overflow: hidden;
+  background: #121212;
+  z-index: 9999;
+}
+#Wrap .lodingBox .loading {
+  position: relative;
+  width: 300px;
+  height: 300px;
+}
+#Wrap .lodingBox .loading a {
+  width: 200px;
+  display: block;
+  position: relative;
+  margin: 80px auto;
+  z-index: 9000;
+  color: #fff;
+  text-align: center;
+  font-family: "Nanum";
+}
+#Wrap .lodingBox .loading a:hover ~ span::before {
+  -webkit-box-shadow: 0 0 20px #f5cef1, -200px -200px 0 #f5cef1, -200px -200px 20px #f5cef1, 200px 200px 0 #f5cef1, 200px 200px 20px #f5cef1, 200px -200px 0 #f5cef1, 200px -200px 20px #f5cef1, -200px 200px 0 #f5cef1, -200px 200px 20px #f5cef1;
+          box-shadow: 0 0 20px #f5cef1, -200px -200px 0 #f5cef1, -200px -200px 20px #f5cef1, 200px 200px 0 #f5cef1, 200px 200px 20px #f5cef1, 200px -200px 0 #f5cef1, 200px -200px 20px #f5cef1, -200px 200px 0 #f5cef1, -200px 200px 20px #f5cef1;
+  -webkit-transform-origin: 250px;
+          transform-origin: 250px;
+}
+#Wrap .lodingBox .loading a:hover h3 {
+  opacity: 1;
+}
+#Wrap .lodingBox .loading a > h2 {
+  position: relative;
+  font-size: 48px;
+  -webkit-transform-origin: left;
+          transform-origin: left;
+  -webkit-transform: scaleX(0);
+          transform: scaleX(0);
+  -webkit-animation: lodingtext 1s ease-in-out forwards;
+          animation: lodingtext 1s ease-in-out forwards;
+  background: transparent;
+  text-shadow: -5px 5px #a499f2;
+}
+#Wrap .lodingBox .loading a > h2::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: #000;
+  width: 100%;
+  height: 100%;
+  -webkit-transform-origin: right;
+          transform-origin: right;
+  -webkit-animation: Textline 1s ease-in-out forwards;
+          animation: Textline 1s ease-in-out forwards;
+  -webkit-animation-delay: 1s;
+          animation-delay: 1s;
+}
+#Wrap .lodingBox .loading a h3 {
+  position: relative;
+  font-size: 48px;
+  -webkit-transform-origin: left;
+          transform-origin: left;
+  -webkit-transform: scaleX(0);
+          transform: scaleX(0);
+  -webkit-animation: lodingtext 1s ease-in-out forwards;
+          animation: lodingtext 1s ease-in-out forwards;
+  -webkit-animation-delay: 1s;
+          animation-delay: 1s;
+  opacity: 0.5;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+#Wrap .lodingBox .loading a h3::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: #000;
+  width: 100%;
+  height: 100%;
+  -webkit-transform-origin: right;
+          transform-origin: right;
+  -webkit-animation: Textline 1s ease-in-out forwards;
+          animation: Textline 1s ease-in-out forwards;
+  -webkit-animation-delay: 2s;
+          animation-delay: 2s;
+}
+@-webkit-keyframes Textline {
+  0% {
+    -webkit-transform: scaleX(1);
+            transform: scaleX(1);
+  }
+  100% {
+    -webkit-transform: scaleX(0);
+            transform: scaleX(0);
+  }
+}
+@keyframes Textline {
+  0% {
+    -webkit-transform: scaleX(1);
+            transform: scaleX(1);
+  }
+  100% {
+    -webkit-transform: scaleX(0);
+            transform: scaleX(0);
+  }
+}
+@-webkit-keyframes lodingtext {
+  0% {
+    -webkit-transform: scaleX(0);
+            transform: scaleX(0);
+  }
+  100% {
+    -webkit-transform: scaleX(1);
+            transform: scaleX(1);
+  }
+}
+@keyframes lodingtext {
+  0% {
+    -webkit-transform: scaleX(0);
+            transform: scaleX(0);
+  }
+  100% {
+    -webkit-transform: scaleX(1);
+            transform: scaleX(1);
+  }
+}
+#Wrap .lodingBox .loading span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-transform: rotate(calc(36deg * var(--i)));
+          transform: rotate(calc(36deg * var(--i)));
+}
+@-webkit-keyframes loder {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+    -webkit-filter: hue-rotate(0deg);
+            filter: hue-rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+    -webkit-filter: hue-rotate(360deg);
+            filter: hue-rotate(360deg);
+  }
+}
+@keyframes loder {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+    -webkit-filter: hue-rotate(0deg);
+            filter: hue-rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+    -webkit-filter: hue-rotate(360deg);
+            filter: hue-rotate(360deg);
+  }
+}
+#Wrap .lodingBox .loading span::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: transparent;
+  border: 4px solid #f5cef1;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-box-shadow: 0 0 20px #f5cef1, -30px -30px 0 #f5cef1, -30px -30px 20px #f5cef1, 30px 30px 0 #f5cef1, 30px 30px 20px #f5cef1, 30px -30px 0 #f5cef1, 30px -30px 20px #f5cef1, -30px 30px 0 #f5cef1, -30px 30px 20px #f5cef1;
+          box-shadow: 0 0 20px #f5cef1, -30px -30px 0 #f5cef1, -30px -30px 20px #f5cef1, 30px 30px 0 #f5cef1, 30px 30px 20px #f5cef1, 30px -30px 0 #f5cef1, 30px -30px 20px #f5cef1, -30px 30px 0 #f5cef1, -30px 30px 20px #f5cef1;
+  -webkit-animation: loder 5s linear infinite;
+          animation: loder 5s linear infinite;
+  -webkit-animation-delay: calc(-0.25s * var(--i));
+          animation-delay: calc(-0.25s * var(--i));
+  -webkit-transform-origin: 20px;
+          transform-origin: 20px;
+  -webkit-transition: 2s;
+  transition: 2s;
+}
+#Wrap .load1 {
+  width: 100%;
+  height: 100%;
+  background: #DBA2F6;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 9900;
 }
 #Wrap header {
   width: 100%;

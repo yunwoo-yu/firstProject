@@ -1,36 +1,58 @@
 $(function () {
-    // var back1 = $(".load1")
-    // //스크롤 막아두기
-    // $("#Wrap").css('overflow', 'hidden');
+    
 
-    // $(".loading>a").on("click", function () {
 
-    //     $(".full").animate({
-    //         "top": "-100%",
-    //     }, 1000)
-
-    //     setTimeout(function () {
-    //         $(back1).animate({
-    //             "left": "-100%",
-    //         }, 1000)
-    //     }, 1000)
-
-    //     setTimeout(() => {
-    //         $("#Wrap").css('overflow', 'auto');
-    //         shadow();
-    //     }, 2000);
-
-    // })
-
-    //컨텐츠1 그림자 이펙트
-
-    shadow();
+    loding();
     gnbscrollEvent();
     parallax();
+    scrollbar();
     AOS.init({
         duration:800,
     });
 })
+
+//첫화면
+function loding(){
+    var back1 = $(".load1")
+    //스크롤 막아두기
+    $('#Wrap').on('scroll touchmove mousewheel', function(event) {
+      event.preventDefault();
+      event.stopPropagation();
+      return false;
+    });
+
+    $(".loading>a").on("click", function () {
+
+        $(".lodingBox").animate({
+            "top": "-100%",
+        }, 1000)
+
+        setTimeout(function () {
+            $(back1).animate({
+                "left": "-100%",
+            }, 1000)
+        }, 1000)
+
+        setTimeout(() => {
+            shadow();
+            $('#Wrap').off('scroll touchmove mousewheel');
+        }, 2000);
+
+    })
+}
+
+//커스텀 스크롤바
+function scrollbar(){
+    let scrollbar = document.getElementById('scrollbar')
+    let totalHeight = document.body.scrollHeight - window.innerHeight;
+    window.onscroll = function(){
+        let scrollbarHeight = (window.scrollY / totalHeight) * 100;
+        scrollbar.style.height = scrollbarHeight + "%";
+    }
+}
+
+//cnt1 그림자 이펙트
+
 function shadow() {
     var cnt1text = $(".cnt1_title")
     var shadow = '';
@@ -45,6 +67,9 @@ function shadow() {
     })
 
 }
+
+//gnb click 및 스크롤 이벤트
+
 function gnbscrollEvent() {
 
 
@@ -74,6 +99,9 @@ function gnbscrollEvent() {
     })
 
 }
+
+//cnt1 배경 별,달 패럴렉스
+
 function parallax() {
 
     let stars = $(".stars");
