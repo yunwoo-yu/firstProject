@@ -2,7 +2,7 @@ $(function () {
     
     
 
-    // loding();
+    loding();
     shadow();
     gnbscrollEvent();
     parallax();
