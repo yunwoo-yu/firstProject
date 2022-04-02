@@ -3,7 +3,6 @@ $(function () {
     
 
     loding();
-    shadow();
     gnbscrollEvent();
     parallax();
     scrollbar();
