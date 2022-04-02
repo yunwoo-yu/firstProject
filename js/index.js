@@ -1,25 +1,31 @@
 $(function () {
     
+    
 
-
-    loding();
+    // loding();
+    shadow();
     gnbscrollEvent();
     parallax();
     scrollbar();
+    mouseevent();
     AOS.init({
-        duration:800,
+        duration: 800,
     });
 })
 
 //첫화면
-function loding(){
+function loding() {
     var back1 = $(".load1")
     //스크롤 막아두기
-    $('#Wrap').on('scroll touchmove mousewheel', function(event) {
-      event.preventDefault();
-      event.stopPropagation();
-      return false;
+    $('#Wrap').on('scroll touchmove mousewheel', function (event) {
+        event.preventDefault();
+        event.stopPropagation();
+        return false;
     });
+
+    setTimeout(function () {
+        scrollTo(0, 0);
+    }, 100)
 
     $(".loading>a").on("click", function () {
 
@@ -42,10 +48,10 @@ function loding(){
 }
 
 //커스텀 스크롤바
-function scrollbar(){
+function scrollbar() {
     let scrollbar = document.getElementById('scrollbar')
     let totalHeight = document.body.scrollHeight - window.innerHeight;
-    window.onscroll = function(){
+    window.onscroll = function () {
         let scrollbarHeight = (window.scrollY / totalHeight) * 100;
         scrollbar.style.height = scrollbarHeight + "%";
     }
@@ -112,5 +118,24 @@ function parallax() {
         let value = $(this).scrollTop();
         $(stars).css("left", value * 0.3 + "px");
         $(moon).css("top", value * 0.6 + "px");
+    })
+}
+
+//마우스 포인터 이벤트
+
+function mouseevent(){
+    const cursor = document.getElementById('cursor');
+    
+    document.addEventListener('mousemove',function(e){
+        let x = e.clientX;
+        let y = e.clientY;
+        cursor.style.left = x + "px";
+        cursor.style.top = y + "px";
+    })
+    document.querySelector(".gnb").addEventListener("mouseenter",function(){
+        cursor.style.transform = "translate(-50%,-50%) scale(4)";
+    })
+    document.querySelector(".gnb").addEventListener("mouseleave",function(){
+        cursor.style.transform = "translate(-50%,-50%) scale(1)";
     })
 }
