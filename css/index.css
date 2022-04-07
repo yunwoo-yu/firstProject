@@ -61,8 +61,6 @@
   height: 50px;
   border-radius: 50%;
   background: #fff;
-  -webkit-transition: 0.1s;
-  transition: 0.1s;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
   pointer-events: none;
@@ -111,7 +109,7 @@
   min-height: 100vh;
   overflow: hidden;
   background: #121212;
-  z-index: 9999;
+  z-index: 9900;
 }
 #Wrap .lodingBox .loading {
   position: relative;
@@ -297,11 +295,11 @@
 #Wrap .load1 {
   width: 100%;
   height: 100%;
-  background: #DBA2F6;
+  background: #dba2f6;
   position: absolute;
   top: 0;
   left: 0;
-  z-index: 9900;
+  z-index: 9800;
 }
 #Wrap header {
   width: 100%;
@@ -313,7 +311,7 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  z-index: 9800;
+  z-index: 9700;
   top: 0;
   left: 0;
 }
@@ -380,8 +378,8 @@
           transform: translateX(-50%) translateY(-50%);
   width: 100%;
   height: 100%;
-  background: -webkit-gradient(linear, left top, left bottom, from(#2b1055), to(#7597de));
-  background: linear-gradient(#2b1055, #7597de);
+  background: -webkit-gradient(linear, left top, left bottom, from(#121212), to(#2b1055));
+  background: linear-gradient(#121212, #2b1055);
 }
 #Wrap #contentBox #cnt1 .parallaximg img {
   position: absolute;
@@ -415,7 +413,32 @@
 #Wrap #contentBox #cnt2 {
   width: 100%;
   height: 100%;
-  background: #121212;
+  background: #2b1055;
+  position: relative;
+  overflow: hidden;
+}
+#Wrap #contentBox #cnt2 .parallaximg {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+          transform: translateX(-50%) translateY(-50%);
+  width: 100%;
+  height: 100%;
+  background: -webkit-gradient(linear, left top, left bottom, from(#2b1055), to(#7597de));
+  background: linear-gradient(#2b1055, #7597de);
+}
+#Wrap #contentBox #cnt2 .parallaximg img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+#Wrap #contentBox #cnt2 .parallaximg img.stars2 {
+  mix-blend-mode: screen;
 }
 #Wrap #contentBox #cnt2 .inner .profile {
   width: auto;
@@ -463,63 +486,11 @@
   font-weight: 400;
   color: #fff;
 }
-#Wrap #contentBox #cnt2 .inner .profile .info {
-  width: 100%;
-  margin-top: 50px;
-  letter-spacing: 2px;
-  position: relative;
-}
-#Wrap #contentBox #cnt2 .inner .profile .info h3 {
-  color: #f5f5f5;
-  font-size: 38px;
-}
-#Wrap #contentBox #cnt2 .inner .profile .info h3::after {
-  content: "";
-  display: block;
-  width: 20%;
-  height: 1px;
-  background: #fff;
-  margin-top: 10px;
-}
-#Wrap #contentBox #cnt2 .inner .profile .info .cnt2_infobox {
-  width: 100%;
-  height: 200px;
-  margin-top: 30px;
-  background: rgba(255, 255, 255, 0.3);
-  border-radius: 20px;
-}
-#Wrap #contentBox #cnt2 .inner .profile .info .cnt2_infobox > div {
-  padding: 30px;
-}
-#Wrap #contentBox #cnt2 .inner .profile .info .cnt2_infobox > div > div {
-  line-height: 32px;
-  padding-bottom: 15px;
-}
-#Wrap #contentBox #cnt2 .inner .profile .info .cnt2_infobox > div > div span {
-  padding-left: 15px;
-}
-#Wrap #contentBox #cnt2 .inner .profile .info .cnt2_infobox > div .git a:hover {
-  color: #fff;
-}
-#Wrap #contentBox #cnt2 .inner .profile .info .cnt2_infobox > div .portfolio {
-  position: absolute;
-  right: 5%;
-  bottom: 5%;
-  font-family: "Nanum";
-}
-#Wrap #contentBox #cnt2 .inner .profile .info .cnt2_infobox > div .portfolio > a:first-child {
-  padding-right: 10px;
-}
-#Wrap #contentBox #cnt2 .inner .profile .info .cnt2_infobox > div .portfolio > a:hover {
-  color: #fff;
-}
-#Wrap #contentBox #cnt2 .inner .profile .info .cnt2_infobox > div .portfolio > a > span {
-  padding-left: 0;
-}
 #Wrap #contentBox #cnt3 {
   width: 100%;
   height: 100%;
-  background: #121212;
+  background: -webkit-gradient(linear, left top, left bottom, from(#7597de), to(#7597de));
+  background: linear-gradient(#7597de, #7597de);
 }
 #Wrap #contentBox #cnt3 .inner .skill {
   padding-left: 150px;
@@ -567,10 +538,13 @@
 }
 #Wrap #contentBox #cnt3 .inner .skill .skBox .skList li {
   width: 33.33%;
-  height: 150px;
-  line-height: 150px;
+  height: 120px;
+  line-height: 120px;
   color: #fff;
   font-size: 28px;
+  border: 1px solid #eee;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 #Wrap #contentBox #cnt3 .inner .skill .skBox .skList li:hover {
   color: #00ff00;
@@ -599,10 +573,210 @@
 #Wrap #contentBox #cnt4 {
   width: 100%;
   height: 100%;
-  background: blue;
+  background: #121212;
+}
+#Wrap #contentBox #cnt4 .Project {
+  padding-left: 150px;
+}
+#Wrap #contentBox #cnt4 .Project .cnt4_title {
+  width: 100%;
+  font-family: "Roboto";
+  font-weight: 700;
+  font-size: 68px;
+  color: #fff;
+  letter-spacing: 10px;
+  padding: 80px 0;
+}
+#Wrap #contentBox #cnt4 .Project .cnt4_subtitle {
+  font-size: 40px;
+  color: #aaa;
+  margin-bottom: 30px;
+}
+#Wrap #contentBox #cnt4 .Project .publishing {
+  width: 100%;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+#Wrap #contentBox #cnt4 .Project .publishing .Prj_card {
+  position: relative;
+  width: 380px;
+  height: 250px;
+}
+#Wrap #contentBox #cnt4 .Project .publishing .Prj_card:hover .face.face1 {
+  -webkit-transform: translateY(-100%) rotateX(90deg);
+          transform: translateY(-100%) rotateX(90deg);
+  background: #dba2f6;
+}
+#Wrap #contentBox #cnt4 .Project .publishing .Prj_card:hover .face.face2 {
+  -webkit-transform: translateY(0%) rotateX(0deg);
+          transform: translateY(0%) rotateX(0deg);
+  background: #fff;
+}
+#Wrap #contentBox #cnt4 .Project .publishing .Prj_card .face {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+#Wrap #contentBox #cnt4 .Project .publishing .Prj_card .face.face1 {
+  background: #333;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  z-index: 1;
+  -webkit-transform-origin: bottom;
+          transform-origin: bottom;
+}
+#Wrap #contentBox #cnt4 .Project .publishing .Prj_card .face.face1 p {
+  color: #fff;
+}
+#Wrap #contentBox #cnt4 .Project .publishing .Prj_card .face.face2 {
+  background: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transform-origin: top;
+          transform-origin: top;
+  -webkit-transform: translateY(100%) rotateX(90deg);
+          transform: translateY(100%) rotateX(90deg);
+}
+#Wrap #contentBox #cnt4 .Project .publishing .Prj_card .face .Prj_text {
+  width: 100%;
+  text-align: left;
+  line-height: 2;
+}
+#Wrap #contentBox #cnt4 .Project .publishing .Prj_card .face .Prj_text p {
+  font-size: 14px;
+  font-family: "Roboto";
+  color: #000;
+  text-indent: 40px;
+}
+#Wrap #contentBox #cnt4 .Project .publishing .Prj_card .face .Prj_text p span {
+  font-weight: 700;
+}
+#Wrap #contentBox #cnt4 .Project .publishing .Prj_card .face .Prj_text em {
+  display: block;
+  font-size: 14px;
+  font-family: "Nanum";
+  font-weight: 700;
+  text-align: center;
+}
+#Wrap #contentBox #cnt4 .Project .publishing .Prj_card .face .Prj_btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+#Wrap #contentBox #cnt4 .Project .publishing .Prj_card .face .Prj_btn div {
+  width: 100px;
+  height: 40px;
+  background: #aaa;
+}
+#Wrap #contentBox #cnt4 .Project .publishing .Prj_card .face .Prj_btn div:hover {
+  background: #dba2f6;
+}
+#Wrap #contentBox #cnt4 .Project .publishing .Prj_card .face .Prj_btn div:first-child {
+  margin-right: 20px;
+}
+#Wrap #contentBox #cnt4 .Project .publishing .Prj_card .face .Prj_btn div a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+#Wrap #contentBox #cnt4 .Project .publishing .Prj_card .face .Prj_btn div a img {
+  max-width: 32px;
 }
 #Wrap #contentBox #cnt5 {
   width: 100%;
   height: 100%;
-  background: green;
+  background: #121212;
+  position: relative;
+}
+#Wrap #contentBox #cnt5 .info {
+  letter-spacing: 2px;
+  position: absolute;
+  top: 50%;
+  left: 150px;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+#Wrap #contentBox #cnt5 .info .cnt5_infobox {
+  width: 100%;
+  height: 600px;
+  background: rgba(255, 255, 255, 0.3);
+}
+#Wrap #contentBox #cnt5 .info .cnt5_infobox .contact {
+  padding: 20px 50px;
+}
+#Wrap #contentBox #cnt5 .info .cnt5_infobox .contact h3 {
+  color: #f5f5f5;
+  font-size: 38px;
+  margin-bottom: 30px;
+}
+#Wrap #contentBox #cnt5 .info .cnt5_infobox .contact h3::after {
+  content: "";
+  display: block;
+  width: 80%;
+  height: 1px;
+  background: #f5f5f5;
+  margin-top: 10px;
+}
+#Wrap #contentBox #cnt5 .info .cnt5_infobox .contact > div {
+  line-height: 32px;
+  padding-bottom: 15px;
+}
+#Wrap #contentBox #cnt5 .info .cnt5_infobox .contact > div span {
+  padding-left: 15px;
+}
+#Wrap #contentBox #cnt5 .info .cnt5_infobox .contact .git a:hover {
+  color: #fff;
+}
+#Wrap #contentBox #cnt5 .info .cnt5_infobox .contact .copy > p {
+  line-height: 1.5;
+  font-size: 12px;
+}
+#Wrap #contentBox #cnt5 .info .cnt5_infobox .contact .copy > p:last-child {
+  margin-bottom: 30px;
+}
+#Wrap #contentBox #cnt5 .info .cnt5_infobox .contact .portfolio {
+  position: absolute;
+  right: 50px;
+  bottom: 0;
+  font-family: "Nanum";
+}
+#Wrap #contentBox #cnt5 .info .cnt5_infobox .contact .portfolio > a:first-child {
+  padding-right: 10px;
+}
+#Wrap #contentBox #cnt5 .info .cnt5_infobox .contact .portfolio > a:hover {
+  color: #fff;
+}
+#Wrap #contentBox #cnt5 .info .cnt5_infobox .contact .portfolio > a > span {
+  padding-left: 0;
 }

@@ -110,13 +110,13 @@ function gnbscrollEvent() {
 function parallax() {
 
     let stars = $(".stars");
+    let stars2 = $(".stars2")
     let moon = $(".moon");
-
     $(window).on("scroll", function () {
 
         let value = $(this).scrollTop();
         $(stars).css("left", value * 0.3 + "px");
-        $(moon).css("top", value * 0.6 + "px");
+        $(moon).css("top", value * 0.7 + "px");
     })
 }
 

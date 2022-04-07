@@ -26,6 +26,7 @@ body{
     font-size:18px;
     color:#121212;
     line-height: 1;
+    cursor: none;
     /* -ms-overflow-style: none; /* IE and Edge */
     /* scrollbar-width: none; Firefox */
 }
